@@ -1,4 +1,4 @@
-package code;
+package StudyJava.Chap01;
 
 public class q1_5 {
     public static void main(String[] args){
