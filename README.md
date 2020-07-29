@@ -14,4 +14,5 @@
 |VSCode|VSCode로 소스 비교||
 |VSCode|VSCode에 SVN extension 설치하기||
 |Winmerge|Winmerge로 소스 비교 및 내용 변경||
+|Java|문자열 intern()|https://www.latera.kr/blog/2019-02-09-java-string-intern/|
 |Spring|Spring 개발|https://addio3305.tistory.com/32?category=772645|
