@@ -11,8 +11,14 @@
 |전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
 |eclipse|eclipse Subversion 설치|https://recipes4dev.tistory.com/155|
 |eclipse|eclipse에서 소스 비교부터 svn 커밋까지||
+|eclipse|Spring 개발환경 설정|https://addio3305.tistory.com/32?category=772645|
 |VSCode|VSCode로 소스 비교||
 |VSCode|VSCode에 SVN extension 설치하기||
+|VSCode|Spring 개발환경 설정|https://sambalim.tistory.com/67|
 |Winmerge|Winmerge로 소스 비교 및 내용 변경||
 |Java|문자열 intern()|https://www.latera.kr/blog/2019-02-09-java-string-intern/|
-|Spring|Spring 개발|https://addio3305.tistory.com/32?category=772645|
+|Java|FileReader와 BufferReader의 차이점||
+|Java|Maven의 이해||
+|Java|Apache Web Server의 이해||
+|Java|Tomcat WAS 이해||
+|Spring|Spring Boot의 이해||
