@@ -8,14 +8,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 
-
+/*Spring 4.0이상부터는 @RestController 사용 가능
+@RestController = @ResponseBody + @Controller
+*/
 @RestController
 public class TestRestController {
     
     // @Autowired
     // TestService testService;
 
-    @RequestMapping(value="/testValue"),method = RequestMethod.GET)
+    @RequestMapping(value="/testValue",method = RequestMethod.GET)
     public String getTestValue2() {
         String TestValue = "레스트컨트롤러 테스트";
         return TestValue;

@@ -21,7 +21,22 @@ public class TestController {
         return value;
     }
 
-    /*Spring 4.0이상부터는 @RestController 사용 가능
-    @RestController = @ResponseBody + @Controller
-    */
+
+
+
+    @RequestMapping("/test")
+    public ModelAndView test() throws Exception{
+        ModelAndView mav = new ModelAndView("test");
+        mav.addObject("name", "goddaehee"); 
+
+        List<String> testList = new ArrayList<String>(); 
+        testList.add("a"); 
+        testList.add("b"); 
+        testList.add("c"); 
+        
+        mav.addObject("list", testList); 
+        return mav; 
+    }
+
+
 }
