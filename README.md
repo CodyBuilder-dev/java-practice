@@ -9,6 +9,7 @@
 |분류|항목|링크|
 |---|---|---|
 |전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
+|전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
 |eclipse|eclipse Subversion 설치|https://recipes4dev.tistory.com/155|
 |eclipse|eclipse에서 소스 비교부터 svn 커밋까지||
 |eclipse|Spring 개발환경 설정|https://addio3305.tistory.com/32?category=772645|
@@ -22,3 +23,5 @@
 |Java|Apache Web Server의 이해||
 |Java|Tomcat WAS 이해||
 |Spring|Spring Boot의 이해||
+|Spring|Spring Boot로 시작하는 프레임워크|https://futurecreator.github.io/2016/06/18/spring-boot-get-started/|
+|Spring|Spring Boot 컨테이너화|https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/|
