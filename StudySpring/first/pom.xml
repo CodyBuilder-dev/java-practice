@@ -48,6 +48,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<!-- jstl 라이브러리 -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

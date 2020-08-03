@@ -1,4 +1,6 @@
-# 1. 스프링 프로젝트 구조 파악
+# 스프링 프로젝트
+## 스프링 MVC구조 이해
+![](mvc.png)
 
 ## 스프링 폴더 구조 파악
 ### pom.xml
@@ -36,7 +38,28 @@ jsp파일 내의 변수에 값을 전달한다.
 ### return jsp파일
 최종적으로 jsp view를 반환한다.
 
-# 2. 스프링 프로젝트 생성
 
-# 3. 스프링 MVC구조 이해
-![](mvc.png)
+# 2. 스프링 부트 프로젝트
+## 스프링 부트 view 만들기
+### 스프링부트 view/template engine 종류
+* JSP/JSTL
+* Thymeleaf
+* FreeMarker
+* Velocity
+* Groovy Template Engine
+* Tiles
+
+### 스프링부트 JSP 제한사항
+- war packaging을 사용하면 JSP 사용가능  
+- jar packaging을 사용하면 JSP 사용불가
+- src/main/resource/template 폴더에 JSP 넣어도 동작 안함
+- JSP 사용을 위해 pom.xml에 추가적인 처리 필요
+
+### 스프링부트 JSP 폴더 생성
+src/main/resources/WEB-INF/jsp  
+또는 src/main/resources/WEB-INF/views
+
+### 스프링부트 application.properties 파일 변경
+
+
+## 스프링부트 자동 파일변경 반영하기
