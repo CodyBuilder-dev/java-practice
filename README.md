@@ -6,6 +6,7 @@
 ~8/28
 
 ## 자바 개발 레퍼런스 정리
+### 개발환경
 |분류|항목|링크|
 |---|---|---|
 |전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
@@ -18,6 +19,10 @@
 |VSCode|Spring 개발환경 설정|https://sambalim.tistory.com/67|
 |VSCode|VSCode에서 Springboot 빌드하기|https://myjamong.tistory.com/123|
 |Winmerge|Winmerge로 소스 비교 및 내용 변경||
+
+### Java & Spring
+|분류|항목|링크|
+|---|---|---|
 |Java|문자열 intern()|https://www.latera.kr/blog/2019-02-09-java-string-intern/|
 |Java|FileReader와 BufferReader의 차이점||
 |Java|Maven의 이해|https://goddaehee.tistory.com/199|
@@ -27,6 +32,9 @@
 |Java|간단한 Servlet 페이지 예시|https://snoopy81.tistory.com/313|
 |Java|Apache Web Server의 이해||
 |Java|Tomcat WAS 이해||
+|Java|Connection Pool 의 이해|https://www.holaxprogramming.com/2013/01/10/devops-how-to-manage-dbcp/|
+|Java|HikariCP의 이해|https://brunch.co.kr/@jehovah/24|
+|Java|JPA란 무엇일까? & Hibernate|https://bit.ly/3ib0zDP <br>https://victorydntmd.tistory.com/195|
 |Spring|Spring 과 Spring의 차이|https://sas-study.tistory.com/274|
 |Spring|Spring Boot의 이해||
 |Spring|Spring Boot로 시작하는 프레임워크|https://futurecreator.github.io/2016/06/18/spring-boot-get-started/|
