@@ -39,12 +39,14 @@ public class TestJpaRestController {
         memberService.updateById(mbrNo, member); return new ResponseEntity<MemberVo>(member, HttpStatus.OK); 
     } 
     
-    // 회원 입력 @PostMapping 
+    // 회원 입력 
+    @PostMapping 
     public ResponseEntity<MemberVo> save(MemberVo member) { 
         return new ResponseEntity<MemberVo>(memberService.save(member), HttpStatus.OK); 
     } 
     
-    // 회원 입력 @RequestMapping(value="/saveMember", method = RequestMethod.GET) 
+    // 회원 입력 
+    @RequestMapping(value="/saveMember", method = RequestMethod.GET) 
     public ResponseEntity<MemberVo> save(HttpServletRequest req, MemberVo member){ 
         return new ResponseEntity<MemberVo>(memberService.save(member), HttpStatus.OK); 
     } 
