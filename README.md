@@ -20,7 +20,7 @@
 |VSCode|VSCode에서 Springboot 빌드하기|https://myjamong.tistory.com/123|
 |Winmerge|Winmerge로 소스 비교 및 내용 변경||
 
-### Java & Spring
+### Java
 |분류|항목|링크|
 |---|---|---|
 |Java|문자열 intern()|https://www.latera.kr/blog/2019-02-09-java-string-intern/|
@@ -28,6 +28,7 @@
 |Java|Maven의 이해|https://goddaehee.tistory.com/199|
 |Java|MavenWrapperMain 에러 해결|https://www.slipp.net/questions/585|
 |Java|Maven package시 test 건너뛰기|http://www.devkuma.com/books/pages/642|
+|Java|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception|
 |Java|Servlet 이해|https://snoopy81.tistory.com/313|
 |Java|간단한 Servlet 페이지 예시|https://snoopy81.tistory.com/313|
 |Java|Apache Web Server의 이해||
@@ -35,6 +36,10 @@
 |Java|Connection Pool 의 이해|https://www.holaxprogramming.com/2013/01/10/devops-how-to-manage-dbcp/|
 |Java|HikariCP의 이해|https://brunch.co.kr/@jehovah/24|
 |Java|JPA란 무엇일까? & Hibernate|https://bit.ly/3ib0zDP <br>https://victorydntmd.tistory.com/195|
+|Java|java.time.LocalDateTime|https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html|
+|Java|하이버네이트 Dialect의 의미||
+
+## Spring
 |Spring|Spring 과 Spring의 차이|https://sas-study.tistory.com/274|
 |Spring|Spring Boot의 이해||
 |Spring|Spring Boot로 시작하는 프레임워크|https://futurecreator.github.io/2016/06/18/spring-boot-get-started/|
@@ -42,10 +47,9 @@
 |Spring|Spring Boot 프로젝트|https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8|
 |Spring|Spring Boot 기초|https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88|
 |Spring|Spring boot에서 jsp 실행시키기|https://antdev.tistory.com/27|
-|Java|java.time.LocalDateTime|https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html|
 |Spring|Spring boot에 MySQL 연동|https://victorydntmd.tistory.com/321|
 |Spring|Spring boot에 H2DB+mybatis 연동|http://tech.javacafe.io/2018/07/31/mybatis-with-spring/|
-|Java|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception|
 |Spring|hikari CP 설정|https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property|
 |Spring|JPA Repository의 이해||
-|Java|하이버네이트 Dialect의 의미||
+|Spring|Spring 방식 JDBC 연동|https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/|
+|Spring|Spring Gradle 구현 예제|https://github.com/stunstunstun/awesome-spring-boot|
