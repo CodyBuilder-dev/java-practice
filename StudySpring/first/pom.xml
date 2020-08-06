@@ -49,6 +49,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+
 		<dependency> 
 			<groupId>org.apache.tomcat.embed</groupId> 
 			<artifactId>tomcat-embed-jasper</artifactId> 
@@ -64,10 +65,19 @@
 			<groupId>org.mariadb.jdbc</groupId> 
 			<artifactId>mariadb-java-client</artifactId> 
 		</dependency> 
-		<dependency> 
-			<groupId>org.mybatis.spring.boot</groupId> 
-			<artifactId>mybatis-spring-boot-starter</artifactId> 
-			<version>2.1.1</version> 
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>	
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

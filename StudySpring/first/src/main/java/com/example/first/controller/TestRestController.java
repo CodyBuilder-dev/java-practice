@@ -2,6 +2,11 @@ package com.example.first.controller;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import com.example.first.service.TestService;
+import com.example.first.vo.TestVo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,8 +24,8 @@ import org.springframework.web.servlet.ModelAndView;
 @RestController
 public class TestRestController {
     
-    // @Autowired
-    // TestService testService;
+    @Autowired
+    TestService testService;
 
     @RequestMapping(value="/testValue",method = RequestMethod.GET)
     public String getTestValue2() {
@@ -40,5 +45,20 @@ public class TestRestController {
         
         mav.addObject("list", testList); 
         return mav; 
+    }
+
+    @RequestMapping("/testTime")
+    public String testTime() {
+        return LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+    }
+
+    @RequestMapping("/testSvs")
+    public ModelAndView testSvs() throws Exception {
+        ModelAndView mav = new ModelAndView("testSvs");
+
+        List<TestVo> testList = testService.selectTest();
+        mav.addObject("list",testList);
+
+        return mav;
     }
 }
