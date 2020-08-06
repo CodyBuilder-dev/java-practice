@@ -1,4 +1,4 @@
-package com.example.first.vo;
+package com.example.first.jpa.vo;
 
 import lombok.*;
 import javax.persistence.*;
