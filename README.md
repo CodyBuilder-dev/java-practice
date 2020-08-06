@@ -42,9 +42,10 @@
 |Spring|Spring Boot 프로젝트|https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8|
 |Spring|Spring Boot 기초|https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88|
 |Spring|Spring boot에서 jsp 실행시키기|https://antdev.tistory.com/27|
-
 |Java|java.time.LocalDateTime|https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html|
 |Spring|Spring boot에 MySQL 연동|https://victorydntmd.tistory.com/321|
 |Spring|Spring boot에 H2DB+mybatis 연동|http://tech.javacafe.io/2018/07/31/mybatis-with-spring/|
 |Java|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception|
 |Spring|hikari CP 설정|https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property|
+|Spring|JPA Repository의 이해||
+|Java|하이버네이트 Dialect의 의미||
