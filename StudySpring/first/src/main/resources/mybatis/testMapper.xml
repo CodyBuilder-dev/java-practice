@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
-<mapper namespace="com.god.bo.test.mapper.TestMapper"> 
-    <select id="selectTest" resultType="com.god.bo.test.vo.TestVo"> 
-        SELECT 'GOD' AS NAME 
+<!-- 여기서 지정되는 네임스페이스가 mapper interface의 패키지명이다-->
+<mapper namespace="com.example.first.mapper.TestMapper"> 
+    <!-- 여기서 지정되는 id가 향후 mapper interface의 메서드명이다 -->
+    <!-- 여기서 지정되는 resultType이 VO의 패키지명이다-->
+    <!-- resultType의 패키지경로는 application.properties에서 생략 가능하다-->
+    <select id="selectTest" resultType="TestVo"> 
+        SELECT 'KIM' AS NAME 
     </select> 
 </mapper>
