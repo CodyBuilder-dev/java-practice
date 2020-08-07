@@ -18,6 +18,7 @@
 |VSCode|VSCode에 SVN extension 설치하기||
 |VSCode|Spring 개발환경 설정|https://sambalim.tistory.com/67|
 |VSCode|VSCode에서 Springboot 빌드하기|https://myjamong.tistory.com/123|
+|VSCode|VSCode에서 JUnit 사용하기||
 |Winmerge|Winmerge로 소스 비교 및 내용 변경||
 
 ### Java
@@ -39,7 +40,7 @@
 |Java|java.time.LocalDateTime|https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html|
 |Java|하이버네이트 Dialect의 의미||
 
-## Spring
+### Spring
 |분류|항목|링크|
 |---|---|---|
 |Spring|Spring 과 Spring의 차이|https://sas-study.tistory.com/274|
@@ -59,4 +60,7 @@
 |Spring|JUnit 이용 단위 테스트||
 |Spring|통합 테스트와 서비스 테스트|https://cheese10yun.github.io/spring-guide-test-1/|
 
-|
+### 기타
+|분류|항목|링크|
+|---|---|---|
+|XML|XML 문서 양식(DTD와 스키마)|http://tcpschool.com/xml/xml_dtd_intro|
