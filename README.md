@@ -30,6 +30,8 @@
 |Java|MavenWrapperMain 에러 해결|https://www.slipp.net/questions/585|
 |Java|Maven package시 test 건너뛰기|http://www.devkuma.com/books/pages/642|
 |Java|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception|
+|Java|JSP란 무엇인가?|https://javacpro.tistory.com/43|
+|Java|JSP 예외처리|https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC<br>https://rongscodinghistory.tistory.com/70|
 |Java|Servlet 이해|https://snoopy81.tistory.com/313|
 |Java|간단한 Servlet 페이지 예시|https://snoopy81.tistory.com/313|
 |Java|Apache Web Server의 이해||
