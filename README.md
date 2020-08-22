@@ -19,7 +19,8 @@
 |[자바 웹을 다루는 기술](https://ridibooks.com/books/754025528?_s=search&_q=%EC%9E%90%EB%B0%94+%EC%9B%B9%EC%9D%84+%EB%8B%A4%EB%A3%A8%EB%8A%94+%EA%B8%B0%EC%88%A0)|실질적인 코딩이 안 된다는 말이 있음|
 |[Spring Boot 프로젝트](https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)|스프링부트 코드를 따라갈 수 있는 |
 |[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|해당 인강 요약정리|
-|||
+|[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)||
+|Spring으로 게시판 만들기|||
 
 ### 개발환경
 |분류|항목|링크|
@@ -60,7 +61,8 @@
 ### Spring/Spring Boot
 |분류|항목|링크|
 |---|---|---|
-|Spring|Spring의 이해, Spring Boot의 차이|[링크](https://sas-study.tistory.com/274)<br>[링크](https://monkey3199.github.io/develop/spring/2019/04/14/Spring-And-SpringBoot.html)<br>[차이 전혀 없음](https://okky.kr/article/312710)|
+|Spring|Spring의 이해, Spring Boot의 차이|[링크](https://sas-study.tistory.com/274)<br>[링크](https://monkey3199.github.io/develop/spring/2019/04/14/Spring-And-SpringBoot.html)<br>[차이 전혀 없음](https://okky.kr/article/312710)<br>[차이점](https://stackoverflow.com/questions/32922914/difference-between-spring-mvc-and-spring-boot)<br>[간단해진 설정](https://ellune.tistory.com/38)|
+|Spring|이제는 Spring Boot를 써야할 때|[링크](https://feeva.github.io/posts/%EC%9D%B4%EC%A0%9C%EB%8A%94-spring-boot%EB%A5%BC-%EC%8D%A8%EC%95%BC%ED%95%A0-%EB%95%8C%EB%8B%A4)|
 |Spring|Spring boot 내장 WAS 설정|[링크](https://engkimbs.tistory.com/755)|
 |Spring|Spring Boot로 시작하는 프레임워크|[링크](https://futurecreator.github.io/2016/06/18/spring-boot-get-started/)|
 |Spring|Spring Boot 쿠버네티스 컨테이너화|[링크](https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/)|
