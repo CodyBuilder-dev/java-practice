@@ -6,6 +6,21 @@
 ~8/28
 
 ## 자바 개발 레퍼런스 정리
+### 교재 추천
+|교재명|설명|
+|---|---|
+|[스프링 부트 코딩 공작소](https://ridibooks.com/books/754019165)|입문용으로 그나마 가장 괜찮은 책이라는 평이 있다|
+|[배워서 바로 쓰는 스프링 프레임워크](https://ridibooks.com/books/443000789)|입문자용으론 조금 어렵고, 챕터간 구성이 종속적이라는 평이 있다|
+|[배워서 바로 쓰는 스프링 부트 2](https://ridibooks.com/books/443000785)|입문자용으로 어려울 수 있지만 실무자에게 레퍼런스로 괜찮다는 평|
+|토비의 스프링|너무나 유명한 책, 스프링 코어를 이해하려면 꼭 읽어야 하는 책, 그러나 입문용으론 별로인 책|
+|[스프링 5 레시피](https://ridibooks.com/books/443000629)|역시 스프링 코어 설명이 있고, 실무에서 만나는 문제들에 대한 레퍼런스로서 좋은 책, 그러나 입문용으론 별로인 책|
+|[스프링 부트로 배우는 자바 웹 개발](https://ridibooks.com/books/852000676)|입문서는 아니고, 사진 상태 등 편집이 불친절하다는 평 있다|
+|[쉽게 따라하는 자바 웹 개발](https://github.com/keesun/study/tree/master/book)|pdf가 오픈되어 있음. 기본적 지식에 대한 설명 없어 입문자용으론 부적절|
+|[자바 웹을 다루는 기술](https://ridibooks.com/books/754025528?_s=search&_q=%EC%9E%90%EB%B0%94+%EC%9B%B9%EC%9D%84+%EB%8B%A4%EB%A3%A8%EB%8A%94+%EA%B8%B0%EC%88%A0)|실질적인 코딩이 안 된다는 말이 있음|
+|[Spring Boot 프로젝트](https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)|스프링부트 코드를 따라갈 수 있는 |
+|[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|해당 인강 요약정리|
+|||
+
 ### 개발환경
 |분류|항목|링크|
 |---|---|---|
@@ -42,15 +57,13 @@
 |Java|java.time.LocalDateTime|https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html|
 |Java|하이버네이트 Dialect의 의미||
 
-### Spring
+### Spring/Spring Boot
 |분류|항목|링크|
 |---|---|---|
-|Spring|Spring 과 Spring의 차이|https://sas-study.tistory.com/274|
-|Spring|Spring Boot의 이해||
-|Spring|Spring Boot로 시작하는 프레임워크|https://futurecreator.github.io/2016/06/18/spring-boot-get-started/|
-|Spring|Spring Boot 컨테이너화|https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/|
-|Spring|Spring Boot 프로젝트|https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8|
-|Spring|Spring Boot 기초|https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88|
+|Spring|Spring의 이해, Spring Boot의 차이|[링크](https://sas-study.tistory.com/274)<br>[링크](https://monkey3199.github.io/develop/spring/2019/04/14/Spring-And-SpringBoot.html)<br>[차이 전혀 없음](https://okky.kr/article/312710)|
+|Spring|Spring boot 내장 WAS 설정|[링크](https://engkimbs.tistory.com/755)|
+|Spring|Spring Boot로 시작하는 프레임워크|[링크](https://futurecreator.github.io/2016/06/18/spring-boot-get-started/)|
+|Spring|Spring Boot 쿠버네티스 컨테이너화|[링크](https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/)|
 |Spring|Spring boot에서 jsp 실행시키기|https://antdev.tistory.com/27|
 |Spring|Spring boot에 MySQL 연동|https://victorydntmd.tistory.com/321|
 |Spring|Spring boot에 H2DB+mybatis 연동|http://tech.javacafe.io/2018/07/31/mybatis-with-spring/|
