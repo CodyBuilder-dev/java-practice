@@ -27,7 +27,6 @@
 |---|---|---|
 |전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
 |전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
-|전자정부 프레임워크|유용한 단축키|Ctrl+Shift+R로 원하는 파일 열기()<br>Ctrl+H로 파일 내용 찾기|
 |eclipse|eclipse Subversion 설치|https://recipes4dev.tistory.com/155|
 |eclipse|eclipse에서 소스 비교부터 svn 커밋까지||
 |eclipse|Spring 개발환경 설정|https://addio3305.tistory.com/32?category=772645|
@@ -50,6 +49,7 @@
 |Java|JSP란 무엇인가?|https://javacpro.tistory.com/43|
 |Java|JSP 예외처리|https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC<br>https://rongscodinghistory.tistory.com/70|
 |Java|Servlet 이해|https://snoopy81.tistory.com/313|
+|Java|JSP와 Servlet의 역할 구분(MVC2)|[링크](https://m.blog.naver.com/acornedu/221128616501)|
 |Java|간단한 Servlet 페이지 예시|https://snoopy81.tistory.com/313|
 |Java|Apache Web Server의 이해||
 |Java|Tomcat WAS 이해||
