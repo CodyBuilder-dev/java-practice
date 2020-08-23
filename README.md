@@ -24,8 +24,8 @@
 ### Eclipse 단축키
 |단축키|설명|
 |---|---|
-|<div class="text-red bg-red-light mb-2">Ctrl+Shift+R</div>|원하는 제목의 파일 열기|
-|<div class="text-red bg-red-light mb-2">Ctrl+H</div>| 파일 내용 찾기|
+|`Ctrl+Shift+R`|원하는 제목의 파일 열기|
+|`Ctrl+H`| 파일 내용 찾기|
 
 ### 개발환경(Eclipse/전자정부)
 |분류|항목|링크|
