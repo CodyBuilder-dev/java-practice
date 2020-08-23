@@ -10,21 +10,26 @@
 |교재명|설명|
 |---|---|
 |[스프링 부트 코딩 공작소](https://ridibooks.com/books/754019165)|입문용으로 그나마 가장 괜찮은 책이라는 평이 있다|
+|[토비의 스프링](https://ridibooks.com/books/111017526)|너무나 유명한 책, 스프링 코어를 이해하려면 꼭 읽어야 하는 책, 그러나 입문용으론 별로인 책|
 |[배워서 바로 쓰는 스프링 프레임워크](https://ridibooks.com/books/443000789)|입문자용으론 조금 어렵고, 챕터간 구성이 종속적이라는 평이 있다|
 |[배워서 바로 쓰는 스프링 부트 2](https://ridibooks.com/books/443000785)|입문자용으로 어려울 수 있지만 실무자에게 레퍼런스로 괜찮다는 평|
-|[토비의 스프링](https://ridibooks.com/books/111017526)|너무나 유명한 책, 스프링 코어를 이해하려면 꼭 읽어야 하는 책, 그러나 입문용으론 별로인 책|
 |[스프링 5 레시피](https://ridibooks.com/books/443000629)|역시 스프링 코어 설명이 있고, 실무에서 만나는 문제들에 대한 레퍼런스로서 좋은 책, 그러나 입문용으론 별로인 책|
 |[스프링 부트로 배우는 자바 웹 개발](https://ridibooks.com/books/852000676)|입문서는 아니고, 사진 상태 등 편집이 불친절하다는 평 있다|
 |[쉽게 따라하는 자바 웹 개발](https://github.com/keesun/study/tree/master/book)|pdf가 오픈되어 있음. 기본적 지식에 대한 설명 없어 입문자용으론 부적절|
 |[자바 웹을 다루는 기술](https://ridibooks.com/books/754025528?_s=search&_q=%EC%9E%90%EB%B0%94+%EC%9B%B9%EC%9D%84+%EB%8B%A4%EB%A3%A8%EB%8A%94+%EA%B8%B0%EC%88%A0)|설명위주로, 실질적인 코딩 구현이 안 된다는 말이 있음|
-|[Spring Boot 프로젝트](https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)| 스프링부트 실습 페이지, 코드가 있어 코드를 따라가면 할 수 있다. |
+|[Spring Boot 프로젝트](https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)| 스프링부트 실습 페이지, 코드가 있어 코드를 따라가면서 배울 수 있다. |
 |[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|백기선 개발자님의 해당 인강 요약정리|
 |[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)||
+
+### Eclipse 단축키
+|단축키|설명|
+|---|---|
+|<span style="color:red;background-color:grey">Ctrl+Shift+R</span>|원하는 제목의 파일 열기|
+|<span style="color:red;background-color:grey">Ctrl+H</span>| 파일 내용 찾기|
 
 ### 개발환경(Eclipse/전자정부)
 |분류|항목|링크|
 |---|---|---|
-|eclipse|유용한 단축키|Ctrl+Shift+R로 원하는 파일 열기<br>Ctrl+H로 파일 내용 찾기|
 |eclipse|Spring 개발환경 설정|[링크](https://addio3305.tistory.com/32?category=772645)|
 |eclipse|eclipse Subversion 설치|[링크](https://recipes4dev.tistory.com/155)|
 |eclipse|eclipse에서 소스 비교부터 svn 커밋까지||
@@ -73,6 +78,7 @@
 |Java|HikariCP의 이해|https://brunch.co.kr/@jehovah/24|
 |Java|JPA란 무엇일까?|[링크](https://bit.ly/3ib0zDP) |
 |Java|iBatis란 무엇일까?|[링크](https://jonghoit.tistory.com/73)|
+|Java|iBatis와 MyBatis 차이|[링크](https://uwostudy.tistory.com/19)|
 |Java|Hibernate란?|[링크](https://victorydntmd.tistory.com/195)|
 |Java|하이버네이트 Dialect의 의미||
 |Java|JPA & Spring JPA & Hibernate 구분|[링크](https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/)|
