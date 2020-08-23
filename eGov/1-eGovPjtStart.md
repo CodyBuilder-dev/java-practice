@@ -1,5 +1,5 @@
-# 전자정부 프레임워크 분투기
-## 개발환경 설정
+# 전자정부 프레임워크 분투기 - 1. 개발환경 설정
+## 전자정부 프레임워크 설치
 ### 파일 다운로드
 전자정부 프레임워크 교육자료를 설치한다.  
 다운로드 게시글에 **'경로는 C:\으로 맞춰주시기 바랍니다'**라는 글이 대문짝만하게 붙어 있다. 글을 보는 순간 ***'아... 얘네 파일경로 C:\로 다 하드코딩 해뒀구나...'*** 라는 생각이 뇌리를 스쳤다.  
@@ -28,6 +28,12 @@
 다행히도 Preference 창에서 설정할 수 있게 해 준다. 전자정부 프레임워크 내에 SDK가 들어있으니(eGovFramework-3.X.X\bin\android-sdk-windows)이를 설정해주면 된다. 아니 경로 세팅 해놓을거면 아예 싹 다 해놓던지, 어떤 건 되어 있고 어떤 건 안 되어 있고... '다 해놓으면 너가 너무 심심해할까봐 설정 몇개는 널 위해 남겨놨어 ㅎㅎ' 이건가?  
 
 **해결 : Preference 창에서 Android SDK 경로(eGovFramework-3.X.X\bin\android-sdk-windows)를 설정해준다**
+## 개발 환경 구성
+Window > Preference에서 앞으로 공통적으로 쭉 사용될 설정들을 하나하나 지정해 본다.
+### Maven Installations 설정
+Maven > User Settings에서 eGovFrame-3.X.X\maven\settings.xml 으로 모두 바꾼다.
+### Apache Tomcat 설정
+Server > Runtime Environment에서 Add > Apache Tomcat 8.0을 선택한 후, 경로를 마찬가지로 eGovFrame-3.X.X\bin\apache-tomcat-8.X.X로 바꾼다.(이때 안해도, 나중에 Run As > Run on Server를 누르면 설정하도록 창이 뜬다)
 
 ## 프로젝트 셋업
 ### 프로젝트 생성
@@ -48,8 +54,10 @@ eGovFramework 보신 분?
 프로젝트 우클릭 > Run As > Maven install  
 ### 프로젝트 실행
 프로젝트 우 클릭 > Run As > Run on Server > Manually Define Server 선택 후 Next > eGovFramwork-3.X.X\bin\apache-tomcat-8.X.X 선택 > Finish
-## 코드 작성
 
-## 실행환경 설정
-
-## 공통 컴포넌트
+## 그 외 eGovFramework에서 제공하는 잡다한 기능들
+- UML
+- ERD
+- DBIO(iBatis/MyBatis 지원)
+- Code Generator(스켈레톤 코드 생성)/Project 마법사
+- Batch Job

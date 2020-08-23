@@ -1,7 +1,7 @@
 # java-practice
 생존을 위한 Java 공부
 ## 목적
-모니터링 프로젝트 진행 및 전자정부 프레임워크 개발을 위함
+모니터링 프로젝트 진행 및 VOC 전자정부 프레임워크 개발을 위함
 ## 학습 기간
 ~8/28
 
@@ -22,15 +22,22 @@
 |[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)||
 |Spring으로 게시판 만들기|||
 
-### 개발환경
+### 개발환경(Eclipse/전자정부)
 |분류|항목|링크|
 |---|---|---|
-|전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
-|전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
-|전자정부 프레임워크|유용한 단축키|Ctrl+Shift+R로 원하는 파일 열기()<br>Ctrl+H로 파일 내용 찾기|
+|eclipse|유용한 단축키|Ctrl+Shift+R로 원하는 파일 열기<br>Ctrl+H로 파일 내용 찾기|
+|eclipse|Spring 개발환경 설정|https://addio3305.tistory.com/32?category=772645|
 |eclipse|eclipse Subversion 설치|https://recipes4dev.tistory.com/155|
 |eclipse|eclipse에서 소스 비교부터 svn 커밋까지||
-|eclipse|Spring 개발환경 설정|https://addio3305.tistory.com/32?category=772645|
+|eclipse|자동 빌드 설정|[링크](https://dololak.tistory.com/63)|
+|전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
+|전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
+|전자정부 프레임워크|Code Generation|https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:codegen|
+
+
+### 개발환경(VS Code)
+|분류|항목|링크|
+|---|---|---|
 |VSCode|VSCode로 소스 비교||
 |VSCode|VSCode에 SVN extension 설치하기||
 |VSCode|Spring 개발환경 설정|https://sambalim.tistory.com/67|
@@ -43,10 +50,13 @@
 |---|---|---|
 |Java|문자열 intern()|https://www.latera.kr/blog/2019-02-09-java-string-intern/|
 |Java|FileReader와 BufferReader의 차이점||
-|Java|Maven의 이해|https://goddaehee.tistory.com/199|
+|Java|Maven의 이해|[링크](https://goddaehee.tistory.com/199)<br>[폴더 구조]()<br>[빌드 라이프사이클](https://jeong-pro.tistory.com/168)|
 |Java|MavenWrapperMain 에러 해결|https://www.slipp.net/questions/585|
 |Java|Maven package시 test 건너뛰기|http://www.devkuma.com/books/pages/642|
 |Java|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception|
+|Java|jUnit 이용 단위 테스트||
+|Java|Mock 객체를 이용한 테스트||
+|Java|Batch 테스트||
 |Java|JSP란 무엇인가?|https://javacpro.tistory.com/43|
 |Java|JSP 예외처리|https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC<br>https://rongscodinghistory.tistory.com/70|
 |Java|Servlet 이해|https://snoopy81.tistory.com/313|
@@ -76,9 +86,8 @@
 |Spring|Spring 방식 JDBC 연동|https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/|
 |Spring|Spring Gradle 구현 예제|https://github.com/stunstunstun/awesome-spring-boot|
 |Spring|단위 테스트에서의 F.I.R.S.T원칙|https://brunch.co.kr/@springboot/207|
-|Spring|JUnit 이용 단위 테스트||
 |Spring|통합 테스트와 서비스 테스트|https://cheese10yun.github.io/spring-guide-test-1/|
-
+|Spring|스프링에서 web.xml의 의미|[링크](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)|
 ### 기타
 |분류|항목|링크|
 |---|---|---|
