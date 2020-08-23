@@ -27,8 +27,7 @@
 |---|---|---|
 |전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
 |전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
-|전자정부 프레임워크|유용한 단축키|Ctrl+Shift+R로 원하는 파일 열기()<br>Ctrl+H로 파일  
-내용 찾기|
+|전자정부 프레임워크|유용한 단축키|Ctrl+Shift+R로 원하는 파일 열기()<br>Ctrl+H로 파일 내용 찾기|
 |eclipse|eclipse Subversion 설치|https://recipes4dev.tistory.com/155|
 |eclipse|eclipse에서 소스 비교부터 svn 커밋까지||
 |eclipse|Spring 개발환경 설정|https://addio3305.tistory.com/32?category=772645|
