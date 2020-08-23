@@ -21,12 +21,6 @@
 |[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|백기선 개발자님의 해당 인강 요약정리|
 |[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)||
 
-### Eclipse 단축키
-|단축키|설명|
-|---|---|
-|`Ctrl+Shift+R`|원하는 제목의 파일 열기|
-|`Ctrl+H`| 파일 내용 찾기|
-
 ### 개발환경(Eclipse/전자정부)
 |분류|항목|링크|
 |---|---|---|
@@ -37,6 +31,15 @@
 |전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
 |전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
 |전자정부 프레임워크|Code Generation|[링크](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:codegen)|
+
+### Eclipse 단축키
+|단축키|설명|
+|---|---|
+|`Ctrl+Shift+R`|원하는 제목의 파일 열기|
+|`Ctrl+H`| 파일 내용 찾기|
+|`Ctrl+Shift+f`|자동 줄맞춤|
+|`Ctrl+Shift+/`|범위 주석 처리|
+|`Ctrl+Shift+\`|범위 주석 해제|
 
 ### 개발환경(VS Code)
 |분류|항목|링크|
@@ -68,6 +71,7 @@
 |Java|단위 테스트에서의 F.I.R.S.T원칙|[링크](https://brunch.co.kr/@springboot/207)|
 |Java|통합 테스트와 서비스 테스트|[링크](https://cheese10yun.github.io/spring-guide-test-1/)|
 |Java|JSP란 무엇인가?|[링크](https://javacpro.tistory.com/43)|
+|Java|JSP 문법|[링크](https://atoz-develop.tistory.com/entry/JSP-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%B4%9D-%EC%A0%95%EB%A6%AC-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%8D%B0%EC%9D%B4%ED%84%B0-JSP-%EC%A0%84%EC%9A%A9-%ED%83%9C%EA%B7%B8-%EB%82%B4%EC%9E%A5-%EA%B0%9D%EC%B2%B4)|
 |Java|JSP 예외처리|[링크](https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC)<br>[링크](https://rongscodinghistory.tistory.com/70)|
 |Java|Servlet 이해|[링크](https://snoopy81.tistory.com/313)|
 |Java|JSP와 Servlet의 역할 구분(MVC2)|[링크](https://m.blog.naver.com/acornedu/221128616501)|
@@ -101,8 +105,10 @@
 |Spring|Spring 방식 JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
 |Spring|Spring Gradle 구현 예제|[링크](https://github.com/stunstunstun/awesome-spring-boot)|
 |Spring|스프링에서 web.xml의 의미|[링크](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)|
-
-
+|Spring|Dispatcher Servlet의 의미|[링크](https://mangkyu.tistory.com/18)|
+|Spring|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
+|Spring|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
+|Spring|MessageSource|[링크](https://engkimbs.tistory.com/717)|
 ### 기타
 |분류|항목|링크|
 |---|---|---|
