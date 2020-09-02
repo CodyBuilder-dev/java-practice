@@ -109,7 +109,9 @@
 |Spring|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
 |Spring|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
 |Spring|MessageSource|[링크](https://engkimbs.tistory.com/717)|
+|Spring|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
 ### 기타
 |분류|항목|링크|
 |---|---|---|
 |XML|XML 문서 양식(DTD와 스키마)|[링크](http://tcpschool.com/xml/xml_dtd_intro)|
+|XML|XML 에서 CDATA태그|[링크](https://parkjuwan.tistory.com/156)|
