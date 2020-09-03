@@ -110,8 +110,20 @@
 |Spring|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
 |Spring|MessageSource|[링크](https://engkimbs.tistory.com/717)|
 |Spring|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
+
+### WebSquare(UI 프레임워크)
+|분류|항목|링크|
+|---|---|---|
+|WebSquare|엔진 동작 구조|![]()<br>![](http://docs1.inswave.com/r/book_image/get/724fd56689fd8db0?0)<br>![](http://docs1.inswave.com/r/book_image/get/49a9786f08253ce6?0)<br>![](http://docs1.inswave.com/r/book_image/get/d6a800686326b54f?1)|
+|||
+|||
+|||
+
+
 ### 기타
 |분류|항목|링크|
 |---|---|---|
 |XML|XML 문서 양식(DTD와 스키마)|[링크](http://tcpschool.com/xml/xml_dtd_intro)|
 |XML|XML 에서 CDATA태그|[링크](https://parkjuwan.tistory.com/156)|
+|XML|XForms 이해||
+|XML|XPath 이해||
