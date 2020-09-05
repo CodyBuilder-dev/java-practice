@@ -111,6 +111,7 @@
 |Spring|MessageSource|[링크](https://engkimbs.tistory.com/717)|
 |Spring|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
 |Spring|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
+|Spring|Entity vs VO vs DTO|[링크](https://medium.com/webeveloper/entity-vo-dto-666bc72614bb)|
 
 ### WebSquare(UI 프레임워크)
 |분류|항목|링크|
