@@ -59,7 +59,10 @@
 |Spring|단위 테스트에서의 F.I.R.S.T원칙|https://brunch.co.kr/@springboot/207|
 |Spring|JUnit 이용 단위 테스트||
 |Spring|통합 테스트와 서비스 테스트|https://cheese10yun.github.io/spring-guide-test-1/|
-
+|Spring|Spring Batch 이해(What,Why,How)|https://www.fwantastic.com/2019/12/spring-batch-intro.html|
+|Spring|Spring Batch Hello World!|https://www.fwantastic.com/2019/12/spring-batch-1-hello-world.html|
+|Spring|||
+|Spring|||
 ### 기타
 |분류|항목|링크|
 |---|---|---|
