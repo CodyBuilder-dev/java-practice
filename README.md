@@ -32,6 +32,7 @@
 |전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
 |전자정부 프레임워크|Code Generation|[링크](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:codegen)|
 |전자정부 프레임워크|Tomcat lifecycle exception 해결|[링크](https://startsecure.tistory.com/55)|
+|Eclipse|트러블슈팅 기록|[링크]()|
 ### Eclipse 단축키
 |단축키|설명|
 |---|---|
