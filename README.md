@@ -95,35 +95,40 @@
 |Java|MyBatis 사용법||
 |Java|Generic이란?|[제네릭 개념](https://arabiannight.tistory.com/entry/%EC%9E%90%EB%B0%94Java-ArrayListT-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%8A%A4Generics%EB%9E%80)<br>[제네릭을 사용해야 하는 이유](https://cornswrold.tistory.com/180)|
 
-### Spring/Spring Boot
+### Spring
 |분류|항목|링크|
 |---|---|---|
-|Spring|Spring의 이해, Spring Boot의 차이|[링크](https://sas-study.tistory.com/274)<br>[링크](https://monkey3199.github.io/develop/spring/2019/04/14/Spring-And-SpringBoot.html)<br>[차이 전혀 없음](https://okky.kr/article/312710)<br>[차이점](https://stackoverflow.com/questions/32922914/difference-between-spring-mvc-and-spring-boot)<br>[간단해진 설정](https://ellune.tistory.com/38)|
-|Spring|이제는 Spring Boot를 써야할 때|[링크](https://feeva.github.io/posts/%EC%9D%B4%EC%A0%9C%EB%8A%94-spring-boot%EB%A5%BC-%EC%8D%A8%EC%95%BC%ED%95%A0-%EB%95%8C%EB%8B%A4)|
-|Spring|Spring boot 내장 WAS 설정|[링크](https://engkimbs.tistory.com/755)|
-|Spring|Spring Boot로 시작하는 프레임워크|[링크](https://futurecreator.github.io/2016/06/18/spring-boot-get-started/)|
-|Spring|Spring Boot 쿠버네티스 컨테이너화|[링크](https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/)|
-|Spring|Spring boot에서 jsp 실행시키기|[링크](https://antdev.tistory.com/27)|
-|Spring|Spring boot에 MySQL 연동|[링크](https://victorydntmd.tistory.com/321)|
-|Spring|Spring boot에 H2DB+mybatis 연동|[링크](http://tech.javacafe.io/2018/07/31/mybatis-with-spring/)|
-|Spring|hikari CP 설정|[링크](https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property)|
-|Spring|JPA Repository의 이해||
-|Spring|Spring 방식 JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
-|Spring|Spring Gradle 구현 예제|[링크](https://github.com/stunstunstun/awesome-spring-boot)|
-|Spring|스프링에서 web.xml의 의미|[링크](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)|
-|Spring|Dispatcher Servlet의 의미|[링크](https://mangkyu.tistory.com/18)|
-|Spring|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
-|Spring|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
-|Spring|@Entity의 이해|[링크](https://www.icatpark.com/entry/JPA-%EA%B8%B0%EB%B3%B8-Annotation-%EC%A0%95%EB%A6%AC)|
-|Spring|@GeneratedValue의 이해||
-|Spring|MessageSource|[링크](https://engkimbs.tistory.com/717)|
-|Spring|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
-|Spring|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
-|Spring|Entity vs VO vs DTO|[링크](https://medium.com/webeveloper/entity-vo-dto-666bc72614bb)|
-|Spring|beans,bean XML설정 옵션|[링크](https://atoz-develop.tistory.com/entry/Spring-%EC%8A%A4%ED%94%84%EB%A7%81-XML-%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC)|
-|Spring|프론트 컨트롤러 패턴|[링크](https://opentutorials.org/module/3569/21219)|
-|Spring boot|스프링 부트를 이용한 MSA|[링크](https://waspro.tistory.com/451)
-|
+|개요|Spring의 이해, Spring Boot의 차이|[링크](https://sas-study.tistory.com/274)<br>[링크](https://monkey3199.github.io/develop/spring/2019/04/14/Spring-And-SpringBoot.html)<br>[차이 전혀 없음](https://okky.kr/article/312710)<br>[차이점](https://stackoverflow.com/questions/32922914/difference-between-spring-mvc-and-spring-boot)<br>[간단해진 설정](https://ellune.tistory.com/38)|
+|개요|MessageSource|[링크](https://engkimbs.tistory.com/717)|
+|설정|스프링에서 web.xml의 의미|[링크](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)|
+|설정|beans,bean XML설정 옵션|[링크](https://atoz-develop.tistory.com/entry/Spring-%EC%8A%A4%ED%94%84%EB%A7%81-XML-%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC)|
+|빌드|Spring Gradle 구현 예제|[링크](https://github.com/stunstunstun/awesome-spring-boot)|
+|어노테이션|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
+|어노테이션|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
+|어노테이션|@Entity의 이해|[링크](https://www.icatpark.com/entry/JPA-%EA%B8%B0%EB%B3%B8-Annotation-%EC%A0%95%EB%A6%AC)|
+|어노테이션|@GeneratedValue의 이해||
+|Spring MVC|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
+|Spring MVC|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
+|Spring MVC|Entity vs VO vs DTO|[링크](https://medium.com/webeveloper/entity-vo-dto-666bc72614bb)|
+|Spring MVC|Dispatcher Servlet의 의미|[링크](https://mangkyu.tistory.com/18)|
+|Spring MVC|Model, ModelandView 객체|[링크](https://velog.io/@msriver/Spring-Model-%EA%B0%9D%EC%B2%B4)|
+|DB|hikari CP 설정|[링크](https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property)|
+|DB|JPA Repository의 이해||
+|DB|Spring 방식 JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
+|아키텍처|프론트 컨트롤러 패턴|[링크](https://opentutorials.org/module/3569/21219)|
+
+
+### Spring Boot
+|분류|항목|링크|
+|---|---|---|
+|개요|이제는 Spring Boot를 써야할 때|[링크](https://feeva.github.io/posts/%EC%9D%B4%EC%A0%9C%EB%8A%94-spring-boot%EB%A5%BC-%EC%8D%A8%EC%95%BC%ED%95%A0-%EB%95%8C%EB%8B%A4)|
+|개요|Spring Boot로 시작하는 프레임워크|[링크](https://futurecreator.github.io/2016/06/18/spring-boot-get-started/)|
+|WAS|Spring boot 내장 WAS 설정|[링크](https://engkimbs.tistory.com/755)|
+|아키텍처|Spring Boot 쿠버네티스 컨테이너화|[링크](https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/)|
+|아키텍처|스프링 부트를 이용한 MSA|[링크](https://waspro.tistory.com/451)|
+|View|Spring boot에서 jsp 실행시키기|[링크](https://antdev.tistory.com/27)|
+|DB|Spring boot에 MySQL 연동|[링크](https://victorydntmd.tistory.com/321)|
+|DB|Spring boot에 H2DB+mybatis 연동|[링크](http://tech.javacafe.io/2018/07/31/mybatis-with-spring/)|
 
 ### WebSquare(UI 프레임워크)
 |분류|항목|링크|
