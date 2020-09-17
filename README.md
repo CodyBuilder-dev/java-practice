@@ -1,10 +1,13 @@
 # java-practice
 생존을 위한 Java 공부
+
 ## 목적
 모니터링 프로젝트 진행 및 VOC 전자정부 프레임워크 개발을 위함
+
 ## 학습 기간
 ~~8/28~~ (추후에도 계속 공부해야 함)  
 ~2021년 연중
+---
 ## 자바 개발 레퍼런스 정리
 ### 교재 추천
 |교재명|설명|
@@ -33,6 +36,7 @@
 |전자정부 프레임워크|Code Generation|[링크](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:codegen)|
 |전자정부 프레임워크|Tomcat lifecycle exception 해결|[링크](https://startsecure.tistory.com/55)|
 |Eclipse|트러블슈팅 기록|[링크](ISSUE.md)|
+
 ### Eclipse 단축키
 |단축키|설명|
 |---|---|
@@ -89,6 +93,7 @@
 |Java|JPA & Spring JPA & Hibernate 구분|[링크](https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/)|
 |Java|MyBatis의 이해||
 |Java|MyBatis 사용법||
+|Java|Generic이란?|[제네릭 개념](https://arabiannight.tistory.com/entry/%EC%9E%90%EB%B0%94Java-ArrayListT-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%8A%A4Generics%EB%9E%80)<br>[제네릭을 사용해야 하는 이유](https://cornswrold.tistory.com/180)|
 
 ### Spring/Spring Boot
 |분류|항목|링크|
@@ -109,6 +114,8 @@
 |Spring|Dispatcher Servlet의 의미|[링크](https://mangkyu.tistory.com/18)|
 |Spring|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
 |Spring|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
+|Spring|@Entity의 이해|[링크](https://www.icatpark.com/entry/JPA-%EA%B8%B0%EB%B3%B8-Annotation-%EC%A0%95%EB%A6%AC)|
+|Spring|@GeneratedValue의 이해||
 |Spring|MessageSource|[링크](https://engkimbs.tistory.com/717)|
 |Spring|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
 |Spring|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
@@ -117,6 +124,7 @@
 |Spring|프론트 컨트롤러 패턴|[링크](https://opentutorials.org/module/3569/21219)|
 |Spring boot|스프링 부트를 이용한 MSA|[링크](https://waspro.tistory.com/451)
 |
+
 ### WebSquare(UI 프레임워크)
 |분류|항목|링크|
 |---|---|---|

@@ -32,6 +32,7 @@ Bean간의 의존관계 연결을 자동으로 해준다!!
 
 ## 스프링 부트 예시 프로젝트(ReadingList) 프로젝트 구성 설명
 ### 프로젝트 폴더 구조
+.gitignore : 친절하게도 git에 올릴때 쓰라고 gitignore도 같이 만들어 준다  
 build.gradle : 그레이들 빌드 명세(maven의 pom.xml과 동일. 컴파일에 사용될 자바 버전도 여기서 설정)  
 src/resources/application.properties : 어플리케이션의 프로퍼티 파일  
 src/main/java/readinglist/ReadingListApplication : 스프링 부트스트래핑 파일(프로젝트 전체의 엔트리파일임)  
