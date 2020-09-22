@@ -67,9 +67,11 @@
 |분류|항목|링크|
 |---|---|---|
 |Java|Maven의 이해|[링크](https://goddaehee.tistory.com/199)<br>[폴더 구조]()<br>[빌드 라이프사이클](https://jeong-pro.tistory.com/168)|
+|Java|Maven 커맨드라인 옵션|[링크](https://m.blog.naver.com/PostView.nhn?blogId=kathar0s&logNo=10143790065&proxyReferer=https:%2F%2Fwww.google.com%2F)|
 |Java|MavenWrapperMain 에러 해결|[링크](https://www.slipp.net/questions/585)|
 |Java|Maven package시 test 건너뛰기|[링크](http://www.devkuma.com/books/pages/642)|
 |Java|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|[링크](https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception)|
+|Java|Maven Profile 설정으로 환경에 맞게 build하기|[링크](https://www.lesstif.com/java/maven-profile-14090588.html)|
 |Java|jar 명령어|[링크](http://blog.daum.net/oraclejava/15869132)|
 |Java|jUnit 이용 단위 테스트||
 |Java|Mock 객체를 이용한 테스트||
