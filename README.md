@@ -115,6 +115,7 @@
 |Spring MVC|Entity vs VO vs DTO|[링크](https://medium.com/webeveloper/entity-vo-dto-666bc72614bb)|
 |Spring MVC|Dispatcher Servlet의 의미|[링크](https://mangkyu.tistory.com/18)|
 |Spring MVC|Model, ModelandView 객체|[링크](https://velog.io/@msriver/Spring-Model-%EA%B0%9D%EC%B2%B4)|
+|Spring MVC|.do를 생략한 URL pattern|[링크](https://okky.kr/article/293531)|
 |DB|hikari CP 설정|[링크](https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property)|
 |DB|JPA Repository의 이해||
 |DB|Spring 방식 JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
