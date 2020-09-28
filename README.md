@@ -141,8 +141,9 @@
 |WebSquare|이클립스 설치|[링크](http://docs1.inswave.com/developerguide#0315c4bfa2106d9e)|
 |WebSquare|엔진 동작 구조|![]()<br>![](http://docs1.inswave.com/r/book_image/get/724fd56689fd8db0?0)<br>![](http://docs1.inswave.com/r/book_image/get/49a9786f08253ce6?0)<br>![](http://docs1.inswave.com/r/book_image/get/d6a800686326b54f?1)|
 |WebSquare|WYSIWYG 에디터 설명|[링크](http://docs1.inswave.com/developerguide#999029cb9a4f098e)|
+|WebSquare|개발 방법 설명|[링크](https://einhugo.github.io/2019/08/05/Web/190805%20-%20WebSquare/)|
 |WebSquare|웹스퀘어 + 톰캣 설정|[링크](http://docs1.inswave.com/developerguide#1b2c6f5188a85e65)|
-|WebSquare|XML 구조|[링크](http://docs1.inswave.com/developerguide#fc8be9599575c2e8)|
+|WebSquare|XML 구조|![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FZb70S%2FbtqAMOjcxOT%2F3ET6kQ3bLpEVD9lLvk5MH0%2Fimg.png)<br>[링크](http://docs1.inswave.com/developerguide#fc8be9599575c2e8)|
 
 
 ### 기타
