@@ -60,8 +60,13 @@
 |분류|항목|링크|
 |---|---|---|
 |Java|문자열 intern()|[링크](https://www.latera.kr/blog/2019-02-09-java-string-intern/)|
+|Java|not 연산자(!)|[링크](https://www.baeldung.com/java-using-not-in-if-conditions)|
 |Java|FileReader와 BufferReader의 차이점||
 |Java|java.time.LocalDateTime|[링크](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)|
+|Java|동일성과 동등성|[링크](https://joont.tistory.com/143)|
+|Java|변수의 객체 클래스/데이터타입 확인법|[링크](https://wakestand.tistory.com/186)|
+|Java|List|[링크](https://wikidocs.net/207)<br>|
+|Java|Hashmap|[링크](https://junjangsee.github.io/2019/09/18/java/hashmap-Method/)<br>[반복문](https://lts0606.tistory.com/149)|
 
 ### Java 웹 개발
 |분류|항목|링크|
