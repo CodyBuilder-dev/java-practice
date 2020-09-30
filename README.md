@@ -24,6 +24,11 @@
 |[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|백기선 개발자님의 해당 인강 요약정리|
 |[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)||
 
+### 개발환경(Java)
+|항목|링크|
+|--|--|
+|Java 환경변수 설정|[Windows10](https://zerojay.tistory.com/2)|
+
 ### 개발환경(Eclipse/전자정부)
 |분류|항목|링크|
 |---|---|---|
@@ -45,6 +50,8 @@
 |`Ctrl+Shift+f`|자동 줄맞춤|
 |`Ctrl+Shift+/`|범위 주석 처리|
 |`Ctrl+Shift+\`|범위 주석 해제|
+
+### 개발환경(IntelliJ)
 
 ### 개발환경(VS Code)
 |분류|항목|링크|
