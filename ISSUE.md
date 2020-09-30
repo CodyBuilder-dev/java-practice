@@ -10,7 +10,11 @@ maven/repository
 SQL.xml내 쿼리문에 한글이 포함된 경우 받아오는 한글이 깨짐
 
 ## 원인분석
+(1) Java -> DB
+ibatis XML의 인코딩 확인
 
+(2) DB -> Java
+JDBC의 오라클 DB 내 한글데이터 Java 단 전송 로직[링크](https://m.blog.naver.com/PostView.nhn?blogId=stork838&logNo=220291872912&proxyReferer=https:%2F%2Fwww.google.com%2F)
 ## 해결시도
 ### 시도 1. XML 내에 한글을 쓸 수 있도록 시도
 (1) XML파일의 인코딩을 EUC-KR로 변경  
