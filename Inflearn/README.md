@@ -39,6 +39,15 @@ pom.xml 우클릭 > mavern > reload
 특정 객체 A가 특정 객체 B가 있어야만 온전히 동작할때, A가 B에 의존한다고 한다.  
 이때 객체 A 내에서 B를 생성해서 사용할 경우, 비효율적이다.  
 객체 A 외부에서 B를 주입하여 객체 A를 생성할 경우 이를 의존성 주입이라고 한다.
+## 일반적인 Java Application의 의존성 주입
+Controller-Service-DAO 등의 의존관계를 띄는 구조를 직접 설계  
+각 객체마다 필요한 의존성을 수동으로 의존성 주입    
+이때 필요한 모든 객체들을 import해서 사용해야 함
+
 ## 스프링의 의존성 주입 자동화
-스프링의 모든 객체는 Spring Container에 존재한다.  
-Spring Container가 객체가 필요할 때 그때그때 넣어준다
+applicationContext.xml 파일에 모든 객체의 선언을 적어준다.  
+해당 파일에 선언된 스프링의 모든 빈은 Spring Container(명칭 : Application Context)에 존재한다.  
+객체가 필요할 때 마다 Spring Container의 getBean() 메소드로 불러와서 사용한다.
+
+---
+# 
