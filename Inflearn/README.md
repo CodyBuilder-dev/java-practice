@@ -50,4 +50,21 @@ applicationContext.xml 파일에 모든 객체의 선언을 적어준다.
 객체가 필요할 때 마다 Spring Container의 getBean() 메소드로 불러와서 사용한다.
 
 ---
-# 
+# 스프링에서의 생명주기(LifeCycle)
+## 스프링 컨테이너의 생명주기
+- 생성 : 스프링 컨테이너 객체를 new를 이용해 생성한 시점에 메모리에 생성
+- 소멸 : 스프링 컨테이너 객체를 .close로 종결한 경우
+
+## 스프링 빈의 생명 주기
+- 생성 : 스프링 컨테이너 생성 시점과 동일
+- 소멸 : 스프링 컨테이너 소멸 시점과 동일
+
+## 생명주기 처리 메소드 1
+- 인터페이스 : InitializingBean/DisposableBean 인터페이스 내에 존재
+- 메소드 : afterPropertiesSet/destroy
+- 사용법 : 각 빈 객체내에서 해당 인터페이스를 implement하여 사용
+- 응용예시 : DB연결시 인증작업 등
+
+## 생명주기 처리 메소드 2
+- XML속성 : init-method/destroy-method
+- 사용법 : applicationContext.xml내의 빈 설정시, 각 XML속성을 정의해 줌
