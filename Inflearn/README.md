@@ -68,3 +68,11 @@ applicationContext.xml 파일에 모든 객체의 선언을 적어준다.
 ## 생명주기 처리 메소드 2
 - XML속성 : init-method/destroy-method
 - 사용법 : applicationContext.xml내의 빈 설정시, 각 XML속성을 정의해 줌
+
+---
+# 데이터베이스
+## 작업환경 설치
+Oracle : 11g EXPRESS EDITION
+SQLDeveloper : 20.0.2
+DB USER : scott/tiger
+##
