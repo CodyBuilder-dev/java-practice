@@ -23,7 +23,11 @@
 |[Spring Boot 프로젝트](https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)| 스프링부트 실습 페이지, 코드가 있어 코드를 따라가면서 배울 수 있다. |
 |[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|백기선 개발자님의 해당 인강 요약정리|
 |[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)||
-
+|[자바 ORM 표준 JPA 프로그래밍](https://ridibooks.com/books/3984000009)|JPA 권위자 김영한 님이 쓰신 책|
+|[실전 QueryDSL](https://www.inflearn.com/course/Querydsl-%EC%8B%A4%EC%A0%84#reviews)|김영한님 인프런 강의|
+|[스프링 부트와 JPA 로드맵](https://www.inflearn.com/roadmaps/149)|김영한님 인프런 로드맵|
+|[더 나은 자바 개발자가 되기 위한 로드맵](https://www.inflearn.com/roadmaps/335)|백기선님 인프런 로드맵|
+|[스프링 마이크로서비스 코딩 공작소](https://ridibooks.com/books/754025269)||
 ### 개발환경(Java)
 |항목|링크|
 |--|--|
