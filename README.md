@@ -5,7 +5,7 @@
 모니터링 프로젝트 진행 및 VOC 전자정부 프레임워크 개발을 위함
 
 ## 학습 기간
-~~8/28~~ (추후에도 계속 공부해야 함)  
+~~2020/8/28~~ (추후에도 계속 공부해야 함)  
 ~2021년 연중
 ---
 ## 자바 개발 레퍼런스 정리
@@ -82,6 +82,7 @@
 |Java|Hashmap|[링크](https://junjangsee.github.io/2019/09/18/java/hashmap-Method/)<br>[반복문](https://lts0606.tistory.com/149)|
 |Java|jar 명령어|[링크](http://blog.daum.net/oraclejava/15869132)|
 |Java|Generic이란?|[제네릭 개념](https://arabiannight.tistory.com/entry/%EC%9E%90%EB%B0%94Java-ArrayListT-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%8A%A4Generics%EB%9E%80)<br>[제네릭을 사용해야 하는 이유](https://cornswrold.tistory.com/180)|
+|Java|Optional의 이해|[링크](https://jdm.kr/blog/234)|
 
 ### Java 웹 개발(with Spring/Spring boot)
 |분류|항목|링크|
@@ -143,6 +144,7 @@
 |SQL Mapper|MyBatis의 이해||
 |SQL Mapper|MyBatis 사용법||
 |ORM|JPA란 무엇일까?|[링크](https://bit.ly/3ib0zDP) |
+|ORM|Persistence를 어떻게 번역해야 할까|[링크](https://homo-ware.tistory.com/4)|
 |ORM|JPA Repository의 이해||
 |ORM|Hibernate란?|[링크](https://victorydntmd.tistory.com/195)|
 |ORM|하이버네이트 Dialect의 의미||
