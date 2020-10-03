@@ -28,6 +28,7 @@
 |[스프링 부트와 JPA 로드맵](https://www.inflearn.com/roadmaps/149)|김영한님 인프런 로드맵|
 |[더 나은 자바 개발자가 되기 위한 로드맵](https://www.inflearn.com/roadmaps/335)|백기선님 인프런 로드맵|
 |[스프링 마이크로서비스 코딩 공작소](https://ridibooks.com/books/754025269)||
+
 ### 개발환경(Java)
 |항목|링크|
 |--|--|
@@ -92,6 +93,7 @@
 |어노테이션|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
 |어노테이션|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
 |어노테이션|@GeneratedValue의 이해||
+|Spring MVC|MVC1/2의 차이와 Spring MVC|[링크](https://nickjoit.tistory.com/9)<br>[링크](https://seongmun-hong.github.io/spring/MVC1-MVC2)|
 |Spring MVC|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
 |Spring MVC|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
 |Spring MVC|Entity vs VO vs DTO|[링크](https://medium.com/webeveloper/entity-vo-dto-666bc72614bb)|
