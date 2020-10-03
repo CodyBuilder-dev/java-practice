@@ -91,7 +91,6 @@
 |Spring|beans,bean XML설정 옵션|[링크](https://atoz-develop.tistory.com/entry/Spring-%EC%8A%A4%ED%94%84%EB%A7%81-XML-%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC)|
 |어노테이션|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
 |어노테이션|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
-|어노테이션|@Entity의 이해|[링크](https://www.icatpark.com/entry/JPA-%EA%B8%B0%EB%B3%B8-Annotation-%EC%A0%95%EB%A6%AC)|
 |어노테이션|@GeneratedValue의 이해||
 |Spring MVC|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
 |Spring MVC|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
@@ -99,7 +98,7 @@
 |Spring MVC|Dispatcher Servlet의 의미|[링크](https://mangkyu.tistory.com/18)|
 |Spring MVC|Model, ModelandView 객체|[링크](https://velog.io/@msriver/Spring-Model-%EA%B0%9D%EC%B2%B4)|
 |Spring MVC|.do를 생략한 URL pattern|[링크](https://okky.kr/article/293531)|
-|Spring Batch|스프링 배치 확인법|[링크]()|
+|Spring Batch|스프링 배치 확인법||
 |Spring boot|이제는 Spring Boot를 써야할 때|[링크](https://feeva.github.io/posts/%EC%9D%B4%EC%A0%9C%EB%8A%94-spring-boot%EB%A5%BC-%EC%8D%A8%EC%95%BC%ED%95%A0-%EB%95%8C%EB%8B%A4)|
 |Spring boot|Spring Boot로 시작하는 프레임워크|[링크](https://futurecreator.github.io/2016/06/18/spring-boot-get-started/)|
 |Spring boot|Spring boot 내장 WAS 설정|[링크](https://engkimbs.tistory.com/755)|
@@ -110,22 +109,7 @@
 |MVC|Servlet 이해|[링크](https://snoopy81.tistory.com/313)|
 |MVC|JSP와 Servlet의 역할 구분(MVC2)|[링크](https://m.blog.naver.com/acornedu/221128616501)|
 |MVC|간단한 Servlet 페이지 예시|[링크](https://snoopy81.tistory.com/313)|
-|DB|Connection Pool 의 이해|https://www.holaxprogramming.com/2013/01/10/devops-how-to-manage-dbcp/|
-|DB|HikariCP의 이해|https://brunch.co.kr/@jehovah/24|
-|DB|JPA란 무엇일까?|[링크](https://bit.ly/3ib0zDP) |
-|DB|iBatis란 무엇일까?|[링크](https://jonghoit.tistory.com/73)|
-|DB|iBatis와 MyBatis 차이|[링크](https://uwostudy.tistory.com/19)|
-|DB|Hibernate란?|[링크](https://victorydntmd.tistory.com/195)|
-|DB|하이버네이트 Dialect의 의미||
-|DB|JPA & Spring JPA & Hibernate 구분|[링크](https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/)|
-|DB|MyBatis의 이해||
-|DB|MyBatis 사용법||
-|DB|hikari CP 설정|[링크](https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property)|
-|DB|JPA Repository의 이해||
-|DB|Spring 방식 JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
-|DB|Spring boot에 MySQL 연동|[링크](https://victorydntmd.tistory.com/321)|
-|DB|Spring boot에 H2DB+mybatis 연동|[링크](http://tech.javacafe.io/2018/07/31/mybatis-with-spring/)|
-|빌드|Maven의 이해|[링크](https://goddaehee.tistory.com/199)<br>[폴더 구조]()<br>[빌드 라이프사이클](https://jeong-pro.tistory.com/168)|
+|빌드|Maven의 이해|[링크](https://goddaehee.tistory.com/199)<br>[빌드 라이프사이클](https://jeong-pro.tistory.com/168)|
 |빌드|Maven 커맨드라인 옵션|[링크](https://m.blog.naver.com/PostView.nhn?blogId=kathar0s&logNo=10143790065&proxyReferer=https:%2F%2Fwww.google.com%2F)|
 |빌드|MavenWrapperMain 에러 해결|[링크](https://www.slipp.net/questions/585)|
 |빌드|Maven package시 test 건너뛰기|[링크](http://www.devkuma.com/books/pages/642)|
@@ -143,6 +127,26 @@
 |아키텍처|프론트 컨트롤러 패턴|[링크](https://opentutorials.org/module/3569/21219)|
 |아키텍처|스프링 부트를 이용한 MSA|[링크](https://waspro.tistory.com/451)|
 
+### 자바 DB 연동 (with JPA/Hibernate)
+|분류|항목|링크|
+|---|---|---|
+|어노테이션|@Entity의 이해|[링크](https://www.icatpark.com/entry/JPA-%EA%B8%B0%EB%B3%B8-Annotation-%EC%A0%95%EB%A6%AC)|
+|커넥션 풀|Connection Pool 의 이해|https://www.holaxprogramming.com/2013/01/10/devops-how-to-manage-dbcp/|
+|커넥션 풀|HikariCP의 이해|https://brunch.co.kr/@jehovah/24|
+|커넥션 풀|hikari CP 설정|[링크](https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property)|
+|JDBC|Spring 방식 JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
+|JDBC|Spring boot에 MySQL 연동|[링크](https://victorydntmd.tistory.com/321)|
+|SQL Mapper|iBatis란 무엇일까?|[링크](https://jonghoit.tistory.com/73)|
+|SQL Mapper|iBatis와 MyBatis 차이|[링크](https://uwostudy.tistory.com/19)|
+|SQL Mapper|MyBatis의 이해||
+|SQL Mapper|MyBatis 사용법||
+|ORM|JPA란 무엇일까?|[링크](https://bit.ly/3ib0zDP) |
+|ORM|JPA Repository의 이해||
+|ORM|Hibernate란?|[링크](https://victorydntmd.tistory.com/195)|
+|ORM|하이버네이트 Dialect의 의미||
+|ORM|JPA & Spring JPA & Hibernate 구분|[링크](https://suhwan.dev/2019/02/24/jpa-vs-hibernate-vs-spring-data-jpa/)|
+|ORM|Spring boot에 H2DB+mybatis 연동|[링크](http://tech.javacafe.io/2018/07/31/mybatis-with-spring/)|
+
 ### WebSquare(UI 프레임워크)
 |분류|항목|링크|
 |---|---|---|
@@ -158,5 +162,6 @@
 |---|---|---|
 |XML|XML 문서 양식(DTD와 스키마)|[링크](http://tcpschool.com/xml/xml_dtd_intro)|
 |XML|XML 에서 CDATA태그|[링크](https://parkjuwan.tistory.com/156)|
+|XML|XML 네임스페이스||
 |XML|XForms 이해||
 |XML|XPath 이해||
