@@ -5,29 +5,37 @@
 모니터링 프로젝트 진행 및 VOC 전자정부 프레임워크 개발을 위함
 
 ## 학습 기간
-~~2020/8/28~~ (추후에도 계속 공부해야 함)  
-~2021년 연중
+~~2020/8/28까지~~  
+~~2021년 연중~~  
+(추후에도 계속 공부해야 함)  
+~**영원히**
+
 ---
 ## 자바 개발 레퍼런스 정리
 ### 교재 추천
-|교재명|설명|
-|---|---|
-|[스프링 부트 코딩 공작소](https://ridibooks.com/books/754019165)|입문용으로 그나마 가장 괜찮은 책이라는 평이 있다|
-|[토비의 스프링](https://ridibooks.com/books/111017526)|너무나 유명한 책, 스프링 코어를 이해하려면 꼭 읽어야 하는 책, 그러나 입문용으론 별로인 책|
-|[배워서 바로 쓰는 스프링 프레임워크](https://ridibooks.com/books/443000789)|입문자용으론 조금 어렵고, 챕터간 구성이 종속적이라는 평이 있다|
-|[배워서 바로 쓰는 스프링 부트 2](https://ridibooks.com/books/443000785)|입문자용으로 어려울 수 있지만 실무자에게 레퍼런스로 괜찮다는 평|
-|[스프링 5 레시피](https://ridibooks.com/books/443000629)|역시 스프링 코어 설명이 있고, 실무에서 만나는 문제들에 대한 레퍼런스로서 좋은 책, 그러나 입문용으론 별로인 책|
-|[스프링 부트로 배우는 자바 웹 개발](https://ridibooks.com/books/852000676)|입문서는 아니고, 사진 상태 등 편집이 불친절하다는 평 있다|
-|[쉽게 따라하는 자바 웹 개발](https://github.com/keesun/study/tree/master/book)|pdf가 오픈되어 있음. 기본적 지식에 대한 설명 없어 입문자용으론 부적절|
-|[자바 웹을 다루는 기술](https://ridibooks.com/books/754025528?_s=search&_q=%EC%9E%90%EB%B0%94+%EC%9B%B9%EC%9D%84+%EB%8B%A4%EB%A3%A8%EB%8A%94+%EA%B8%B0%EC%88%A0)|설명위주로, 실질적인 코딩 구현이 안 된다는 말이 있음|
-|[Spring Boot 프로젝트](https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)| 스프링부트 실습 페이지, 코드가 있어 코드를 따라가면서 배울 수 있다. |
-|[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|백기선 개발자님의 해당 인강 요약정리|
-|[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)||
-|[자바 ORM 표준 JPA 프로그래밍](https://ridibooks.com/books/3984000009)|JPA 권위자 김영한 님이 쓰신 책|
-|[실전 QueryDSL](https://www.inflearn.com/course/Querydsl-%EC%8B%A4%EC%A0%84#reviews)|김영한님 인프런 강의|
-|[스프링 부트와 JPA 로드맵](https://www.inflearn.com/roadmaps/149)|김영한님 인프런 로드맵|
-|[더 나은 자바 개발자가 되기 위한 로드맵](https://www.inflearn.com/roadmaps/335)|백기선님 인프런 로드맵|
-|[스프링 마이크로서비스 코딩 공작소](https://ridibooks.com/books/754025269)||
+|교재명|분야|설명|
+|---|---|--|
+|[알쏭달쏭 자바 200제](https://ridibooks.com/books/443000704)|Java 입문|기본문법 설명 + 실제 문제해결 코드로 빨리 따라치며 배우기 좋다|
+|[전자정부 프레임워크로 게시판 만들기](https://canelia09.tistory.com/category/%EC%A0%84%EC%9E%90%EC%A0%95%EB%B6%80%20%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC%20%EA%B2%8C%EC%8B%9C%ED%8C%90%20%EC%97%B0%EC%8A%B5)<br>[전자정부 프레임워크 교육자료](https://www.egovframe.go.kr/cop/bbs/selectBoardArticle.do?nttId=1569&bbsId=BBSMSTR_000000000004&menu=4)|전자정부 프레임워크||
+|[자바 웹을 다루는 기술](https://ridibooks.com/books/754025528?_s=search&_q=%EC%9E%90%EB%B0%94+%EC%9B%B9%EC%9D%84+%EB%8B%A4%EB%A3%A8%EB%8A%94+%EA%B8%B0%EC%88%A0)|자바 웹|설명위주로, 실질적인 코딩 구현이 안 된다는 말이 있음|
+|[토비의 스프링](https://ridibooks.com/books/111017526)|Spring|너무나 유명한 책, 스프링 코어를 이해하려면 꼭 읽어야 하는 책, 그러나 입문용으론 별로인 책|
+|[배워서 바로 쓰는 스프링 프레임워크](https://ridibooks.com/books/443000789)|Spring|입문자용으론 조금 어렵고, 챕터간 구성이 종속적이라는 평이 있다|
+|[스프링 5 레시피](https://ridibooks.com/books/443000629)|Spring|역시 스프링 코어 설명이 있고, 실무에서 만나는 문제들에 대한 레퍼런스로서 좋은 책, 그러나 입문용으론 별로인 책|
+|[쉽게 따라하는 자바 웹 개발](https://github.com/keesun/study/tree/master/book)|Spring MVC|pdf가 오픈되어 있음. 기본적 지식에 대한 설명 없어 입문자용으론 부적절|
+|[스프링 마이크로서비스 코딩 공작소](https://ridibooks.com/books/754025269)|Spring Cloud||
+|[스프링 부트 코딩 공작소](https://ridibooks.com/books/754019165)|Spring boot|입문용으로 그나마 가장 괜찮은 책이라는 평이 있다|
+|[배워서 바로 쓰는 스프링 부트 2](https://ridibooks.com/books/443000785)|Spring boot|입문자용으로 어려울 수 있지만 실무자에게 레퍼런스로 괜찮다는 평|
+|[스프링 부트로 배우는 자바 웹 개발](https://ridibooks.com/books/852000676)|Spring boot|마찬가지로 입문서는 아니고, 사진 상태 등 편집이 불친절하다는 평 있다|
+|[Spring Boot 프로젝트](https://goddaehee.tistory.com/category/3.%20%EC%9B%B9%EA%B0%9C%EB%B0%9C/3_1_3%20%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8)|Spring boot|스프링부트 실습 페이지, 코드가 있어 코드를 따라가면서 배울 수 있다.|
+|[자바 ORM 표준 JPA 프로그래밍](https://ridibooks.com/books/3984000009)|JPA|JPA 권위자 김영한 님이 쓰신 책|
+
+## 인강 추천
+|강의명|분야|설명|
+|---|---|--|
+|[더 나은 자바 개발자가 되기 위한 로드맵](https://www.inflearn.com/roadmaps/335)|백기선님 인프런 로드맵(The Java 시리즈)|
+|[스프링 부트와 JPA 로드맵](https://www.inflearn.com/roadmaps/149)|JPA|김영한님 인프런 로드맵|
+|[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|Spring boot|백기선님의 인프런 인강 요약정리|
+
 
 ### 개발환경(Java)
 |항목|링크|
