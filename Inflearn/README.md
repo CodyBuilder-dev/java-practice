@@ -50,7 +50,7 @@ applicationContext.xml 파일에 모든 객체의 선언을 적어준다.
 객체가 필요할 때 마다 Spring Container의 getBean() 메소드로 불러와서 사용한다.
 
 ---
-# 스프링에서의 생명주기(LifeCycle)
+# 10강.스프링에서의 생명주기(LifeCycle)
 ## 스프링 컨테이너의 생명주기
 - 생성 : 스프링 컨테이너 객체를 new를 이용해 생성한 시점에 메모리에 생성
 - 소멸 : 스프링 컨테이너 객체를 .close로 종결한 경우
@@ -68,11 +68,43 @@ applicationContext.xml 파일에 모든 객체의 선언을 적어준다.
 ## 생명주기 처리 메소드 2
 - XML속성 : init-method/destroy-method
 - 사용법 : applicationContext.xml내의 빈 설정시, 각 XML속성을 정의해 줌
-
 ---
-# 데이터베이스
+# 11~12강. 어노테이션(Annotation)
+---
+# 13~19강. 웹 MVC
+---
+# 20~21강. 인증과 권한
+---
+# 22~25강.데이터베이스
 ## 작업환경 설치
-Oracle : 11g EXPRESS EDITION
-SQLDeveloper : 20.0.2
+Oracle : 11g/18c EXPRESS EDITION
+SQLDeveloper : 20.0.2(최신버전)
 DB USER : scott/tiger
-##
+
+## DI없는 JDBC 사용방법
+1. import java.sql.Connection
+2. driverType/DB URL/ID/PW 정보를 통해 conn 생성
+3. conn 객체 생성
+4. sql문 작성 맟 preparestatement 로 치환변수 등록
+5. 쿼리 실행
+-> 위에 적힌 굉장히 복잡한 절차를 DAO에 매번 반복적으로 작성해야 한다
+
+## 스프링 JDBC Template 통한 JDBC 연결 자동화
+- DB Conn 생성/DB Conn 해제 부분을 템플릿화
+    - 개발자는 오직 SQL 작성에만 신경쓰면 됨
+- 사용법
+    1. maven pom.xml에 org.springframework.spring-jdbc dependency 추가
+    2. import DriverManagerDataSource
+    3. DriverManagerDatasource 객체에 DB접근정보를 저장
+    4. 해당 Datasource 객체를 JdbcTemplate객체에 연결
+    5. JdbcTemplate 객체의 sql 호출 메소드에 sql문과 치환변수를 arg로 집어넣으면 끝
+
+## 스프링 커넥션 풀
+- 커넥션 풀이란?
+    - 커넥션을 미리 만들어 놓고, 요청이 있을 때 선택해서 사용
+    - 서버 부하 감소 효과
+- 커넥션 풀 포함된 DataSource 이용
+    - c3p0.ComboPooledDataSource
+    - 반드시 예외처리 구문 내에서 connection 생성해야 함
+- 스프링 설정파일 내의 DataSource Bean 이용
+    - 설정파일 내에 bean을 생성할 때, 사용할 커넥션 풀 설정
