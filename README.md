@@ -83,6 +83,20 @@
 |Java|jar 명령어|[링크](http://blog.daum.net/oraclejava/15869132)|
 |Java|Generic이란?|[제네릭 개념](https://arabiannight.tistory.com/entry/%EC%9E%90%EB%B0%94Java-ArrayListT-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%8A%A4Generics%EB%9E%80)<br>[제네릭을 사용해야 하는 이유](https://cornswrold.tistory.com/180)|
 |Java|Optional의 이해|[링크](https://jdm.kr/blog/234)|
+|Java|익명 클래스|[링크](https://dduddublog.tistory.com/169)|
+
+
+### Java Build Tool(Maven,Gradle)
+|분류|항목|링크|
+|---|---|---|
+|Maven|Maven의 이해|[링크](https://goddaehee.tistory.com/199)<br>[빌드 라이프사이클](https://jeong-pro.tistory.com/168)|
+|Maven|Maven 커맨드라인 옵션|[링크](https://m.blog.naver.com/PostView.nhn?blogId=kathar0s&logNo=10143790065&proxyReferer=https:%2F%2Fwww.google.com%2F)|
+|Maven|MavenWrapperMain 에러 해결|[링크](https://www.slipp.net/questions/585)|
+|Maven|Maven test 건너뛰기|[링크](http://www.devkuma.com/books/pages/642)|
+|Maven|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|[링크](https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception)|
+|Maven|Maven Profile 설정으로 환경에 맞게 build하기|[링크](https://www.lesstif.com/java/maven-profile-14090588.html)|
+|Gradle|메인 클래스 경로 못 찾는 문제 해결|[링크](https://cnpnote.tistory.com/entry/SPRING-Gradle-%EB%A9%94%EC%9D%B8-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%96%88%EC%8A%B5%EB%8B%88%EB%8B%A4)|
+|Gradle|Spring Gradle 구현 예제|[링크](https://github.com/stunstunstun/awesome-spring-boot)|
 
 ### Java 웹 개발(with Spring/Spring boot)
 |분류|항목|링크|
@@ -112,13 +126,6 @@
 |MVC|Servlet 이해|[링크](https://snoopy81.tistory.com/313)|
 |MVC|JSP와 Servlet의 역할 구분(MVC2)|[링크](https://m.blog.naver.com/acornedu/221128616501)|
 |MVC|간단한 Servlet 페이지 예시|[링크](https://snoopy81.tistory.com/313)|
-|빌드|Maven의 이해|[링크](https://goddaehee.tistory.com/199)<br>[빌드 라이프사이클](https://jeong-pro.tistory.com/168)|
-|빌드|Maven 커맨드라인 옵션|[링크](https://m.blog.naver.com/PostView.nhn?blogId=kathar0s&logNo=10143790065&proxyReferer=https:%2F%2Fwww.google.com%2F)|
-|빌드|MavenWrapperMain 에러 해결|[링크](https://www.slipp.net/questions/585)|
-|빌드|Maven package시 test 건너뛰기|[링크](http://www.devkuma.com/books/pages/642)|
-|빌드|Maven 빌드시 java.security.InvalidAlgorithmParameterException 해결|[링크](https://sarc.io/index.php/forum/tips/3102-openjdk-javax-net-ssl-sslexception-java-lang-runtimeexception-unexpected-error-java-security-invalidalgorithmparameterexception)|
-|빌드|Maven Profile 설정으로 환경에 맞게 build하기|[링크](https://www.lesstif.com/java/maven-profile-14090588.html)|
-|빌드|Spring Gradle 구현 예제|[링크](https://github.com/stunstunstun/awesome-spring-boot)|
 |테스트|jUnit 이용 단위 테스트||
 |테스트|Mock 객체를 이용한 테스트||
 |테스트|Batch 테스트||
@@ -134,11 +141,14 @@
 |분류|항목|링크|
 |---|---|---|
 |어노테이션|@Entity의 이해|[링크](https://www.icatpark.com/entry/JPA-%EA%B8%B0%EB%B3%B8-Annotation-%EC%A0%95%EB%A6%AC)|
+|JDBC|preparedStatement 이용 쿼리 실행|[링크](https://cocodo.tistory.com/11)|
+|JDBC|Spring DataSource & JDBC Template|[링크](https://gmlwjd9405.github.io/2018/12/19/jdbctemplate-usage.html)|
+|JDBC|Spring MySQL 커넥션풀 사용|[링크](https://victorydntmd.tistory.com/169)|
+|JDBC|Spring boot JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
+|JDBC|Spring boot에 MySQL 연동|[링크](https://victorydntmd.tistory.com/321)|
 |커넥션 풀|Connection Pool 의 이해|https://www.holaxprogramming.com/2013/01/10/devops-how-to-manage-dbcp/|
 |커넥션 풀|HikariCP의 이해|https://brunch.co.kr/@jehovah/24|
 |커넥션 풀|hikari CP 설정|[링크](https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property)|
-|JDBC|Spring 방식 JDBC 연동|[링크](https://www.holaxprogramming.com/2015/10/16/spring-boot-with-jdbc/)|
-|JDBC|Spring boot에 MySQL 연동|[링크](https://victorydntmd.tistory.com/321)|
 |SQL Mapper|iBatis란 무엇일까?|[링크](https://jonghoit.tistory.com/73)|
 |SQL Mapper|iBatis와 MyBatis 차이|[링크](https://uwostudy.tistory.com/19)|
 |SQL Mapper|MyBatis의 이해||
