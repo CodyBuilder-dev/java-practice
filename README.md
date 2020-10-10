@@ -12,6 +12,9 @@
 
 ---
 ## 자바 개발 레퍼런스 정리
+### [Kevin의 알기 쉬운 Java 개발자 로드맵 이야기](https://www.inflearn.com/course/java-4)
+![](Java_developer_roadmap_07.jpg)  
+
 ### 교재 추천
 |교재명|분야|설명|
 |---|---|--|
@@ -109,9 +112,17 @@
 ### Java 웹 개발(with Spring/Spring boot)
 |분류|항목|링크|
 |---|---|---|
+|MVC|JSP란 무엇인가?|[링크](https://javacpro.tistory.com/43)|
+|MVC|JSP 문법|[링크](https://atoz-develop.tistory.com/entry/JSP-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%B4%9D-%EC%A0%95%EB%A6%AC-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%8D%B0%EC%9D%B4%ED%84%B0-JSP-%EC%A0%84%EC%9A%A9-%ED%83%9C%EA%B7%B8-%EB%82%B4%EC%9E%A5-%EA%B0%9D%EC%B2%B4)|
+|MVC|JSP 예외처리|[링크](https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC)<br>[링크](https://rongscodinghistory.tistory.com/70)|
+|MVC|Servlet 이해|[링크](https://snoopy81.tistory.com/313)|
+|MVC|JSP와 Servlet의 역할 구분(MVC2)|[링크](https://m.blog.naver.com/acornedu/221128616501)|
+|MVC|간단한 Servlet 페이지 예시|[링크](https://snoopy81.tistory.com/313)|
 |Spring|Spring의 이해, Spring Boot의 차이|[링크](https://sas-study.tistory.com/274)<br>[링크](https://monkey3199.github.io/develop/spring/2019/04/14/Spring-And-SpringBoot.html)<br>[차이 전혀 없음](https://okky.kr/article/312710)<br>[차이점](https://stackoverflow.com/questions/32922914/difference-between-spring-mvc-and-spring-boot)<br>[간단해진 설정](https://ellune.tistory.com/38)|
+|Spring|AOP의 이해|[링크](https://engkimbs.tistory.com/746)|
+|Spring|서비스 추상화|[링크](https://coding-start.tistory.com/12)|
 |Spring|MessageSource|[링크](https://engkimbs.tistory.com/717)|
-|Spring|스프링에서 web.xml의 의미|[링크](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)|
+|Spring|Web.xml|[링크](https://gmlwjd9405.github.io/2018/10/29/web-application-structure.html)<br>[JSP](https://kamang-it.tistory.com/entry/JSPwebxml-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0)<br>[JSP](https://rebeccajo.tistory.com/5)<br>[JSP](https://cloud.google.com/appengine/docs/standard/java/config/webxml?hl=ko)<br>[Spring](https://mangkyu.tistory.com/13)<br>[Spring](https://midas123.tistory.com/222)|
 |Spring|beans,bean XML설정 옵션|[링크](https://atoz-develop.tistory.com/entry/Spring-%EC%8A%A4%ED%94%84%EB%A7%81-XML-%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC-%EC%9E%91%EC%84%B1-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC)|
 |어노테이션|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
 |어노테이션|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
@@ -121,6 +132,7 @@
 |Spring MVC|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
 |Spring MVC|Entity vs VO vs DTO|[링크](https://medium.com/webeveloper/entity-vo-dto-666bc72614bb)|
 |Spring MVC|Dispatcher Servlet의 의미|[링크](https://mangkyu.tistory.com/18)|
+|Spring MVC|dispatcher-servlet.xml 파일 설정|[링크](https://sodocumentation.net/ko/spring/topic/10092/dispatcher-servlet-xml%EC%9D%98-%EC%9D%B4%ED%95%B4)<br>|
 |Spring MVC|Model, ModelandView 객체|[링크](https://velog.io/@msriver/Spring-Model-%EA%B0%9D%EC%B2%B4)|
 |Spring MVC|.do를 생략한 URL pattern|[링크](https://okky.kr/article/293531)|
 |Spring Batch|스프링 배치 확인법||
@@ -128,12 +140,6 @@
 |Spring boot|Spring Boot로 시작하는 프레임워크|[링크](https://futurecreator.github.io/2016/06/18/spring-boot-get-started/)|
 |Spring boot|Spring boot 내장 WAS 설정|[링크](https://engkimbs.tistory.com/755)|
 |Spring boot|Spring boot에서 jsp 실행시키기|[링크](https://antdev.tistory.com/27)|
-|MVC|JSP란 무엇인가?|[링크](https://javacpro.tistory.com/43)|
-|MVC|JSP 문법|[링크](https://atoz-develop.tistory.com/entry/JSP-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%B4%9D-%EC%A0%95%EB%A6%AC-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%8D%B0%EC%9D%B4%ED%84%B0-JSP-%EC%A0%84%EC%9A%A9-%ED%83%9C%EA%B7%B8-%EB%82%B4%EC%9E%A5-%EA%B0%9D%EC%B2%B4)|
-|MVC|JSP 예외처리|[링크](https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC)<br>[링크](https://rongscodinghistory.tistory.com/70)|
-|MVC|Servlet 이해|[링크](https://snoopy81.tistory.com/313)|
-|MVC|JSP와 Servlet의 역할 구분(MVC2)|[링크](https://m.blog.naver.com/acornedu/221128616501)|
-|MVC|간단한 Servlet 페이지 예시|[링크](https://snoopy81.tistory.com/313)|
 |테스트|jUnit 이용 단위 테스트||
 |테스트|Mock 객체를 이용한 테스트||
 |테스트|Batch 테스트||
