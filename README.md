@@ -95,7 +95,9 @@
 |Java|Generic이란?|[제네릭 개념](https://arabiannight.tistory.com/entry/%EC%9E%90%EB%B0%94Java-ArrayListT-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%8A%A4Generics%EB%9E%80)<br>[제네릭을 사용해야 하는 이유](https://cornswrold.tistory.com/180)|
 |Java|Optional의 이해|[링크](https://jdm.kr/blog/234)|
 |Java|익명 클래스|[링크](https://dduddublog.tistory.com/169)|
-
+|Java|멀티스레드 프로그램 작성|[링크](https://reakwon.tistory.com/84)|
+|Java|Runtime 객체|[링크](https://itmore.tistory.com/entry/Runtime-%ED%81%B4%EB%9E%98%EC%8A%A4)|
+|Java|system.getProperty|[링크](https://unabated.tistory.com/entry/Java%EC%97%90%EC%84%9C-SystemgetProperty)|
 
 ### Java Build Tool(Maven,Gradle)
 |분류|항목|링크|
