@@ -1,4 +1,4 @@
-# Java Web Programming With JSP
+# Java Web Programming With JSP/Servlet
 ## 프로젝트 시작하기
 ### JSP 프로젝트 생성
 (Eclipse 기준으로 설명)  
@@ -32,5 +32,3 @@
 - 톰캣 웹 컨테이너에서 java 빌드
     - 빌드된 파일들은 **프로젝트 build 디렉토리 내**에 .class로 저장됨
 - 사용자 Req에 따라 빌드된 obj파일을 실행시켜 HTML을 생성 후 Res 반환
-
-
