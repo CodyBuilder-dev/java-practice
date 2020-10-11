@@ -35,7 +35,7 @@
 ## 인강 추천
 |강의명|분야|설명|
 |---|---|--|
-|[더 나은 자바 개발자가 되기 위한 로드맵](https://www.inflearn.com/roadmaps/335)|백기선님 인프런 로드맵(The Java 시리즈)|
+|[더 나은 자바 개발자가 되기 위한 로드맵](https://www.inflearn.com/roadmaps/335)|Java|백기선님 인프런 로드맵(The Java 시리즈)|
 |[스프링 부트와 JPA 로드맵](https://www.inflearn.com/roadmaps/149)|JPA|김영한님 인프런 로드맵|
 |[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|Spring boot|백기선님의 인프런 인강 요약정리|
 
@@ -119,11 +119,16 @@
 ### Java 웹 개발(with Spring/Spring boot)
 |분류|항목|링크|
 |---|---|---|
+|MVC|CGI방식과 Servlet/JSP의 Req 처리방식|[링크](https://memory0136.tistory.com/59)<br>[링크](https://m.blog.naver.com/PostView.nhn?blogId=yswon72&logNo=51133346&proxyReferer=https:%2F%2Fwww.google.com%2F)|
 |MVC|JSP란 무엇인가?|[링크](https://javacpro.tistory.com/43)|
-|MVC|JSP의 동작방식(컴파일 및 실행)||
+|MVC|JSP의 동작방식(컴파일 및 실행)|[컴파일 시점](https://cjh5414.github.io/jsp-compile/)<br>[링크](https://rebeccajo.tistory.com/9)<br>[컴파일 시점](https://okky.kr/article/395520)|
 |MVC|JSP 문법|[링크](https://atoz-develop.tistory.com/entry/JSP-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%B4%9D-%EC%A0%95%EB%A6%AC-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%8D%B0%EC%9D%B4%ED%84%B0-JSP-%EC%A0%84%EC%9A%A9-%ED%83%9C%EA%B7%B8-%EB%82%B4%EC%9E%A5-%EA%B0%9D%EC%B2%B4)|
+|MVC|Servlet/JSP 처음부터 끝까지 만들어보기|[링크](https://javarayo.tistory.com/entry/1-%EC%84%9C%EB%B8%94%EB%A6%BF%EA%B3%BC-JSP%EC%9D%98-%EA%B8%B0%EC%B4%88-%EA%B0%9C%EB%85%90)|
 |MVC|JSP 예외처리|[링크](https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC)<br>[링크](https://rongscodinghistory.tistory.com/70)|
+|MVC|JSP 컴파일 경로 확인|[TOMCAT](https://jang2r.tistory.com/10)<br>[JEUS](https://jang2r.tistory.com/9?category=782342)|
 |MVC|Servlet 이해|[링크](https://snoopy81.tistory.com/313)|
+|MVC|Servlet의 동작 프로세스와 라이프사이클|[동작 프로세스](https://hackersstudy.tistory.com/72)<br>[톰캣의 서블릿 처리방식](https://victorydntmd.tistory.com/154)<br>[생명주기](https://velog.io/@max9106/JSP-Servlet-Life-cycle%EC%84%9C%EB%B8%94%EB%A6%BF-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0-5ak58h5ffj)|
+|MVC|Servlet @PreDestory, @PostConstruct 에러 해결|[JAVA9 이상](https://devbible.tistory.com/461)|
 |MVC|JSP와 Servlet의 역할 구분(MVC2)|[링크](https://m.blog.naver.com/acornedu/221128616501)|
 |MVC|간단한 Servlet 페이지 예시|[링크](https://snoopy81.tistory.com/313)|
 |Spring|Spring의 이해, Spring Boot의 차이|[링크](https://sas-study.tistory.com/274)<br>[링크](https://monkey3199.github.io/develop/spring/2019/04/14/Spring-And-SpringBoot.html)<br>[차이 전혀 없음](https://okky.kr/article/312710)<br>[차이점](https://stackoverflow.com/questions/32922914/difference-between-spring-mvc-and-spring-boot)<br>[간단해진 설정](https://ellune.tistory.com/38)|
@@ -135,7 +140,6 @@
 |어노테이션|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
 |어노테이션|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
 |어노테이션|@GeneratedValue의 이해||
-
 |Spring MVC|MVC1/2의 차이와 Spring MVC|[링크](https://nickjoit.tistory.com/9)<br>[링크](https://seongmun-hong.github.io/spring/MVC1-MVC2)|
 |Spring MVC|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
 |Spring MVC|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
@@ -154,13 +158,15 @@
 |테스트|Batch 테스트||
 |테스트|단위 테스트에서의 F.I.R.S.T원칙|[링크](https://brunch.co.kr/@springboot/207)|
 |테스트|통합 테스트와 서비스 테스트|[링크](https://cheese10yun.github.io/spring-guide-test-1/)|
+|웹서버|WEB/WAS/Container|[링크](http://melonicedlatte.com/web/2019/06/23/210300.html)|
 |웹서버|Apache Web Server의 이해||
 |웹서버|Tomcat WAS 이해||
+|웹서버|Tomcat 소스코드 패키지 인식|[링크](https://zzznara2.tistory.com/414)|
 |아키텍처|Spring Boot 쿠버네티스 컨테이너화|[링크](https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/)|
 |아키텍처|프론트 컨트롤러 패턴|[링크](https://opentutorials.org/module/3569/21219)|
 |아키텍처|스프링 부트를 이용한 MSA|[링크](https://waspro.tistory.com/451)|
 
-### 자바 DB 연동 (with JPA/Hibernate)
+### 자바 DB 연동 (JDBC/SQL Mapper/JPA/Hibernate)
 |분류|항목|링크|
 |---|---|---|
 |어노테이션|@Entity의 이해|[링크](https://www.icatpark.com/entry/JPA-%EA%B8%B0%EB%B3%B8-Annotation-%EC%A0%95%EB%A6%AC)|
