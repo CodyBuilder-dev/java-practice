@@ -88,16 +88,21 @@
 |Java|FileReader와 BufferReader의 차이점||
 |Java|java.time.LocalDateTime|[링크](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)|
 |Java|동일성과 동등성|[링크](https://joont.tistory.com/143)|
+|Java|변수의 메모리 주소 찾는법|[identityHashCode()](https://velog.io/@vegeta/2020-02-04-1602-%EC%9E%91%EC%84%B1%EB%90%A8-2pk67k2l9l)|
+|Java|equals(),hashcode()의 정확한 이해|[링크](https://victorydntmd.tistory.com/133)|
 |Java|변수의 객체 클래스/데이터타입 확인법|[링크](https://wakestand.tistory.com/186)|
 |Java|List|[링크](https://wikidocs.net/207)<br>|
 |Java|Hashmap|[링크](https://junjangsee.github.io/2019/09/18/java/hashmap-Method/)<br>[반복문](https://lts0606.tistory.com/149)|
 |Java|jar 명령어|[링크](http://blog.daum.net/oraclejava/15869132)|
 |Java|Generic이란?|[제네릭 개념](https://arabiannight.tistory.com/entry/%EC%9E%90%EB%B0%94Java-ArrayListT-%EC%A0%9C%EB%84%A4%EB%A6%AD%EC%8A%A4Generics%EB%9E%80)<br>[제네릭을 사용해야 하는 이유](https://cornswrold.tistory.com/180)|
 |Java|Optional의 이해|[링크](https://jdm.kr/blog/234)|
+|Java|추상 클래스|[링크](https://limkydev.tistory.com/188)|
 |Java|익명 클래스|[링크](https://dduddublog.tistory.com/169)|
-|Java|멀티스레드 프로그램 작성|[링크](https://reakwon.tistory.com/84)|
+|Java|멀티스레드 프로그램 작성|[링크](https://reakwon.tistory.com/84)<br>[링크](https://aileen93.tistory.com/105)|
 |Java|Runtime 객체|[링크](https://itmore.tistory.com/entry/Runtime-%ED%81%B4%EB%9E%98%EC%8A%A4)|
 |Java|system.getProperty|[링크](https://unabated.tistory.com/entry/Java%EC%97%90%EC%84%9C-SystemgetProperty)|
+|Java|어노테이션의 이해||
+|Java|@Override의 사용 이유|[링크](https://okky.kr/article/346969)|
 
 ### Java Build Tool(Maven,Gradle)
 |분류|항목|링크|
@@ -115,6 +120,7 @@
 |분류|항목|링크|
 |---|---|---|
 |MVC|JSP란 무엇인가?|[링크](https://javacpro.tistory.com/43)|
+|MVC|JSP의 동작방식(컴파일 및 실행)||
 |MVC|JSP 문법|[링크](https://atoz-develop.tistory.com/entry/JSP-%EA%B8%B0%EB%B3%B8-%EB%AC%B8%EB%B2%95-%EC%B4%9D-%EC%A0%95%EB%A6%AC-%ED%85%9C%ED%94%8C%EB%A6%BF-%EB%8D%B0%EC%9D%B4%ED%84%B0-JSP-%EC%A0%84%EC%9A%A9-%ED%83%9C%EA%B7%B8-%EB%82%B4%EC%9E%A5-%EA%B0%9D%EC%B2%B4)|
 |MVC|JSP 예외처리|[링크](https://gangzzang.tistory.com/entry/JSP-%EC%97%90%EB%9F%AC-%EC%B2%98%EB%A6%AC%EC%9D%B5%EC%85%89%EC%85%98-%EC%B2%98%EB%A6%AC)<br>[링크](https://rongscodinghistory.tistory.com/70)|
 |MVC|Servlet 이해|[링크](https://snoopy81.tistory.com/313)|
@@ -129,6 +135,7 @@
 |어노테이션|@Autowired 이해|[링크](https://galid1.tistory.com/512)|
 |어노테이션|@ModelAttribute 이해|[링크](https://engkimbs.tistory.com/694)|
 |어노테이션|@GeneratedValue의 이해||
+
 |Spring MVC|MVC1/2의 차이와 Spring MVC|[링크](https://nickjoit.tistory.com/9)<br>[링크](https://seongmun-hong.github.io/spring/MVC1-MVC2)|
 |Spring MVC|Spring MVC 플로우 정리|[링크](https://www.slideshare.net/hanmomhanda/spring-mvc-fullflow)|
 |Spring MVC|Spring MVC View 처리 이해|[링크](https://gocoder.tistory.com/1104)|
