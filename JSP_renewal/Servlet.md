@@ -28,11 +28,6 @@
 ### 생명주기의 개념
 ![](https://media.vlpt.us/post-images/max9106/1c184800-33d7-11ea-8437-b39361a076dc/-2020-01-11-3.29.03.png)  
 - 서블릿은, 항상 컨테이너 메모리에 올라와 있는 것이 아니라, 호출될때만 컨테이너상에 잠깐 올라왔다 호출처리가 완료되면 컨테이너상에서 내려가는 듯
-- @PostConstruct : 
-- init() : 
-- service : 
-- destory() : 
-- @PreDestroy : 
 
 ### 생명주기 메소드의 구현
 - 각 서블릿 클래스 내에 구현하면 된다
@@ -40,13 +35,18 @@
 - 메소드명을 init(), destroy()로 구현
 - service는 doGet,doPost등에 기술해줌
 
-### 방법2. Java Annotation을 이용한 설정
-
 ---
 ## Form 데이터 처리
-### 개념
-### 방법1. web.xml을 이용한 설정
-### 방법2. Java Annotation을 이용한 설정
+### From 태그에 대한 간략한 설명
+- form 태그 내의 데이터들을 request로 전송
+- WAS 서버 내의 어딘가에서, 해당 request를 HttpServletRequest 객체로 변환해주는 동작이 일어남
+- 이 HttpServletRequest를 이용해 JSP/Servlet의 Java 코드가 동작됨
+- 
+
+### doGet/doPost
+- method="get"->URI query string 형태로 날아감 -> doGet() 메소드가 처리
+    - 쿼리스트링의 최대 길이가 255자 제한
+- method="post" -> body내에 key:value 형태로 포함되어 들어감 -> doPost() 메소드가 처리
 
 ---
 ## Servlet 데이터 공유
