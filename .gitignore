@@ -1,3 +1,11 @@
-*.class
+# folders from ide
 .vscode/
 .idea/
+.metadata/
+.recommenders/
+
+# elipse
+Servers/
+RemoteSystemsTempFiles/
+# java class file
+*.class
