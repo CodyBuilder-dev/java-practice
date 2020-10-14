@@ -8,6 +8,7 @@
     - 해당 폴더 아래에 JSP파일 작성
 - 프로젝트 실행 : JSP파일 우클릭 > Run As > Run on the server
     - JSP파일은 변경해도 Tomcat 재기동 필요 없음
+    - JSP는 런타임에서 호출되는 순간 컴파일
 - 프로젝트 접근 : localhost:8080/프로젝트명/경로/파일명
     - 사용자는 HTML파일로 볼 수 있음
 
@@ -24,6 +25,7 @@
     - 자동으로 src/패키지명 폴더 아래에 생성
     - 해당 java파일의 doGet/doPost메소드 내에 동작 작성
 - 프로젝트 실행 : java파일 우클릭 > Run As > Run on the server
+    - Servlet은 서버 기동 시점에 컴파일
 - 프로젝트 접근 : localhost:8080/프로젝트명/경로/파일명
     - 사용자는 HTML파일로 볼 수 있음
 
