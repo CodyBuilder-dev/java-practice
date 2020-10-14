@@ -8,6 +8,7 @@ pageEncoding="EUC-KR"%>
 <title>Insert title here</title>
 </head>
 <body>
+	<%@ include file="header.jsp" %>
 	<%! 
 		int num  = 10;
 		String str ="jsp";
@@ -29,5 +30,7 @@ pageEncoding="EUC-KR"%>
 	<%= num %>
 	<%-- 아래 부분은 콘솔창에 출력--%>
 	<% System.out.println(num); %>
+	
+	<%@ include file="footer.jsp" %>
 </body>
 </html>
