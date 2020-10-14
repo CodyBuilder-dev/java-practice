@@ -13,8 +13,24 @@
     <servlet-name>ServletMappingEx1</servlet-name>
     <servlet-class>com.testPjt.ServletMappingEx1</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ServletDataShareEx</servlet-name>
+    <servlet-class>com.servlet.ServletDataShareEx</servlet-class>
+    <init-param>
+    	<param-name>adminId</param-name>
+    	<param-value>admin</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>adminPw</param-name>
+    	<param-value>1234</param-value>
+    </init-param>
+  </servlet>
   <servlet-mapping>
     <servlet-name>ServletMappingEx1</servlet-name>
     <url-pattern>/mapping1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletDataShareEx</servlet-name>
+    <url-pattern>/share</url-pattern>
   </servlet-mapping>
 </web-app>

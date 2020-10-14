@@ -103,6 +103,7 @@
 |Java|system.getProperty|[링크](https://unabated.tistory.com/entry/Java%EC%97%90%EC%84%9C-SystemgetProperty)|
 |Java|어노테이션의 이해||
 |Java|@Override의 사용 이유|[링크](https://okky.kr/article/346969)|
+|Java|log4j|[링크](https://cofs.tistory.com/354)<br>[사용법](https://m.blog.naver.com/PostView.nhn?blogId=deet1107&logNo=221451928661&proxyReferer=https:%2F%2Fwww.google.com%2F)|
 
 ### Java Build Tool(Maven,Gradle)
 |분류|항목|링크|
