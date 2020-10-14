@@ -33,4 +33,13 @@
     <servlet-name>ServletDataShareEx</servlet-name>
     <url-pattern>/share</url-pattern>
   </servlet-mapping>
+  
+  <context-param>
+  	<param-name>testId</param-name>
+  	<param-value>test</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>testPw</param-name>
+  	<param-value>123</param-value>
+  </context-param>
 </web-app>

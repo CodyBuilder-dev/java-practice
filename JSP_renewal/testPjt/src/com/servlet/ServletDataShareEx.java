@@ -29,9 +29,16 @@ public class ServletDataShareEx extends HttpServlet {
 		
 		String adminId = getServletConfig().getInitParameter("adminId");
 		String adminPw = getServletConfig().getInitParameter("adminId");
-		
+		String testId = getServletContext().getInitParameter("testId");		
 		PrintWriter o = response.getWriter();
-		o.print(adminId +' '+ adminPw);
+		o.print(adminId +' '+ adminPw + ' ' + testId+'\n');
+		
+		// 이미 초기화된 init param은 수정 불가능
+		//getServletContext().setInitParameter("testId","noTest");
+		String testPw = (String) getServletContext().getAttribute("testPw");
+		getServletContext().setAttribute("testPw", "21");
+		
+		o.print(adminId +' '+ adminPw + ' ' + testId+ ' '+testPw+'\n');
 	}
 
 

@@ -50,8 +50,9 @@
 
 ---
 ## Servlet 데이터 공유
-### Servlet Parameter 설정법
+### Servlet Init Parameter 설정법
 - web.xml 에 init parameter를 선언
 - servlet 내에서 getServletConfig().getInitParamter()에서 사용가능
 ### Context Parameter
+- 동일하게, web.xml내에서 설정 및 동일한 getServletContext().getInitParamter()에서 사용가능
 ### 
