@@ -50,6 +50,8 @@
 
 ---
 ## Servlet 데이터 공유
-### 개념
-### 방법1. web.xml을 이용한 설정
-### 방법2. Java Annotation을 이용한 설정
+### Servlet Parameter 설정법
+- web.xml 에 init parameter를 선언
+- servlet 내에서 getServletConfig().getInitParamter()에서 사용가능
+### Context Parameter
+### 
