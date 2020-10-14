@@ -104,6 +104,7 @@
 |Java|어노테이션의 이해||
 |Java|@Override의 사용 이유|[링크](https://okky.kr/article/346969)|
 |Java|log4j|[링크](https://cofs.tistory.com/354)<br>[사용법](https://m.blog.naver.com/PostView.nhn?blogId=deet1107&logNo=221451928661&proxyReferer=https:%2F%2Fwww.google.com%2F)|
+|Java|split() 메소드|[링크](https://jamesdreaming.tistory.com/84)|
 
 ### Java Build Tool(Maven,Gradle)
 |분류|항목|링크|
@@ -163,6 +164,7 @@
 |웹서버|Apache Web Server의 이해||
 |웹서버|Tomcat WAS 이해||
 |웹서버|Tomcat 소스코드 패키지 인식|[링크](https://zzznara2.tistory.com/414)|
+|웹서버|Tomcat 재기동 없이 Hot Swapping|[Spring-loaded(맥)](https://beyondj2ee.wordpress.com/2015/10/24/%EB%B9%A0%EB%A5%B8-%EC%83%9D%EC%82%B0%EC%84%B1%EC%9D%84-%EC%9C%84%ED%95%B4%EC%84%9C-%EC%9E%AC%EA%B8%B0%EB%8F%99-%EC%97%86%EC%9D%B4-%EC%84%9C%EB%B2%84-hot-swapping-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/)<br>[Spring-loaded(윈도우)](https://hee-kkk.tistory.com/50)|
 |아키텍처|Spring Boot 쿠버네티스 컨테이너화|[링크](https://futurecreator.github.io/2019/01/19/spring-boot-containerization-and-ci-cd-to-kubernetes-cluster/)|
 |아키텍처|프론트 컨트롤러 패턴|[링크](https://opentutorials.org/module/3569/21219)|
 |아키텍처|스프링 부트를 이용한 MSA|[링크](https://waspro.tistory.com/451)|
@@ -181,8 +183,9 @@
 |커넥션 풀|hikari CP 설정|[링크](https://javacan.tistory.com/entry/spring-boot-2-hikaricp-property)|
 |SQL Mapper|iBatis란 무엇일까?|[링크](https://jonghoit.tistory.com/73)|
 |SQL Mapper|iBatis와 MyBatis 차이|[링크](https://uwostudy.tistory.com/19)|
+|SQL Mapper|iBatis 치환변수 #와 $ 이해|[링크](https://dsmoon.tistory.com/entry/ibatis-%EC%BF%BC%EB%A6%AC-%EB%8F%99%EC%9E%91-%EC%9B%90%EB%A6%AC-%EB%B0%8F-%EC%A3%BC%EC%9D%98%EC%A0%90-%EB%B3%80%EC%88%98)|
 |SQL Mapper|MyBatis의 이해||
-|SQL Mapper|MyBatis 사용법||
+|SQL Mapper|MyBatis 사용법|[DataSource 설정](https://mangkyu.tistory.com/22)|
 |ORM|JPA란 무엇일까?|[링크](https://bit.ly/3ib0zDP) |
 |ORM|Persistence를 어떻게 번역해야 할까|[링크](https://homo-ware.tistory.com/4)|
 |ORM|JPA Repository의 이해||
