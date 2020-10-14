@@ -36,6 +36,8 @@ public class ServletDataShareEx extends HttpServlet {
 		// 이미 초기화된 init param은 수정 불가능
 		//getServletContext().setInitParameter("testId","noTest");
 		String testPw = (String) getServletContext().getAttribute("testPw");
+		
+		// 페이지상에서 처음에는 null로 나오다가, 새로고침을 하면 21이 된다. 동작 파악 필요
 		getServletContext().setAttribute("testPw", "21");
 		
 		o.print(adminId +' '+ adminPw + ' ' + testId+ ' '+testPw+'\n');
