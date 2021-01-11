@@ -1,10 +1,15 @@
 package main.java;
 
+import main.java.functional.AbsInterface;
+import main.java.functional.AbsInterfaceCalc;
+import main.java.functional.UserFunction;
+
+import java.time.*;
 import java.util.function.Function;
 
 public class App {
-    public static void main(String[] args){
-//        AbsInterface runSomething = new AbsInterface() {
+    public void functional() {
+        //        AbsInterface runSomething = new AbsInterface() {
 //            @Override
 //            public void doTask() {
 //                System.out.println("안녕하세요!");
@@ -47,5 +52,29 @@ public class App {
         Function<Integer, Integer> higherFunction = mult10.compose(add10);
         System.out.println(higherFunction.apply(5));
 
+    }
+
+    public void datetime() {
+        // 컴퓨터용 시간
+        Instant instant = Instant.now();
+        System.out.println(instant); // Human Time UTC
+        ZoneId zone = ZoneId.systemDefault();
+        System.out.println(zone);
+        ZonedDateTime zonedDateTime = instant.atZone(zone);
+
+        System.out.println(zonedDateTime);
+
+        // 휴먼옹 시간
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now);
+
+        LocalDateTime birthday = LocalDateTime.of(1993, 8, 16,0,0,0);
+        System.out.println(birthday);
+    }
+
+    public static void main(String[] args){
+        App app = new App();
+//        app.functional();
+        app.datetime();
     }
 }
