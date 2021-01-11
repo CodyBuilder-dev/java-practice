@@ -1,4 +1,4 @@
-package main.java;
+package main.java.functional;
 
 public interface AbsInterface {
     abstract void doTask();
