@@ -5,7 +5,11 @@ import main.java.functional.AbsInterfaceCalc;
 import main.java.functional.UserFunction;
 
 import java.time.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class App {
     public void functional() {
@@ -72,9 +76,35 @@ public class App {
         System.out.println(birthday);
     }
 
+    public void stream() {
+        List<String> names = new ArrayList<>();
+        names.add("apple");
+        names.add("banana");
+        names.add("kiwi");
+        names.add("john-maynard-keynes");
+
+        //stream 사용
+
+        // 중개 오퍼레이션만 사용할 경우 함수가 실행되지 않음
+//        names.stream().map(s->{
+//            System.out.println(s);
+//            return s.toUpperCase();
+//        });
+
+        List<String> collectedNames = names.stream().map(s->{
+            System.out.println(s);
+            return s.toUpperCase();
+        }).collect(Collectors.toList());
+
+        System.out.println(collectedNames);
+
+        names.forEach(System.out::println);
+    }
+
     public static void main(String[] args){
         App app = new App();
 //        app.functional();
-        app.datetime();
+//        app.datetime();
+        app.stream();
     }
 }
