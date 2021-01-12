@@ -39,45 +39,11 @@
 |[스프링 부트와 JPA 로드맵](https://www.inflearn.com/roadmaps/149)|JPA|김영한님 인프런 로드맵|
 |[Spring Boot 개념과 활용 - 백기선](https://velog.io/@max9106/series/Spring-Boot-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%B6%80%ED%8A%B8-%EA%B8%B0%EC%B4%88)|Spring boot|백기선님의 인프런 인강 요약정리|
 
-
-### 개발환경(Java)
-|항목|링크|
-|--|--|
-|Java 환경변수 설정|[Windows10](https://zerojay.tistory.com/2)|
-
 ### 개발환경(Eclipse/전자정부)
 |분류|항목|링크|
 |---|---|---|
-|eclipse|Spring 개발환경 설정|[링크](https://addio3305.tistory.com/32?category=772645)|
-|eclipse|eclipse Subversion 설치|[링크](https://recipes4dev.tistory.com/155)|
-|eclipse|eclipse에서 소스 비교부터 svn 커밋까지||
-|eclipse|자동 빌드 설정|[링크](https://dololak.tistory.com/63)|
-|전자정부 프레임워크|전자정부 프레임워크 이해|https://coding-restaurant.tistory.com/146|
-|전자정부 프레임워크|내장 Spring Starter|https://offbyone.tistory.com/391|
-|전자정부 프레임워크|Code Generation|[링크](https://www.egovframe.go.kr/wiki/doku.php?id=egovframework:dev2:imp:codegen)|
-|전자정부 프레임워크|Tomcat lifecycle exception 해결|[링크](https://startsecure.tistory.com/55)|
+|clipse|Spring 개발환경 설정|[링크](https://addio3305.tistory.com/32?category=772645)|
 |Eclipse|트러블슈팅 기록|[링크](ISSUE.md)|
-
-### Eclipse 단축키
-|단축키|설명|
-|---|---|
-|`Ctrl+Shift+R`|원하는 제목의 파일 열기|
-|`Ctrl+H`| 파일 내용 찾기|
-|`Ctrl+Shift+f`|자동 줄맞춤|
-|`Ctrl+Shift+/`|범위 주석 처리|
-|`Ctrl+Shift+\`|범위 주석 해제|
-
-### 개발환경(IntelliJ)
-
-### 개발환경(VS Code)
-|분류|항목|링크|
-|---|---|---|
-|VSCode|VSCode로 소스 비교||
-|VSCode|VSCode에 SVN extension 설치하기||
-|VSCode|Spring 개발환경 설정|[링크](https://sambalim.tistory.com/67)|
-|VSCode|VSCode에서 Springboot 빌드하기|[링크](https://myjamong.tistory.com/123)|
-|VSCode|VSCode에서 JUnit 사용하기||
-|Winmerge|Winmerge로 소스 비교 및 내용 변경||
 
 ### Java 문법
 |분류|항목|링크|
