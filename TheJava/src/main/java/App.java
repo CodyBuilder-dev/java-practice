@@ -1,8 +1,12 @@
 package main.java;
 
+
+import main.java.bytecode.Hat;
 import main.java.functional.AbsInterface;
 import main.java.functional.AbsInterfaceCalc;
 import main.java.functional.UserFunction;
+import net.bytebuddy.ByteBuddy;
+import net.bytebuddy.implementation.FixedValue;
 
 import java.time.*;
 import java.util.ArrayList;
@@ -10,6 +14,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+
+import static net.bytebuddy.matcher.ElementMatchers.named;
 
 public class App {
     public void functional() {
@@ -101,10 +107,19 @@ public class App {
         names.forEach(System.out::println);
     }
 
+    public void magician() {
+//        new ByteBuddy().redefine(Hat.class)
+//                .method(named("pullOut")).intercept(FixedValue.value("Rabbit!"))
+//                .make().saveIn();
+
+        System.out.println(new Hat().pullOut());
+    }
+
     public static void main(String[] args){
         App app = new App();
 //        app.functional();
 //        app.datetime();
-        app.stream();
+//        app.stream();
+        app.magician();
     }
 }
