@@ -1,4 +1,4 @@
-package com.testPjt;
+package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloServlet
  */
+@WebServlet("/SE")
 public class ServletMappingEx1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -1,4 +1,4 @@
-package com.testPjt;
+package com.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
