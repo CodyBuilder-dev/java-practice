@@ -28,6 +28,19 @@
     </init-param>
   </servlet>
   
+    <servlet>
+	    <servlet-name>JspAdmin</servlet-name>
+	    <jsp-file>/jspAdmin.jsp</jsp-file>
+	    <init-param>
+	      <param-name>adminName</param-name>
+	      <param-value>CodyBuilder</param-value>
+	    </init-param>
+	    <init-param>
+	      <param-name>adminPw</param-name>
+	      <param-value>1234</param-value>
+	    </init-param>
+  </servlet>
+  
   
   <servlet-mapping>
     <servlet-name>ServletMappingEx1</servlet-name>
@@ -36,6 +49,10 @@
   <servlet-mapping>
     <servlet-name>ServletDataShareEx</servlet-name>
     <url-pattern>/share</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>JspAdmin</servlet-name>
+    <url-pattern>/jspAdmin.jsp</url-pattern>
   </servlet-mapping>
   
   

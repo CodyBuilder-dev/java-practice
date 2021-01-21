@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Form데이터 테스트</title>
+		<title>Form 데이터 테스트</title>
 	</head>
 	<body>
-		<form action="mSignUp" method="GET">
+		<form action="SignUp.jsp" method="GET">
 			name : <input type="text" name="m_name"></br>
 			password : <input type="password" name="m_pass"></br>
 			gender : Man<input type="radio" name="m_gender" value="M" checked="checked">
-				,Woman<input type="radio" name="m_gender" value="W">
+				,Woman<input type="radio" name="m_gender" value="W"></br>
+			hobby : sport<input type="checkbox" name="m_hobby" value="sports">,
+					cooking<input type="checkbox" name="m_hobby" value="cooking"></br>
 			<input type="submit" value="sign up">
-			
 		</form>
 	</body>
 </html>
