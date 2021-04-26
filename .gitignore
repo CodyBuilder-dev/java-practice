@@ -9,3 +9,6 @@ Servers/
 RemoteSystemsTempFiles/
 # java class file
 *.class
+
+# config
+persistence.xml
