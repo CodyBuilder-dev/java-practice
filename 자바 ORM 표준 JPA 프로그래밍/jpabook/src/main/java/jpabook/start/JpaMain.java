@@ -1,6 +1,6 @@
 package jpabook.start;
 
-import org.hibernate.type.BasicTypeRegistry;
+import jpabook.start.entity.Member;
 
 import javax.persistence.*;
 import java.util.List;
