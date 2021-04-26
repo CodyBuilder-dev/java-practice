@@ -23,7 +23,7 @@ public class JpaMain {
         try {
 
             tx.begin(); //트랜잭션 시작
-//            logic(em);  //비즈니스 로직
+            logic(em);  //비즈니스 로직
             tx.commit();//트랜잭션 커밋
 
         } catch (Exception e) {
@@ -38,14 +38,15 @@ public class JpaMain {
 
     public static void logic(EntityManager em) {
 
-        String id = "id1";
+//        String id = "id1";
+        Long id = 99L;
         Member member = new Member();
         member.setId(id);
         member.setUsername("지한");
         member.setAge(2);
 
         //등록
-        em.persist(member);
+//        em.persist(member);
 
         //수정
         member.setAge(20);
