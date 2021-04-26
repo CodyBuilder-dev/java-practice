@@ -1,6 +1,8 @@
 package jpabook.start;
 
 import javax.persistence.*;  //**
+import java.util.Date;
+
 
 /**
  * User: HolyEyE
@@ -19,6 +21,16 @@ public class Member {
 
     private Integer age;
 
+    private RoleType roleType;
+
+    private Date registerdDate;
+    private Date lastodifiedDate;
+
+    private String description;
+
+//    private MyCustomClassType customClassType;
+
+    // Getter, Setter
     public String getId() {
         return id;
     }
