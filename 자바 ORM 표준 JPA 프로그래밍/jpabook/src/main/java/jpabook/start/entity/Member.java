@@ -1,4 +1,6 @@
-package jpabook.start;
+package jpabook.start.entity;
+
+import jpabook.start.RoleType;
 
 import javax.persistence.*;  //**
 import java.util.Date;
@@ -28,6 +30,10 @@ public class Member {
 
     @Column(name = "NAME", nullable = false, length = 10)
     private String username;
+
+    private String city;
+    private String street;
+    private String zipcode;
 
     private Integer age;
 
