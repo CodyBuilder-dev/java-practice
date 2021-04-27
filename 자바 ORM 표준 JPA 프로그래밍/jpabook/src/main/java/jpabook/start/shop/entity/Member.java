@@ -1,6 +1,4 @@
-package jpabook.start.entity;
-
-import jpabook.start.RoleType;
+package jpabook.start.shop.entity;
 
 import javax.persistence.*;  //**
 import java.util.Date;

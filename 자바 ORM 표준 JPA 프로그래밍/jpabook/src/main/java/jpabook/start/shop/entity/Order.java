@@ -1,4 +1,4 @@
-package jpabook.start.entity;
+package jpabook.start.shop.entity;
 
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
