@@ -3,10 +3,12 @@
 .idea/
 .metadata/
 .recommenders/
+*.iml
 
 # elipse
 Servers/
 RemoteSystemsTempFiles/
+
 # java class file
 *.class
 
