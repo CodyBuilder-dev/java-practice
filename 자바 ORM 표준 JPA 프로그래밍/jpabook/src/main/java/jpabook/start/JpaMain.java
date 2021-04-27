@@ -67,10 +67,11 @@ public class JpaMain {
         em = emf.createEntityManager();
         tx = em.getTransaction();
         if (shouldStartJoinLogic) {
-            // 6. Join Logic
+            // 6. Join / find all Logic
             try {
                 tx.begin();
-                queryLogicJoin(em);
+//                queryLogicJoin(em);
+                findAllPlayers(em);
                 tx.commit();
 
             } catch (Exception e) {
@@ -152,6 +153,14 @@ public class JpaMain {
         System.out.println("정승네트워크 현재 직원수:"+resultList.size());
 
         for (Player player : resultList) {
+            System.out.println(player.getName());
+        }
+    }
+
+    private static void findAllPlayers(EntityManager em){
+        Team team = em.find(Team.class, "team1");
+        System.out.println(team.getPlayers().size());
+        for (Player player: team.getPlayers()){
             System.out.println(player.getName());
         }
     }
