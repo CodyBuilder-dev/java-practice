@@ -20,7 +20,14 @@ public class Player {
     public void setName(String name) { this.name = name; }
 
     public Team getTeam() { return team; }
-    public void setTeam(Team team) { this.team = team; }
+    // 양방향 관계에 안전하게 동작하도록, 연관관계 편의 메서드로 리팩토링
+    public void setTeam(Team team) {
+        if(this.team != null){
+            this.team.getPlayers().remove(this);
+        }
+        this.team = team;
+        team.getPlayers().add(this);
+    }
 
 
 }
