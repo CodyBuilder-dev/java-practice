@@ -2,6 +2,7 @@ package jpabook.start.shop.entity;
 
 import javax.persistence.*;  //**
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -42,7 +43,17 @@ public class Member {
 
     private String description;
 
-//    private MyCustomClassType customClassType;
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
+    }
+
+    //    private MyCustomClassType customClassType;
+    @OneToMany(mappedBy = "member2")
+    private List<Order> orders;
 
     // Getter, Setter
     public Long getId() {
