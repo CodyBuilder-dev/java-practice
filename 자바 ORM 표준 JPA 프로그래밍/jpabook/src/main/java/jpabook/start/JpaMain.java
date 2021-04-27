@@ -1,8 +1,8 @@
 package jpabook.start;
 
 import jpabook.start.shop.entity.Member;
-import jpabook.start.test.entity.Player;
-import jpabook.start.test.entity.Team;
+import jpabook.start.league.entity.Player;
+import jpabook.start.league.entity.Team;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,7 +24,7 @@ public class JpaMain {
 
 
         boolean shouldStartMemberLogic = false;
-//        shouldStartMemberLogic = true;
+        shouldStartMemberLogic = true;
         boolean shouldStartPlayerLogic = false;
         shouldStartPlayerLogic = true;
         boolean shouldStartJoinLogic = false;
@@ -47,6 +47,8 @@ public class JpaMain {
             }
         }
 
+        em = emf.createEntityManager();
+        tx = em.getTransaction();
         if (shouldStartPlayerLogic) {
             // 5. Player Business Logic
             try {
@@ -62,6 +64,8 @@ public class JpaMain {
             }
         }
 
+        em = emf.createEntityManager();
+        tx = em.getTransaction();
         if (shouldStartJoinLogic) {
             // 6. Join Logic
             try {
@@ -86,14 +90,14 @@ public class JpaMain {
     public static void logic(EntityManager em) {
 
 //        String id = "id1";
-        Long id = 99L;
+        Long id = 1L;
         Member member = new Member();
-        member.setId(id);
+//        member.setId(id);
         member.setUsername("지한");
         member.setAge(2);
 
         //등록
-//        em.persist(member);
+        em.persist(member);
 
         //수정
         member.setAge(20);
@@ -113,9 +117,11 @@ public class JpaMain {
 
     public static void playerLogic(EntityManager em) {
         Player player = new Player();
+        Player player2 = new Player();
 
         Team team = new Team();
         team.setId("team1");
+        team.setName("정승네트워크");
 
         // 반드시 team을 persist 상태로 만들어야 한다
         em.persist(team);
@@ -123,11 +129,15 @@ public class JpaMain {
         player.setId("player1");
         player.setName("조충범");
         player.setTeam(team);
-
         em.persist(player);
 
+        player2.setId("player2");
+        player2.setName("이미나");
+        player2.setTeam(team);
+        em.persist(player2);
+
         Player findPlayer = em.find(Player.class, "player1");
-        System.out.println(findPlayer.getName());
+//        System.out.println(findPlayer.getName());
     }
 
     private static void queryLogicJoin(EntityManager em) {
@@ -136,6 +146,13 @@ public class JpaMain {
         // JPQL을 이용한 Join 처리후 조회
         // 일반적인 SQL과는 문법이 좀 다르다
         List<Player> resultList = em.createQuery(jpql,Player.class)
-                .getResultList()
+                .setParameter("teamName","정승네트워크")
+                .getResultList();
+
+        System.out.println("정승네트워크 현재 직원수:"+resultList.size());
+
+        for (Player player : resultList) {
+            System.out.println(player.getName());
+        }
     }
 }

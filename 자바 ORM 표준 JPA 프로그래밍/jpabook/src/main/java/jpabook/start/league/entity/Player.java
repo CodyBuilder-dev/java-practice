@@ -1,4 +1,4 @@
-package jpabook.start.test.entity;
+package jpabook.start.league.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
