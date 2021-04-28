@@ -18,8 +18,8 @@ public class Order {
     @ManyToOne
     private Member member;
 
-    @OneToMany
-    private List<Item> orderItems;
+    @OneToMany(mappedBy = "order")
+    private List<OrderItem> orderItems;
 
     public Member getMember() {
         return member;
@@ -34,11 +34,11 @@ public class Order {
     }
 
 
-    public List<Item> getOrderItems() {
+    public List<OrderItem> getOrderItems() {
         return orderItems;
     }
 
-    public void setOrderItems(List<Item> orderItems) {
+    public void setOrderItems(List<OrderItem> orderItems) {
         this.orderItems = orderItems;
     }
 
