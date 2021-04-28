@@ -12,7 +12,7 @@ public class OrderItem {
 
     @ManyToOne
     private Item item;
-//    private Long itemId; / 잘못된 매핑
+//    private Long itemId; // 데이터베이스 중심의 매핑
 
     @ManyToOne
     private Order order;

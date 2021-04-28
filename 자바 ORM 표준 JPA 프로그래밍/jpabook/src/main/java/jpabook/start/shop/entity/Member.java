@@ -43,17 +43,11 @@ public class Member {
 
     private String description;
 
-    public List<Order> getOrders() {
-        return orders;
-    }
-
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
-    }
-
-    //    private MyCustomClassType customClassType;
-    @OneToMany(mappedBy = "member2")
+    @OneToMany(mappedBy = "member")
     private List<Order> orders;
+
+    // 커스텀 자료형은 매핑 정보 없으면 예외 발생
+    //    private MyCustomClassType customClassType;
 
     // Getter, Setter
     public Long getId() {
@@ -73,7 +67,9 @@ public class Member {
     public Integer getAge() {
         return age;
     }
-    public void setAge(Integer age) {
-        this.age = age;
-    }
+    public void setAge(Integer age) { this.age = age; }
+
+    public List<Order> getOrders() { return this.orders; }
+    public void setOrders(List<Order> orders) { this.orders = orders; }
+
 }
