@@ -3,6 +3,8 @@ package jpabook.start;
 import jpabook.start.shop.entity.Member;
 import jpabook.start.league.entity.Player;
 import jpabook.start.league.entity.Team;
+import jpabook.start.shop.entity.Order;
+import jpabook.start.shop.entity.OrderItem;
 
 import javax.persistence.*;
 import java.util.List;
@@ -163,5 +165,17 @@ public class JpaMain {
         for (Player player: team.getPlayers()){
             System.out.println(player.getName());
         }
+    }
+
+    public static void orderLogic(EntityManager em) {
+        // 주문으로부터 회원을 찾는 가상의 그래프 탐색 예제
+        Long orderId = 1L;
+        Order order = em.find(Order.class, orderId);
+        Member member = order.getMember();
+
+        // 주문으로부터 해당 주문의 상품을 찾는 가상의 그래프 탐색 예제
+        Order order2 = em.find(Order.class, orderId);
+        List<OrderItem> orderItem = order2.getOrderItems();
+
     }
 }
