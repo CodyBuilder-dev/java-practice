@@ -5,7 +5,9 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Item {
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "ITEM_TYPE")
+public class Item extends DateInfo{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
@@ -20,7 +22,6 @@ public class Item {
 
     @ManyToMany
     private List<Category> categories;
-
 
 
 }
