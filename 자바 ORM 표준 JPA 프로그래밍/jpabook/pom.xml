@@ -23,6 +23,7 @@
 
 		<!-- ORACLE JDBC 버전 -->
 		<ojdbc6.verseion>11.2.0.4</ojdbc6.verseion>
+
 	</properties>
 
 
@@ -44,6 +45,14 @@
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>${ojdbc6.verseion}</version>
+		</dependency>
+
+		<!-- 테스트코드를 위한 JUNIT-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 

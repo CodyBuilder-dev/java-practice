@@ -3,7 +3,7 @@ package jpabook.start.shop.entity;
 import javax.persistence.*;
 
 @Entity
-public class OrderItem {
+public class OrderItem extends DateInfo{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

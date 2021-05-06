@@ -6,7 +6,7 @@ import javax.persistence.ManyToMany;
 import java.util.List;
 
 @Entity
-public class Category {
+public class Category extends DateInfo{
 
     @Id
     private long id;

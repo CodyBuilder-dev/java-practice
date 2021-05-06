@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class Order {
+public class Order extends DateInfo{
     @Id
     private Long id;
 

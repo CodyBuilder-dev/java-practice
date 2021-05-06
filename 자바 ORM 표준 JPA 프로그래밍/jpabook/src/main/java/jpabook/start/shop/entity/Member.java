@@ -17,9 +17,9 @@ import java.util.List;
 @SequenceGenerator(
         name = "MEMBER_SEQ_GENERATOR",
         sequenceName = "MEMBER_SEQ",
-        initialValue = 1,allocationSize = 1
+        initialValue = 1, allocationSize = 1
 )
-public class Member {
+public class Member extends DateInfo{
 
     @Id
     @Column(name = "ID")
@@ -72,4 +72,8 @@ public class Member {
     public List<Order> getOrders() { return this.orders; }
     public void setOrders(List<Order> orders) { this.orders = orders; }
 
+}
+
+enum RoleType {
+    ADMIN,USER
 }
