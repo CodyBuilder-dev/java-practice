@@ -7,4 +7,6 @@ import javax.persistence.Id;
 public class GrandMother {
     @Id
     private Long id;
+
+    private String name;
 }

@@ -10,8 +10,9 @@ public class Child {
     @EmbeddedId
     private ChildId id;
 
-    @MapsId
     @ManyToOne
+    @MapsId("motherId") // MapsId를 하지 않으면 단순한 비식별 다대일 관계로 매핑됨
     private Mother mother;
 
+    private String name;
 }

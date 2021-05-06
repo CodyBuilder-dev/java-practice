@@ -8,7 +8,8 @@ public class Mother {
     private MotherId id;
 
     @ManyToOne
-    @MapsId
+    @MapsId("grandMotherId") // 기본키(MotherId)의 필드명에 매핑하여 식별관계로 만들겠다
     private GrandMother grandmother;
 
+    private String name;
 }
