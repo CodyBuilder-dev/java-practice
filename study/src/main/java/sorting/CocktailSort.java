@@ -4,14 +4,14 @@ import static sorting.SortingComparison.isSorted;
 
 import java.util.Random;
 
-public class BubbleSort {
+public class CocktailSort {
 
   public static void main(String[] args) {
     int[] sizes = {1000, 5000, 10000, 20000};
     Random random = new Random();
 
-    System.out.println("Bubble Sort Time Complexity Test:");
-    System.out.println("---------------------------------");
+    System.out.println("Cocktail Sort Time Complexity Test:");
+    System.out.println("------------------------------------");
 
     for (int size : sizes) {
       int[] arr = new int[size];
@@ -20,7 +20,7 @@ public class BubbleSort {
       }
 
       long startTime = System.nanoTime();
-      bubbleSort(arr);
+      cocktailSort(arr);
       long endTime = System.nanoTime();
 
       long duration = (endTime - startTime) / 1_000_000; // milliseconds
@@ -29,17 +29,25 @@ public class BubbleSort {
     }
   }
 
-
-
-  public static void bubbleSort(int[] arr) {
+  public static void cocktailSort(int[] arr) {
     int n = arr.length;
     for (int i = 0; i < n -1 ; i++) {
-      for (int j = 0; j < n - i - 1; j++){
-        if (arr[j] > arr[j+1]) {
+      int j = i;
+      while (j < n - i - 1){
+        if (arr[j] > arr[j+1]){
           int temp = arr[j];
           arr[j] = arr[j+1];
           arr[j+1] = temp;
         }
+        j++;
+      }
+      while (j > i) {
+        if( arr[j-1] > arr[j]){
+          int temp = arr[j-1];
+          arr[j-1] = arr[j];
+          arr[j] = temp;
+        }
+        j--;
       }
     }
   }
