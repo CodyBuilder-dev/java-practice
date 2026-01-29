@@ -1,6 +1,7 @@
 package sorting;
 
 import static sorting.SortingComparison.isSorted;
+import static sorting.SortingComparison.swap;
 
 import java.util.Random;
 
@@ -55,11 +56,5 @@ public class DoubleSelectionSort {
       // 최대값 교환
       swap(arr, n - i - 1, maxIndex);
     }
-  }
-
-  private static void swap(int[] arr, int i, int j) {
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
   }
 }

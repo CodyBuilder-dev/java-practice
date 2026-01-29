@@ -1,17 +1,16 @@
 package sorting;
 
 import static sorting.SortingComparison.isSorted;
-import static sorting.SortingComparison.swap;
 
 import java.util.Random;
 
-public class SelectionSort {
+public class InsertionSort {
 
   public static void main(String[] args) {
     int[] sizes = {1000, 5000, 10000, 20000};
     Random random = new Random();
 
-    System.out.println("Selection Sort Time Complexity Test:");
+    System.out.println("Insertion Sort Time Complexity Test:");
     System.out.println("------------------------------------");
 
     for (int size : sizes) {
@@ -21,7 +20,7 @@ public class SelectionSort {
       }
 
       long startTime = System.nanoTime();
-      selectionSort(arr);
+      insertionSort(arr);
       long endTime = System.nanoTime();
 
       long duration = (endTime - startTime) / 1_000_000; // milliseconds
@@ -30,15 +29,16 @@ public class SelectionSort {
     }
   }
 
-  public static void selectionSort (int[] arr){
-    for (int i = 0; i < arr.length - 1; i++) {
-      int minIndex = i;
-      for (int j = i + 1; j < arr.length; j++) {
-        if (arr[j] < arr[minIndex]) {
-          minIndex = j;
-        }
+  public static void insertionSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 1; i < n; i++) {
+      int key = arr[i]; // key를 쓰는 이유 : 매번 swap하면서 진행하지 말고, 한칸씩 밀어낸 후 마지막에 대입. 매번 swap하는 경우 선택정렬보다 더 느릴 수 있음
+      int j = i - 1;
+      while (j >= 0 && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        j--;
       }
-      swap(arr, i, minIndex);
+      arr[j + 1] = key;
     }
   }
 }

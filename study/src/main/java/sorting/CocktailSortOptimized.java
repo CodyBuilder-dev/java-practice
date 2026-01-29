@@ -1,6 +1,7 @@
 package sorting;
 
 import static sorting.SortingComparison.isSorted;
+import static sorting.SortingComparison.swap;
 
 import java.util.Random;
 
@@ -50,11 +51,5 @@ public class CocktailSortOptimized {
             }
             start = lastSwap;
         }
-    }
-
-    private static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
     }
 }

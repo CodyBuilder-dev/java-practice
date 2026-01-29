@@ -4,6 +4,12 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class SortingComparison {
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
     public static boolean isSorted(int[] arr) {
         for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] > arr[i + 1]) {
@@ -18,9 +24,9 @@ public class SortingComparison {
         Random random = new Random();
 
         System.out.println("Sorting Algorithms Performance Comparison:");
-        System.out.println("==================================================================================================================");
-        System.out.printf("%-12s | %-12s | %-12s | %-15s | %-12s | %-12s%n", "Array Size", "Bubble", "Cocktail", "Cocktail (Opt)", "Selection", "Double Select");
-        System.out.println("------------------------------------------------------------------------------------------------------------------");
+        System.out.println("=====================================================================================================================================================");
+        System.out.printf("%-12s | %-12s | %-12s | %-15s | %-12s | %-12s | %-12s | %-12s%n", "Array Size", "Bubble", "Cocktail", "Cocktail (Opt)", "Selection", "Double Select", "Insertion", "Insertion (Swap)");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------");
 
         for (int size : sizes) {
             int[] baseArr = new int[size];
@@ -63,8 +69,22 @@ public class SortingComparison {
             long end4 = System.nanoTime();
             long time4 = (end4 - start4) / 1_000_000;
 
-            System.out.printf("%-12d | %8d ms | %10d ms | %12d ms | %10d ms | %13d ms%n", size, time1, time2, time3, time5, time4);
+            // Test Insertion Sort
+            int[] arr6 = Arrays.copyOf(baseArr, size);
+            long start6 = System.nanoTime();
+            InsertionSort.insertionSort(arr6);
+            long end6 = System.nanoTime();
+            long time6 = (end6 - start6) / 1_000_000;
+
+            // Test Inefficient Insertion Sort
+            int[] arr7 = Arrays.copyOf(baseArr, size);
+            long start7 = System.nanoTime();
+            InsertionSortInefficient.insertionSortInefficient(arr7);
+            long end7 = System.nanoTime();
+            long time7 = (end7 - start7) / 1_000_000;
+
+            System.out.printf("%-12d | %8d ms | %10d ms | %12d ms | %10d ms | %11d ms | %10d ms | %12d ms%n", size, time1, time2, time3, time5, time4, time6, time7);
         }
-        System.out.println("==================================================================================================================");
+        System.out.println("=====================================================================================================================================================");
     }
 }
