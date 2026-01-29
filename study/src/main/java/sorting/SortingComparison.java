@@ -18,9 +18,9 @@ public class SortingComparison {
         Random random = new Random();
 
         System.out.println("Sorting Algorithms Performance Comparison:");
-        System.out.println("===========================================");
-        System.out.printf("%-12s | %-12s | %-12s | %-15s%n", "Array Size", "Bubble Sort", "Cocktail Sort", "Cocktail (Opt)");
-        System.out.println("---------------------------------------------------------------------------");
+        System.out.println("==================================================================================================================");
+        System.out.printf("%-12s | %-12s | %-12s | %-15s | %-12s | %-12s%n", "Array Size", "Bubble", "Cocktail", "Cocktail (Opt)", "Selection", "Double Select");
+        System.out.println("------------------------------------------------------------------------------------------------------------------");
 
         for (int size : sizes) {
             int[] baseArr = new int[size];
@@ -49,8 +49,22 @@ public class SortingComparison {
             long end3 = System.nanoTime();
             long time3 = (end3 - start3) / 1_000_000;
 
-            System.out.printf("%-12d | %8d ms | %10d ms | %12d ms%n", size, time1, time2, time3);
+            // Test Selection Sort
+            int[] arr5 = Arrays.copyOf(baseArr, size);
+            long start5 = System.nanoTime();
+            SelectionSort.selectionSort(arr5);
+            long end5 = System.nanoTime();
+            long time5 = (end5 - start5) / 1_000_000;
+
+            // Test Double Selection Sort
+            int[] arr4 = Arrays.copyOf(baseArr, size);
+            long start4 = System.nanoTime();
+            DoubleSelectionSort.doubleSelectionSort(arr4);
+            long end4 = System.nanoTime();
+            long time4 = (end4 - start4) / 1_000_000;
+
+            System.out.printf("%-12d | %8d ms | %10d ms | %12d ms | %10d ms | %13d ms%n", size, time1, time2, time3, time5, time4);
         }
-        System.out.println("===========================================");
+        System.out.println("==================================================================================================================");
     }
 }
