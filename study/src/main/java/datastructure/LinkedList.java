@@ -18,6 +18,19 @@ public class LinkedList {
         newNode.setPrev(current);
     }
 
+    public void inverse() {
+        Node<Integer> prev = null;
+        Node<Integer> curr = head;
+        while (curr != null) {
+            Node<Integer> nextTemp = curr.getNext();
+            curr.setNext(prev);
+            curr.setPrev(nextTemp); // doubly linked list 이므로 prev 도 갱신해줘야 함
+            prev = curr;
+            curr = nextTemp;
+        }
+        head = prev;
+    }
+
     // 병합 정렬 시작
     public void sort() {
         head = mergeSort(head);
@@ -122,7 +135,49 @@ public class LinkedList {
         LinkedList list = new LinkedList();
         java.util.Random random = new java.util.Random();
         
-        System.out.println("--- LinkedList Merge Sort Test ---");
+        System.out.println("--- LinkedList Inverse Test ---");
+        System.out.print("Original Data: ");
+        for (int i = 1; i <= 5; i++) {
+            System.out.print(i + " ");
+            list.add(i);
+        }
+        System.out.println();
+
+        list.inverse();
+        System.out.print("Inversed Data: ");
+        list.printList();
+        
+        // 검증: 5 4 3 2 1 순서여야 함
+        Node<Integer> curr = list.head;
+        boolean correct = true;
+        Node<Integer> last = null;
+        for (int i = 5; i >= 1; i--) {
+            if (curr == null || !curr.getValue().equals(i)) {
+                correct = false;
+                break;
+            }
+            last = curr;
+            curr = curr.getNext();
+        }
+        
+        if (correct) {
+            System.out.print("Backward Data: ");
+            curr = last;
+            for (int i = 1; i <= 5; i++) {
+                if (curr == null || !curr.getValue().equals(i)) {
+                    correct = false;
+                    break;
+                }
+                System.out.print(curr.getValue() + " ");
+                curr = curr.getPrev();
+            }
+            System.out.println();
+        }
+        
+        System.out.println("Inverse Correctness: " + correct);
+
+        System.out.println("\n--- LinkedList Merge Sort Test ---");
+        list = new LinkedList();
         System.out.print("Original Data: ");
         for (int i = 0; i < 10; i++) {
             int val = random.nextInt(100);
