@@ -28,10 +28,10 @@ public class SortingComparison {
         Random random = new Random();
 
         System.out.println("Sorting Algorithms Performance Comparison:");
-        System.out.println("=========================================================================================================================================================================================================================================================================================");
-        System.out.printf("%-12s | %-12s | %-12s | %-15s | %-12s | %-14s | %-12s | %-16s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s%n",
-                "Array Size", "Bubble", "Cocktail", "Cocktail(O)", "Selection", "Double Sel", "Insertion", "Insert(S)", "Merge", "Heap(List)", "Heap(Node)", "Heap(Path)", "Heap(PQ)", "Count", "Count(Map)", "Radix", "AdvCount", "AdvRadix");
-        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("=========================================================================================================================================================================================================================================================================================================");
+        System.out.printf("%-12s | %-12s | %-12s | %-15s | %-12s | %-14s | %-12s | %-16s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s%n",
+                "Array Size", "Bubble", "Cocktail", "Cocktail(O)", "Selection", "Double Sel", "Insertion", "Insert(S)", "Merge", "Quick", "Heap(List)", "Heap(Node)", "Heap(Path)", "Heap(PQ)", "Count", "Count(Map)", "Radix", "AdvCount", "AdvRadix");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         for (int size : sizes) {
             int[] baseArr = new int[size];
@@ -94,6 +94,13 @@ public class SortingComparison {
             MergeSort.mergeSort(arr8);
             long end8 = System.nanoTime();
             long time8 = (end8 - start8) / 1_000_000;
+
+            // Test Quick Sort
+            int[] arr9 = Arrays.copyOf(baseArr, size);
+            long start9 = System.nanoTime();
+            QuickSort.quickSort(arr9, 0, size - 1);
+            long end9 = System.nanoTime();
+            long time9 = (end9 - start9) / 1_000_000;
 
             // Test Heap Sort (List-based)
             int[] arrList = Arrays.copyOf(baseArr, size);
@@ -167,9 +174,9 @@ public class SortingComparison {
             long endAdvRadix = System.nanoTime();
             long timeAdvRadix = (endAdvRadix - startAdvRadix) / 1_000_000;
 
-            System.out.printf("%-12d | %9d ms | %9d ms | %12d ms | %9d ms | %11d ms | %9d ms | %13d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms%n",
-                    size, time1, time2, time3, time4, time5, time6, time7, time8, timeList, timeNode, timePath, timePQ, timeCount, timeCountMap, timeRadix, timeAdvCount, timeAdvRadix);
+            System.out.printf("%-12d | %9d ms | %9d ms | %12d ms | %9d ms | %11d ms | %9d ms | %13d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms%n",
+                    size, time1, time2, time3, time4, time5, time6, time7, time8, time9, timeList, timeNode, timePath, timePQ, timeCount, timeCountMap, timeRadix, timeAdvCount, timeAdvRadix);
         }
-        System.out.println("=========================================================================================================================================================================================================================================================================================");
+        System.out.println("=========================================================================================================================================================================================================================================================================================================");
     }
 }
