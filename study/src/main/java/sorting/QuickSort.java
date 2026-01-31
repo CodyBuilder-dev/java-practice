@@ -52,12 +52,16 @@ public class QuickSort {
     }
 
     /**
-     * 배열을 피벗을 기준으로 분할하는 메서드 (Lomuto partition scheme)
+     * 배열을 피벗을 기준으로 분할하는 메서드 (Lomuto partition scheme with Randomized Pivot)
      */
     private static int partition(int[] arr, int low, int high) {
+        // [최적화] 랜덤하게 피벗을 선택하여 최악의 경우(이미 정렬된 배열) 방지
+        Random random = new Random();
+        int pivotIndex = random.nextInt(high - low + 1) + low;
+        swap(arr, pivotIndex, high); // 선택된 랜덤 피벗을 맨 뒤로 보내서 기존 로직 유지
 
-        int pivot = arr[high];      // 여기서는 가장 오른쪽 요소를 피벗으로 선택
-        int i = (low - 1);          // 피벗보다 작은 요소들의 마지막 인덱스
+        int pivot = arr[high];
+        int i = (low - 1); // 피벗보다 작은 요소들의 마지막 인덱스
 
         for (int j = low; j < high; j++) {
             if (arr[j] <= pivot) {  // 피벗보다 작거나 같은 요소 발견!
