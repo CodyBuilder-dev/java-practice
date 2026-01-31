@@ -4,6 +4,7 @@ import datastructure.HeapWithList;
 import datastructure.HeapWithNode;
 import datastructure.HeapWithNodeByBinaryIndexSearch;
 import datastructure.HeapWithPriorityQueue;
+import datastructure.LinkedList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -29,9 +30,9 @@ public class SortingComparison {
 
         System.out.println("Sorting Algorithms Performance Comparison:");
         System.out.println("================================================================================================================================================================================================================================================================================================");
-        System.out.printf("%-12s | %-12s | %-12s | %-19s | %-12s | %-16s | %-12s | %-16s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s%n",
-                "Array Size", "Bubble", "Cocktail", "Cocktail(Optimized)", "Selection", "Double Selection", "Insertion", "Insertion(Swap)", "Merge", "Quick", "Heap(List)", "Heap(Node)", "Heap(Path)", "Heap(PQ)", "Count", "Count(Map)", "Radix", "AdvCount", "AdvRadix");
-        System.out.println("------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-12s | %-12s | %-12s | %-19s | %-12s | %-16s | %-12s | %-16s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s%n",
+                "Array Size", "Bubble", "Cocktail", "Cocktail(Optimized)", "Selection", "Double Selection", "Insertion", "Insertion(Swap)", "Merge", "Quick", "Heap(List)", "Heap(Node)", "Heap(Path)", "Heap(PQ)", "Count", "Count(Map)", "Radix", "AdvCount", "AdvRadix", "Link(Merge)");
+        System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         for (int size : sizes) {
             int[] baseArr = new int[size];
@@ -174,8 +175,16 @@ public class SortingComparison {
             long endAdvRadix = System.nanoTime();
             long timeAdvRadix = (endAdvRadix - startAdvRadix) / 1_000_000;
 
-            System.out.printf("%-12d | %9d ms | %9d ms | %16d ms | %9d ms | %13d ms | %9d ms | %13d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms%n",
-                    size, time1, time2, time3, time4, time5, time6, time7, time8, time9, timeList, timeNode, timePath, timePQ, timeCount, timeCountMap, timeRadix, timeAdvCount, timeAdvRadix);
+            // Test LinkedList Merge Sort
+            long startLL = System.nanoTime();
+            LinkedList linkedList = new LinkedList();
+            for (int val : baseArr) linkedList.add(val);
+            linkedList.sort();
+            long endLL = System.nanoTime();
+            long timeLL = (endLL - startLL) / 1_000_000;
+
+            System.out.printf("%-12d | %9d ms | %9d ms | %16d ms | %9d ms | %13d ms | %9d ms | %13d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms%n",
+                    size, time1, time2, time3, time4, time5, time6, time7, time8, time9, timeList, timeNode, timePath, timePQ, timeCount, timeCountMap, timeRadix, timeAdvCount, timeAdvRadix, timeLL);
         }
         System.out.println("================================================================================================================================================================================================================================================================================================");
     }
