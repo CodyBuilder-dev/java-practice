@@ -28,10 +28,10 @@ public class SortingComparison {
         Random random = new Random();
 
         System.out.println("Sorting Algorithms Performance Comparison:");
-        System.out.println("========================================================================================================================================================================================================");
-        System.out.printf("%-12s | %-12s | %-12s | %-15s | %-12s | %-14s | %-12s | %-16s | %-12s | %-12s | %-12s | %-12s | %-12s%n",
-                "Array Size", "Bubble", "Cocktail", "Cocktail (Opt)", "Selection", "Double Select", "Insertion", "Insertion (Swap)", "Merge", "Heap(List)", "Heap(Node)", "Heap(Path)", "Heap(PQ)");
-        System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("=========================================================================================================================================================================================================================================================================================");
+        System.out.printf("%-12s | %-12s | %-12s | %-15s | %-12s | %-14s | %-12s | %-16s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s | %-12s%n",
+                "Array Size", "Bubble", "Cocktail", "Cocktail(O)", "Selection", "Double Sel", "Insertion", "Insert(S)", "Merge", "Heap(List)", "Heap(Node)", "Heap(Path)", "Heap(PQ)", "Count", "Count(Map)", "Radix", "AdvCount", "AdvRadix");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         for (int size : sizes) {
             int[] baseArr = new int[size];
@@ -132,9 +132,44 @@ public class SortingComparison {
             long endPQ = System.nanoTime();
             long timePQ = (endPQ - startPQ) / 1_000_000;
 
-            System.out.printf("%-12d | %9d ms | %9d ms | %12d ms | %9d ms | %11d ms | %9d ms | %13d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms%n",
-                    size, time1, time2, time3, time4, time5, time6, time7, time8, timeList, timeNode, timePath, timePQ);
+            // Test Counting Sort (User)
+            int[] arrCount = Arrays.copyOf(baseArr, size);
+            long startCount = System.nanoTime();
+            CountingSort.countingSort(arrCount);
+            long endCount = System.nanoTime();
+            long timeCount = (endCount - startCount) / 1_000_000;
+
+            // Test Counting Sort With Map (User)
+            int[] arrCountMap = Arrays.copyOf(baseArr, size);
+            long startCountMap = System.nanoTime();
+            CountingSortWithMap.countingSort(arrCountMap);
+            long endCountMap = System.nanoTime();
+            long timeCountMap = (endCountMap - startCountMap) / 1_000_000;
+
+            // Test Radix Sort (User)
+            int[] arrRadix = Arrays.copyOf(baseArr, size);
+            long startRadix = System.nanoTime();
+            RadixSort.radixSort(arrRadix, 10);
+            long endRadix = System.nanoTime();
+            long timeRadix = (endRadix - startRadix) / 1_000_000;
+
+            // Test Advanced Counting Sort (Array)
+            int[] arrAdvCount = Arrays.copyOf(baseArr, size);
+            long startAdvCount = System.nanoTime();
+            AdvancedSorting.countingSortArray(arrAdvCount);
+            long endAdvCount = System.nanoTime();
+            long timeAdvCount = (endAdvCount - startAdvCount) / 1_000_000;
+
+            // Test Advanced Radix Sort
+            int[] arrAdvRadix = Arrays.copyOf(baseArr, size);
+            long startAdvRadix = System.nanoTime();
+            AdvancedSorting.radixSort(arrAdvRadix);
+            long endAdvRadix = System.nanoTime();
+            long timeAdvRadix = (endAdvRadix - startAdvRadix) / 1_000_000;
+
+            System.out.printf("%-12d | %9d ms | %9d ms | %12d ms | %9d ms | %11d ms | %9d ms | %13d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms | %9d ms%n",
+                    size, time1, time2, time3, time4, time5, time6, time7, time8, timeList, timeNode, timePath, timePQ, timeCount, timeCountMap, timeRadix, timeAdvCount, timeAdvRadix);
         }
-        System.out.println("========================================================================================================================================================================================================");
+        System.out.println("=========================================================================================================================================================================================================================================================================================");
     }
 }
