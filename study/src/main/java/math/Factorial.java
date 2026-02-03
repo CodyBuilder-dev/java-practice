@@ -1,5 +1,7 @@
 package math;
 
+import java.util.Arrays;
+
 public class Factorial {
   static long[] dpCache = new long[100];
 
@@ -9,8 +11,8 @@ public class Factorial {
     int testN = 10;
     System.out.println("10! = " + factorialFor(testN));
     System.out.println("재귀: " + factorialRecursive(testN));
-    System.out.println("DP: " + factorialWithDPWithoutCaching(testN));
-    System.out.println("DP(Cache): " + factorialWithDPWithCaching(testN));
+    System.out.println("DP: " + factorialDPWithoutCaching(testN));
+    System.out.println("DP(Cache): " + factorialDPWithCaching(testN));
 
     // 성능 비교
     System.out.println("\n=== 성능 비교 (30! 계산 100,000회) ===");
@@ -31,13 +33,14 @@ public class Factorial {
 
     start = System.nanoTime();
     for (int i = 0; i < iterations; i++) {
-      factorialWithDPWithoutCaching(n);
+      factorialDPWithoutCaching(n);
     }
     long dpTime = System.nanoTime() - start;
 
+    Arrays.fill(dpCache, 0);
     start = System.nanoTime();
     for (int i = 0; i < iterations; i++) {
-      factorialWithDPWithCaching(n);
+      factorialDPWithCaching(n);
     }
     long dpCacheTime = System.nanoTime() - start;
 
@@ -62,7 +65,7 @@ public class Factorial {
   }
 
   // DP를 이용한 구현 (캐싱 없음)
-  public static long factorialWithDPWithoutCaching(int n) {
+  public static long factorialDPWithoutCaching(int n) {
     long[] dp = new long[n + 1];
     dp[0] = 1;
     for (int i = 1; i <= n; i++) {
@@ -72,7 +75,7 @@ public class Factorial {
   }
 
   // DP를 이용한 구현 (캐싱 사용)
-  public static long factorialWithDPWithCaching(int n) {
+  public static long factorialDPWithCaching(int n) {
     if (n < 0 || n >= dpCache.length) {
       throw new IllegalArgumentException("n must be non-negative and less than " + dpCache.length);
     }
