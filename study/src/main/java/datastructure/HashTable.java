@@ -129,8 +129,10 @@ public class HashTable<K,V> {
   public Set<K> keySet() {
     Set<K> set = new HashSet<>();
     for(Node<K,V> i: table) {
-      if(i != null) {
-        set.add(i.key);
+      Node<K,V> current = i;
+      while (current != null) {
+        set.add(current.key);
+        current = current.next;
       }
     }
     return set;
@@ -189,5 +191,18 @@ public class HashTable<K,V> {
     hashTable.putAll(newEntries);
     System.out.println("After putAll, keys: " + hashTable.keySet());
     System.out.println("After putAll, values: " + hashTable.values());
+
+    // Hash collision test
+    System.out.println("Testing hash collisions...");
+    HashTable<Integer, String> collisionTable = new HashTable<>(1);
+    collisionTable.put(1, "One");
+    collisionTable.put(6, "Six"); // 1 and 6 will collide in a table of size 1
+    collisionTable.put(11, "Eleven"); // 1, 6, and 11 will collide
+
+    System.out.println("Collisions: " + collisionTable.keySet());
+
+    System.out.println("Value for key 1: " + collisionTable.get(1));
+    System.out.println("Value for key 6: " + collisionTable.get(6));
+    System.out.println("Value for key 11: " + collisionTable.get(11));
   }
 }
