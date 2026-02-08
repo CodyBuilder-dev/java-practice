@@ -1,7 +1,19 @@
 package datatype;
+import java.nio.charset.Charset;
 
 public final class Char {
   public static void main(String[] args) {
+    // 디버그: JVM과 기본 Charset 출력
+    System.out.println("[DEBUG] file.encoding=" + System.getProperty("file.encoding"));
+    System.out.println("[DEBUG] java.nio.charset.Charset.defaultCharset()=" + Charset.defaultCharset().name()); // 내부적으로 file.encoding과 동일 값
+    System.out.println("[DEBUG] stdout.encoding=" + System.getProperty("stdout.encoding"));
+    System.out.println("[DEBUG] stderr.encoding=" + System.getProperty("stderr.encoding"));
+    System.out.println("[DEBUG] sun.jnu.encoding=" + System.getProperty("sun.jnu.encoding"));
+    System.out.println("[DEBUG] os.name=" + System.getProperty("os.name"));
+    System.out.println("[DEBUG] os.version=" + System.getProperty("os.version"));
+    System.out.println("[DEBUG] os.arch=" + System.getProperty("os.arch"));
+
+
     // === 1. 기본 문자 (한글, 영문, 숫자) ===
     System.out.println("=== 1. 기본 문자 (한글, 영문, 숫자) ===");
     char kor = '가';
@@ -65,9 +77,13 @@ public final class Char {
     char zeroWidthSpace = '\u200B';     // Zero Width Space
     char zeroWidthNonJoiner = '\u200C'; // Zero Width Non-Joiner
     char zeroWidthJoiner = '\u200D';    // Zero Width Joiner
+    char zeroWidthNoBreakSpace = '\uFEFF'; // Zero Width No-Break Space (BOM)
+    char zeroWidthNoBreakSpace2 = '\u00A0';  // Non-breaking space
     System.out.println("Zero Width Space: [A" + zeroWidthSpace + "B] (A와 B 사이에 있지만 안보임)");
     System.out.println("Zero Width Non-Joiner: [가" + zeroWidthNonJoiner + "나]");
     System.out.println("Zero Width Joiner: [" + zeroWidthJoiner + "]");
+    System.out.println("Zero Width No-Break Space (BOM): [A" + zeroWidthNoBreakSpace + "B]");
+    System.out.println("Non-breaking space : [A" + zeroWidthNoBreakSpace2 + "B]");
 
     // === 6. 서로게이트 페어 (Surrogate Pair) - 단독으로 사용하면 깨짐 ===
     System.out.println("\n=== 6. 서로게이트 페어 (Surrogate Pair) - 단독으로 깨짐 ===");
@@ -255,7 +271,7 @@ public final class Char {
     System.out.println("999999999를 char로 변환:");
     System.out.println("  결과 문자: [" + overflowChar + "]");
     System.out.println("  int 값: " + (int)overflowChar);
-    System.out.println("  16진수: 0x" + Integer.toHexString((int)overflowChar));
+    System.out.println("  16진수: 0x" + Integer.toHexString(overflowChar));
     System.out.println("  계산 과정: 999999999 % 65536 = " + (largeValue % 65536));
     
     // 음수 할당 (char는 unsigned이지만 int는 signed)
@@ -264,7 +280,7 @@ public final class Char {
     System.out.println("\n-1을 char로 변환:");
     System.out.println("  결과 문자: [" + negativeChar + "]");
     System.out.println("  int 값: " + (int)negativeChar);
-    System.out.println("  16진수: 0x" + Integer.toHexString((int)negativeChar));
+    System.out.println("  16진수: 0x" + Integer.toHexString(negativeChar));
     System.out.println("  설명: -1은 0xFFFF (65535)가 됨");
     
     int negativeValue2 = -100;
@@ -272,19 +288,19 @@ public final class Char {
     System.out.println("\n-100을 char로 변환:");
     System.out.println("  결과 문자: [" + negativeChar2 + "]");
     System.out.println("  int 값: " + (int)negativeChar2);
-    System.out.println("  16진수: 0x" + Integer.toHexString((int)negativeChar2));
+    System.out.println("  16진수: 0x" + Integer.toHexString(negativeChar2));
     
     // 경계값 테스트
     System.out.println("\n경계값 테스트:");
     char maxChar = (char)65535;  // 최대값
     char maxPlus1 = (char)65536;  // 최대값 + 1
-    System.out.println("65535 (최대값): [" + maxChar + "] = 0x" + Integer.toHexString((int)maxChar));
-    System.out.println("65536 (최대값+1): [" + maxPlus1 + "] = 0x" + Integer.toHexString((int)maxPlus1) + " (0으로 wrap)");
+    System.out.println("65535 (최대값): [" + maxChar + "] = 0x" + Integer.toHexString(maxChar));
+    System.out.println("65536 (최대값+1): [" + maxPlus1 + "] = 0x" + Integer.toHexString(maxPlus1) + " (0으로 wrap)");
     
     char minChar = (char)0;  // 최소값
     char minMinus1 = (char)(-1);  // 최소값 - 1
-    System.out.println("0 (최소값): [" + minChar + "] = 0x" + Integer.toHexString((int)minChar));
-    System.out.println("-1 (최소값-1): [" + minMinus1 + "] = 0x" + Integer.toHexString((int)minMinus1) + " (65535로 wrap)");
+    System.out.println("0 (최소값): [" + minChar + "] = 0x" + Integer.toHexString(minChar));
+    System.out.println("-1 (최소값-1): [" + minMinus1 + "] = 0x" + Integer.toHexString(minMinus1) + " (65535로 wrap)");
     
     // 산술 연산 오버플로우
     System.out.println("\n산술 연산 오버플로우:");
