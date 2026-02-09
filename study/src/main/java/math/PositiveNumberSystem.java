@@ -1,6 +1,12 @@
 package math;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class PositiveNumberSystem {
+
+  private static final Logger log = LoggerFactory.getLogger(PositiveNumberSystem.class);
+
   public static int pow(int base, int exponent) throws IllegalArgumentException {
     if (exponent < 0) {
       throw new IllegalArgumentException("Exponent must be non-negative");
@@ -69,14 +75,101 @@ public class PositiveNumberSystem {
     }
     return decimal;
   }
+  public static int decimalToDecimal(String decimalStr) throws IllegalArgumentException {
+    if (decimalStr == null || decimalStr.isEmpty()) {
+      throw new IllegalArgumentException("Input decimal string is null or empty");
+    }
+    int decimal = 0;
+    int length = decimalStr.length();
+    for (int i = 0; i < length; i++) {
+      char ch = decimalStr.charAt(length - 1 - i);
+      if (ch >= '0' && ch <= '9') {
+        int value = ch - '0';
+        decimal += value * pow(10, i);
+        if (decimal < 0) {
+          throw new IllegalArgumentException("Integer overflow occurred");
+        }
+      } else {
+        throw new IllegalArgumentException("Invalid decimal character: " + ch);
+      }
+    }
+    return decimal;
+  }
+  public static int strToDecimal(String str) throws IllegalArgumentException {
+    if (str == null || str.isEmpty()) {
+      throw new IllegalArgumentException("Input string is null or empty");
+    }
+    if (str.startsWith("0x")) {
+      return hexToDecimal(str);
+    } else if (str.startsWith("0b")) {
+      return binaryToDecimal(str);
+    } else {
+      return decimalToDecimal(str);
+    }
+  }
 
   public static void main(String[] args) {
-    System.out.println(pow(2, 30));
-    System.out.println(pow(16, 7));
     System.out.println(hexToDecimal("0x1A3F"));
     assert hexToDecimal("0x1A3F") == 6719;
     System.out.println(binaryToDecimal("0b1101"));
     assert binaryToDecimal("0b1101") == 13;
+    System.out.println(decimalToDecimal("12345"));
+    assert decimalToDecimal("12345") == 12345;
+    System.out.println(strToDecimal("0xFF"));
+    assert strToDecimal("0xFF") == 255;
+    System.out.println(strToDecimal("0b1010"));
+    assert strToDecimal("0b1010") == 10;
+    System.out.println(strToDecimal("6789"));
+    assert strToDecimal("6789") == 6789;
+
+    try {
+      hexToDecimal("1A3F");
+    } catch (IllegalArgumentException e) {
+      // Expected exception
+      log.error("e: ", e);
+    }
+    try{
+      hexToDecimal("0xGOAT");
+    }catch (IllegalArgumentException e){
+      // Expected exception
+      log.error("e: ", e);
+    }
+    try {
+      hexToDecimal("0x12345678");
+    } catch (IllegalArgumentException e) {
+      // Expected exception
+      log.error("e: ", e);
+    }
+    try {
+      binaryToDecimal("1101");
+    } catch (IllegalArgumentException e) {
+      // Expected exception
+      log.error("e: ", e);
+    }
+    try {
+      binaryToDecimal("0b1021");
+    } catch (IllegalArgumentException e) {
+      // Expected exception
+      log.error("e: ", e);
+    }
+    try {
+      binaryToDecimal("0b" + "1".repeat(32));
+    } catch (IllegalArgumentException e) {
+      // Expected exception
+      log.error("e: ", e);
+    }
+    try {
+      decimalToDecimal("12A45");
+    } catch (IllegalArgumentException e) {
+      // Expected exception
+      log.error("e: ", e);
+    }
+    try {
+      decimalToDecimal("2147483648");
+    } catch (IllegalArgumentException e) {
+      // Expected exception
+      log.error("e: ", e);
+    }
     System.out.println("All tests passed.");
   }
 }
