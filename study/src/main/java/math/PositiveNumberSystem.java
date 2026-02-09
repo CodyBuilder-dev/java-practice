@@ -1,4 +1,4 @@
-package datatype;
+package math;
 
 public class PositiveNumberSystem {
   public static int pow(int base, int exponent) throws IllegalArgumentException {
@@ -46,11 +46,37 @@ public class PositiveNumberSystem {
     return decimal;
   }
 
+  public static int binaryToDecimal(String binary) throws IllegalArgumentException {
+    int decimal = 0;
+    if(binary == null || binary.isEmpty()) {
+      throw new IllegalArgumentException("Input binary string is null or empty");
+    }
+    if(!binary.startsWith("0b")) {
+      throw new IllegalArgumentException("Input binary string must start with '0b'");
+    }
+    binary = binary.substring(2); // '0b' 접두사 제거
+    if(binary.length() > 31) {
+      throw new IllegalArgumentException("Input binary string is too long");
+    }
+    int length = binary.length();
+    for (int i = 0; i < length; i++) {
+      char ch = binary.charAt(length - 1 - i);
+      if (ch == '1') {
+        decimal += pow(2, i);
+      } else if (ch != '0') {
+        throw new IllegalArgumentException("Invalid binary character: " + ch);
+      }
+    }
+    return decimal;
+  }
+
   public static void main(String[] args) {
     System.out.println(pow(2, 30));
     System.out.println(pow(16, 7));
     System.out.println(hexToDecimal("0x1A3F"));
     assert hexToDecimal("0x1A3F") == 6719;
+    System.out.println(binaryToDecimal("0b1101"));
+    assert binaryToDecimal("0b1101") == 13;
     System.out.println("All tests passed.");
   }
 }
