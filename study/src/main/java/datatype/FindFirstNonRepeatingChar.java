@@ -83,7 +83,7 @@ public class FindFirstNonRepeatingChar {
 
     int testCount = 100000;
     int stringLength = 2000;
-    for(int coun = 0 ; coun < testCount ; coun++) {
+    for(int count = 0 ; count < testCount ; count++) {
       String temp = finder.createRandomString(stringLength);
       startTime = System.nanoTime();
       finder.getFirstNonRepeatingChar(temp);
