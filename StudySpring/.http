@@ -1,0 +1,137 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+
+### POST request to example server
+POST https://examples.http-client.intellij.net/post
+    ?generated-in=IntelliJ IDEA
+Content-Type: application/json
+
+{
+  "message": "Hello, World!"
+}
+
+### PUT request to example server
+PUT https://examples.http-client.intellij.net/put
+    ?generated-in=IntelliJ IDEA
+Content-Type: application/json
+
+{
+  "message": "This is a PUT request."
+}
+
+### DELETE request to example server
+DELETE https://examples.http-client.intellij.net/delete
+    ?generated-in=IntelliJ IDEA
+
+### PATCH request to example server
+PATCH https://examples.http-client.intellij.net/patch
+    ?generated-in=IntelliJ IDEA
+Content-Type: application/json
+
+{
+  "message": "This is a PATCH request."
+}
+
+### Request with custom headers
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+X-Custom-Header: CustomValue
+
+### Request with query parameters
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+    &param1=value1
+    &param2=value2
+
+### Request with authentication
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+Authorization: Bearer your_access_token_here
+
+### Request with form data
+POST https://examples.http-client.intellij.net/post
+    ?generated-in=IntelliJ IDEA
+Content-Type: application/x-www-form-urlencoded
+
+param1=value1&param2=value2
+
+#### Request with multipart form data
+POST https://examples.http-client.intellij.net/post
+    ?generated-in=IntelliJ IDEA
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="field1"
+
+value1
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="field2"
+
+value2
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+### Request with timeout
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+    &timeout=5000
+
+### Request with redirection
+GET https://examples.http-client.intellij.net/redirect
+    ?generated-in=IntelliJ IDEA
+
+### Request with cookies
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+Cookie: sessionId=abc123; userId=789
+
+### Request with response handling
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+Accept: application/json
+
+### Request with error handling
+GET https://examples.http-client.intellij.net/error
+    ?generated-in=IntelliJ IDEA
+
+### Request with custom user agent
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+User-Agent: MyCustomUserAgent/1.0
+
+#### Request with gzip encoding
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+Accept-Encoding: gzip
+
+#### Request with cache control
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+Cache-Control: no-cache
+
+### Request with ETag
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+If-None-Match: "etag_value_here"
+
+### Request with range header
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+Range: bytes=0-499
+
+### Request with content negotiation
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=IntelliJ IDEA
+Accept: application/json, application/xml;q=0.9, */*;q=0.8
+
+### Request to localhost session scoped server
+GET http://localhost:8080/scopes/session
+    ?generated-in=IntelliJ IDEA
+    &message=dda34562452123156121562132
+
+### Request to localhost session scoped server without session
+GET http://localhost:8080/scopes/session
+    ?generated-in=IntelliJ IDEA
+    &message=dda2456
+Cookie: JSESSIONID=219379A58CC2BFB6088A2767D283FE8b
+Connection: close
