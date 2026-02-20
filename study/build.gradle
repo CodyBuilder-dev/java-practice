@@ -19,19 +19,19 @@ configurations {
     aspectjtools
 }
 
-//tasks.withType(JavaCompile) {
-//    options.encoding = "UTF-8"
-//}
 //tasks.withType(Test) {
 //    systemProperty "file.encoding", "UTF-8"
 //}
 tasks.withType(JavaExec).configureEach {
-    jvmArgs = ['-Dfile.encoding=UTF-8', '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8']
+    jvmArgs = ['-Dfile.encoding=UTF-8', '-Dstdout.encoding=UTF-8', '-Dstderr.encoding=UTF-8',
+               '--add-opens', 'java.base/java.lang=ALL-UNNAMED']
 }
 
 dependencies {
     implementation 'org.slf4j:slf4j-api:2.0.17'
     implementation 'ch.qos.logback:logback-classic:1.5.25'
+
+    implementation 'cglib:cglib:3.3.0'
 
     implementation 'org.aspectj:aspectjrt:1.9.25.1'
     aspectjtools 'org.aspectj:aspectjtools:1.9.25.1'
