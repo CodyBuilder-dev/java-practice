@@ -1,0 +1,78 @@
+plugins {
+    id 'java'
+    id "maven-publish"
+}
+
+group = 'me.codybuilder'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+
+//    add a repository to download dependencies
+//    maven {
+//        allowInsecureProtocol true
+//        credentials {
+//            username "repo-user"
+//            password "user1234"
+//        }
+//        url 'http://nexus.amazonaws.com/repository/my-public/'
+//        artifactUrls "https://nexus2.amazonaws.com/nexus/repository/my-snapshots"
+//        artifactUrls "https://nexus2.amazonaws.com/nexus/repository/my-release"
+//        authentication {
+//            basic(BasicAuthentication)
+//        }
+//    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Gradle을 이용해 원하는 repository에 publishing
+publishing {
+    publications {
+        library(MavenPublication) {
+            // If want to pushlish with different Id
+//            setGroupId groupId
+//            setGroupId "me.codybuilder"
+//            setArtifactId artifactId
+//            setArtifactId "custom-annotation-processor"
+//            version "1.0"
+
+            from components.java
+
+            // add a dependency into generated .pom file
+//            pom.withXml {
+//                def dependenciesNode = asNode().appendNode('dependencies')
+//                def dependencyNode = dependenciesNode.appendNode('dependency')
+//                dependencyNode.appendNode('groupId', 'com.company')
+//                dependencyNode.appendNode('artifactId', 'HelloWorld-core')
+//                dependencyNode.appendNode('version', '1.1')
+//            }
+        }
+    }
+    // add a repository where artifacts should published
+//    repositories {
+//        maven {
+//            credentials {
+//                username = "$usr"
+//                password = "$pwd"
+//            }
+//
+//            url = "https://nexus2.amazonaws.com/nexus/repository/my-snapshots"
+//        }
+//    }
+}
