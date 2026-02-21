@@ -2,11 +2,17 @@ plugins {
     id 'java'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+// Ensure all JavaCompile tasks compile with the intended release to avoid annotation-processor source-version warnings
+tasks.withType(JavaCompile).configureEach {
+    options.release.set(17)
+}
 
 repositories {
     mavenCentral()
+    mavenLocal()
 }
 
 java {
@@ -28,6 +34,10 @@ tasks.withType(JavaExec).configureEach {
 }
 
 dependencies {
+    // 로컬에 publishToMavenLocal로 올린 artifact를 사용
+    compileOnly 'me.codybuilder:custom-annotation-processor:1.0-SNAPSHOT'
+    annotationProcessor 'me.codybuilder:custom-annotation-processor:1.0-SNAPSHOT'
+
     implementation 'org.slf4j:slf4j-api:2.0.17'
     implementation 'ch.qos.logback:logback-classic:1.5.25'
 
@@ -47,10 +57,330 @@ test {
     useJUnitPlatform()
 }
 
+// disable normal javac compile to avoid missing method errors; ajc will compile sources
+compileJava.enabled = false
+
+// Ensure processAnnotations uses packaged jar when needed (only add dependsOn when local module exists and mavenLocal doesn't provide the jar)
+def moduleDir = file("${rootDir}/custom-annotation-processor")
+def m2Jar = file(System.getProperty('user.home') + '/.m2/repository/me/codybuilder/custom-annotation-processor/1.0-SNAPSHOT/custom-annotation-processor-1.0-SNAPSHOT.jar')
+
+// Compile processor sources from custom-annotation-processor into a temp dir so processors are available without mavenLocal/multiproject
+tasks.register('compileProcessorSources', JavaCompile) {
+    group = 'build'
+    description = 'Compile annotation processor sources from custom-annotation-processor into a temp classes dir'
+    // source directory of the processor module
+    source = fileTree(dir: "${rootDir}/custom-annotation-processor/src/main/java", includes: ['**/*.java'])
+    classpath = files() // processor module has no runtime deps for now
+    // use layout.buildDirectory to avoid deprecated buildDir usage
+    destinationDirectory.set(layout.buildDirectory.dir('tmp/processor-classes'))
+    options.release.set(17)
+
+    doLast {
+        // copy META-INF service file from processor module resources into compiled classes dir so javac discovers processors
+        def serviceSrc = file("${rootDir}/custom-annotation-processor/src/main/resources/META-INF/services/javax.annotation.processing.Processor")
+        def destDir = destinationDirectory.get().asFile
+        if (serviceSrc.exists()) {
+            def destFile = file(destDir.path + '/META-INF/services/javax.annotation.processing.Processor')
+            destFile.parentFile.mkdirs()
+            serviceSrc.withInputStream { ins -> destFile.withOutputStream { outs -> outs << ins } }
+            logger.lifecycle('Copied processor service file into compiled processor classes: ' + destFile)
+        }
+    }
+
+    // Only run this task when the processor module exists and a mavenLocal snapshot isn't already available
+    onlyIf {
+        return moduleDir.exists() && !m2Jar.exists()
+    }
+}
+
+// Package compiled processor classes into a temporary jar to ensure javac can load processors
+tasks.register('packageProcessorJar', Jar) {
+    group = 'build'
+    description = 'Package compiled processor classes into a jar for annotation processing'
+    dependsOn 'compileProcessorSources'
+    // Only package processor jar when the processor module exists and mavenLocal snapshot isn't present
+    onlyIf {
+        return moduleDir.exists() && !m2Jar.exists()
+    }
+    // include compiled processor classes; ensure service file path is correct (META-INF/services)
+    from(layout.buildDirectory.dir('tmp/processor-classes'))
+    doFirst {
+        // If the compiled processor classes dir contains META-INF/Services (wrong case), copy to META-INF/services
+        def compiledDir = layout.buildDirectory.dir('tmp/processor-classes').get().asFile
+        def wrongSvc = new File(compiledDir, 'META-INF/Services')
+        def rightSvc = new File(compiledDir, 'META-INF/services')
+        if (wrongSvc.exists() && !rightSvc.exists()) {
+            rightSvc.parentFile.mkdirs()
+            wrongSvc.eachFileRecurse { f ->
+                def rel = f.toPath().toString().substring(wrongSvc.toPath().toString().length())
+                def dest = new File(rightSvc, rel)
+                if (f.isDirectory()) dest.mkdirs() else { dest.parentFile.mkdirs(); f.withInputStream { ins -> dest.withOutputStream { outs -> outs << ins } } }
+            }
+            logger.lifecycle('Normalized META-INF/Services -> META-INF/services in compiled processor classes')
+        }
+
+        // Also attempt to copy service file from processor module resources into compiled dir if present
+        def serviceSrc = file("${rootDir}/custom-annotation-processor/src/main/resources/META-INF/services/javax.annotation.processing.Processor")
+        if (serviceSrc.exists()) {
+            def dest = new File(compiledDir, 'META-INF/services/javax.annotation.processing.Processor')
+            dest.parentFile.mkdirs()
+            serviceSrc.withInputStream { ins -> dest.withOutputStream { outs -> outs << ins } }
+            logger.lifecycle('Copied META-INF/services/javax.annotation.processing.Processor into compiled processor classes')
+        }
+    }
+    archiveFileName.set('processor-temp.jar')
+    destinationDirectory.set(layout.buildDirectory.dir('tmp'))
+}
+
+tasks.register('processAnnotations', JavaCompile) {
+    group = 'build'
+    description = 'Run annotation processors only to generate sources (e.g., .aj)'
+    source = sourceSets.main.java
+    // include processor jars on the classpath too (some processors require dependencies)
+    classpath = sourceSets.main.compileClasspath + configurations.annotationProcessor
+    // ensure the location matches where our processor writes StandardLocation.SOURCE_OUTPUT
+    destinationDirectory.set(layout.buildDirectory.dir('tmp/annotationProcessing'))
+    // include tmp compiled processor classes (if present) plus configured annotationProcessor artifacts
+    def tmpProcDir = layout.buildDirectory.dir('tmp/processor-classes').get().asFile
+    options.annotationProcessorPath = files(tmpProcDir) + configurations.annotationProcessor
+    // Ensure compiler target/source is consistent with project Java toolchain to avoid processor version warnings
+    options.release.set(17)
+    // tell Gradle where the annotation processors should write generated sources
+    def apGenDir = layout.buildDirectory.dir('generated/sources/annotationProcessor/java/main').get().asFile
+    // Ensure directory exists and instruct javac where to write generated sources via -s
+    apGenDir.mkdirs()
+    // combine arguments: set source-output dir (-s) and force processors only (-proc:only)
+    // do NOT hardcode -processor so that all configured processors run
+    options.compilerArgs = (options.compilerArgs ?: []) + ['-s', apGenDir.absolutePath, '-proc:only']
+
+    // Ensure forbidden flags are not present during configuration (Gradle forbids -processorpath in compilerArgs)
+    if (options.compilerArgs) {
+        def cleanedCfg = [] as List
+        def skip = false
+        options.compilerArgs.each { itv ->
+            if (skip) { skip = false; return }
+            if (itv == '-processorpath' || itv == '--processor-path') { skip = true } else { cleanedCfg << itv }
+        }
+        options.compilerArgs = cleanedCfg
+    }
+
+    doFirst {
+        // Ensure no forbidden -processorpath / --processor-path flags are present in compilerArgs.
+        // Some code paths or plugins may have added these; Gradle requires using annotationProcessorPath instead.
+        if (options.compilerArgs) {
+            def cleaned = [] as List
+            def skipNext = false
+            options.compilerArgs.each { a ->
+                if (skipNext) { skipNext = false; return }
+                if (a == '-processorpath' || a == '--processor-path') {
+                    // skip this flag and the following value (path)
+                    skipNext = true
+                } else {
+                    cleaned << a
+                }
+            }
+            options.compilerArgs = cleaned
+        }
+
+        logger.lifecycle('processAnnotations: begin - printing current annotationProcessor configuration files: ' + configurations.annotationProcessor.files.collect { it.name }.join(', '))
+        logger.lifecycle('processAnnotations: current tmp processor-classes exists=' + tmpProcDir.exists())
+        // force resolution of processor artifacts so processors are available for javac
+        def procFiles = [] as List
+        try {
+            configurations.annotationProcessor.resolve()
+            procFiles.addAll(configurations.annotationProcessor.files)
+        } catch (Exception ex) {
+            logger.warn("Failed to resolve annotationProcessor configuration: ${ex.message}")
+        }
+
+        // ensure generated dir exists so ajc doesn't fail on missing sourceroot
+        apGenDir.mkdirs()
+
+        // Prefer packaged processor jar if present
+        def pkgJar = layout.buildDirectory.file('tmp/processor-temp.jar').get().asFile
+        if (pkgJar.exists()) {
+            logger.lifecycle('Using packaged processor jar: ' + pkgJar)
+            // add packaged jar to Gradle's annotationProcessorPath (do NOT add -processorpath to compilerArgs)
+            options.annotationProcessorPath = files(pkgJar) + (options.annotationProcessorPath ?: files())
+            procFiles << pkgJar
+        }
+
+        // prefer local compiled classes from custom-annotation-processor
+        def procClassesDir = file("${rootDir}/custom-annotation-processor/build/classes/java/main")
+        if (procClassesDir.exists()) {
+            logger.lifecycle('Found processor classes directory: ' + procClassesDir)
+            // ensure META-INF/services exists under procClassesDir so javac can discover processors
+            def serviceSrc = file("${rootDir}/custom-annotation-processor/src/main/resources/META-INF/services/javax.annotation.processing.Processor")
+            def serviceDest = file(procClassesDir.toString() + '/META-INF/services/javax.annotation.processing.Processor')
+            if (!serviceDest.exists() && serviceSrc.exists()) {
+                serviceDest.parentFile.mkdirs()
+                serviceSrc.withInputStream { ins -> serviceDest.withOutputStream { outs -> outs << ins } }
+                logger.lifecycle('Copied processor service file into compiled classes dir')
+            }
+            procFiles << procClassesDir
+        }
+
+        // jars in build/libs
+        def libsDir = file("${rootDir}/custom-annotation-processor/build/libs")
+        if (libsDir.exists()) {
+            def jars = libsDir.listFiles()?.findAll { it.name.endsWith('.jar') }
+            if (jars) {
+                logger.lifecycle('Found processor jars in build/libs: ' + jars.collect { it.name }.join(', '))
+                procFiles.addAll(jars)
+            }
+        }
+
+        // mavenLocal jar fallback
+        if (m2Jar.exists()) {
+            logger.lifecycle('Found processor jar in mavenLocal: ' + m2Jar)
+            procFiles << m2Jar
+        }
+
+        // If still empty, try to build the processor module to produce classes/jars
+        if (procFiles.isEmpty()) {
+            def gw = file("${rootDir}/custom-annotation-processor/gradlew.bat")
+            if (gw.exists()) {
+                logger.lifecycle('No processor artifacts found; attempting to build custom-annotation-processor...')
+                def proc = exec {
+                    workingDir = file("${rootDir}/custom-annotation-processor")
+                    commandLine = [gw.absolutePath, 'build']
+                    standardOutput = new ByteArrayOutputStream()
+                    errorOutput = standardOutput
+                    ignoreExitValue = true
+                }
+                logger.lifecycle(proc.standardOutput.toString())
+                if (procClassesDir.exists()) procFiles << procClassesDir
+                if (libsDir.exists()) {
+                    def jars2 = libsDir.listFiles()?.findAll { it.name.endsWith('.jar') }
+                    if (jars2) procFiles.addAll(jars2)
+                }
+            } else {
+                logger.warn('No gradlew.bat found in custom-annotation-processor; cannot build processor module automatically.')
+            }
+        }
+
+        // handle tmp processor classes dir
+        def tmpProcClassesDir = tmpProcDir
+        if (tmpProcClassesDir.exists() && tmpProcClassesDir.listFiles()) {
+            // ensure service file is present in the compiled processor classes dir
+            def serviceSrc = file("${rootDir}/custom-annotation-processor/src/main/resources/META-INF/services/javax.annotation.processing.Processor")
+            def serviceDest = file(tmpProcClassesDir.path + '/META-INF/services/javax.annotation.processing.Processor')
+            if (!serviceDest.exists() && serviceSrc.exists()) {
+                serviceDest.parentFile.mkdirs()
+                serviceSrc.withInputStream { ins -> serviceDest.withOutputStream { outs -> outs << ins } }
+                logger.lifecycle('Copied processor service file into tmp processor classes dir')
+            }
+
+            procFiles << tmpProcClassesDir
+        }
+
+        if (!procFiles.isEmpty()) {
+            def filesColl = files(procFiles)
+            options.annotationProcessorPath = filesColl + (options.annotationProcessorPath ?: files())
+            classpath = classpath + filesColl
+            logger.lifecycle('Using annotation processor artifacts: ' + procFiles.collect { it.name ?: it }.join(', '))
+            logger.lifecycle('processAnnotations: options.annotationProcessorPath=' + options.annotationProcessorPath.files.collect { it.name }.join(', '))
+
+            // If no service file present, try to detect processor classes inside the procFiles and force them via -processor
+            def servicePresent = procFiles.any { pf ->
+                if (pf.isDirectory()) {
+                    file(pf.toString() + '/META-INF/services/javax.annotation.processing.Processor').exists()
+                } else if (pf.name.endsWith('.jar')) {
+                    try {
+                        def jf = new java.util.jar.JarFile(pf as File)
+                        try { jf.getJarEntry('META-INF/services/javax.annotation.processing.Processor') != null } finally { jf.close() }
+                    } catch (Exception ignored) { false }
+                } else {
+                    false
+                }
+            }
+
+            if (!servicePresent) {
+                def detected = [] as List
+                procFiles.each { pf ->
+                    if (pf.isDirectory()) {
+                        fileTree(dir: pf, includes: ['**/*Processor.class']).each { fentry ->
+                            def rel = fentry.path - pf.path
+                            if (rel.startsWith(File.separator)) rel = rel.substring(1)
+                            def cls = rel.replace(File.separator, '.').replaceAll(/\.class$/, '')
+                            detected << cls
+                        }
+                    } else if (pf.name.endsWith('.jar')) {
+                        try {
+                            def jf = new java.util.jar.JarFile(pf as File)
+                            jf.entries().each { e ->
+                                if (!e.isDirectory() && e.name =~ /Processor\.class$/) {
+                                    def cls = e.name.replaceAll('/', '.').replaceAll(/\.class$/, '')
+                                    detected << cls
+                                }
+                            }
+                            jf.close()
+                        } catch (Exception ignored) { /* ignore */ }
+                    }
+                }
+                detected = detected.unique()
+                if (!detected.isEmpty()) {
+                    // Allowed to force -processor; this is a fallback when service file isn't provided
+                    options.compilerArgs = (options.compilerArgs ?: []) + ['-processor', detected.join(',')]
+                    logger.lifecycle('Detected processor classes, forcing -processor: ' + detected.join(','))
+                }
+            }
+        } else {
+            logger.warn('No processor artifacts available; annotation processing will run with no processors.')
+        }
+
+    }
+}
+
+// Configure processAnnotations once (merge previous multiple config blocks)
+tasks.named('processAnnotations') {
+    // decide at configuration time whether to depend on packaging/compilation of local processor
+    if (moduleDir.exists() && !m2Jar.exists()) {
+        dependsOn 'compileProcessorSources'
+        dependsOn 'packageProcessorJar'
+        logger.lifecycle('processAnnotations will depend on compileProcessorSources & packageProcessorJar because module exists and mavenLocal jar is absent')
+    } else {
+        logger.lifecycle('processAnnotations will NOT depend on compileProcessorSources/packageProcessorJar (moduleExists=' + moduleDir.exists() + ', mavenLocalJarExists=' + m2Jar.exists() + ')')
+    }
+
+    // Single execution-time preparation: add packaged jar if present and/or compiled processor classes
+    doFirst {
+        // 1) packaged jar (if present)
+        def pkgJar = layout.buildDirectory.file('tmp/processor-temp.jar').get().asFile
+        if (pkgJar.exists()) {
+            options.annotationProcessorPath = files(pkgJar) + (options.annotationProcessorPath ?: files())
+            classpath = classpath + files(pkgJar)
+            logger.lifecycle('Added packaged processor jar to annotationProcessorPath: ' + pkgJar)
+        } else {
+            logger.lifecycle('No packaged processor jar present; skipping adding packaged jar to annotationProcessorPath')
+        }
+
+        // 2) compiled processor classes dir (if present)
+        def procClasses = layout.buildDirectory.dir('tmp/processor-classes').get().asFile
+        if (procClasses.exists() && procClasses.listFiles()) {
+            // ensure service file is present in the compiled processor classes dir
+            def serviceSrc = file("${rootDir}/custom-annotation-processor/src/main/resources/META-INF/services/javax.annotation.processing.Processor")
+            def serviceDest = file(procClasses.path + '/META-INF/services/javax.annotation.processing.Processor')
+            if (!serviceDest.exists() && serviceSrc.exists()) {
+                serviceDest.parentFile.mkdirs()
+                serviceSrc.withInputStream { ins -> serviceDest.withOutputStream { outs -> outs << ins } }
+                logger.lifecycle('Copied processor service file into tmp processor classes dir')
+            }
+
+            options.annotationProcessorPath = files(procClasses) + (options.annotationProcessorPath ?: files())
+            classpath = classpath + files(procClasses)
+            logger.lifecycle('Using compiled processor classes from: ' + procClasses)
+        }
+    }
+}
+
+// compileAjc가 processResources로부터 generated sources를 받도록 의존성 추가
+// processResources에서 생성된 aj파일을 받아 바이트코드를 조작한다.
 tasks.register('compileAjc') {
     group = 'build'
     description = 'Compile with AspectJ (compile-time weaving)'
     dependsOn 'processResources'
+    dependsOn 'processAnnotations' // make compileAjc depend on annotation processing
 
     doLast {
         ant.taskdef(
@@ -69,10 +399,24 @@ tasks.register('compileAjc') {
                 sourceSets.main.java.srcDirs.each { dir ->
                     pathelement(location: dir)
                 }
+
+                def genAjDir = layout.buildDirectory.dir('generated/sources/annotationProcessor/main').get().asFile
+                if (genAjDir.exists()) {
+                    pathelement(location: genAjDir)
+                } else {
+                    logger.warn("Annotation-generated source directory not found, skipping AJ sourceroot: ${genAjDir}")
+                }
+
+                // also include Gradle's java variant path (some processors write into java/main)
+                def genAjDirJava = layout.buildDirectory.dir('generated/sources/annotationProcessor/java/main').get().asFile
+                if (genAjDirJava.exists()) {
+                    pathelement(location: genAjDirJava)
+                } else {
+                    logger.warn("Annotation-generated source directory not found, skipping AJ sourceroot: ${genAjDirJava}")
+                }
             }
         }
     }
 }
 
-compileJava.enabled = false
 classes.dependsOn 'compileAjc'

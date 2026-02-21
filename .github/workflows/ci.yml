@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-all:
+    name: Build processor and study (single-runner)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '17'
+          cache: gradle
+
+      - name: Build custom-annotation-processor
+        working-directory: ./custom-annotation-processor
+        run: |
+          ./gradlew.bat clean build --no-daemon
+
+      - name: Publish processor to mavenLocal (so study can use it)
+        working-directory: ./custom-annotation-processor
+        run: |
+          # publish to the runner's mavenLocal so the following study build picks it up
+          ./gradlew.bat publishToMavenLocal --no-daemon || echo "publish skipped"
+
+      - name: Build study (annotation processing + aspectj)
+        working-directory: ./study
+        env:
+          MAVEN_OPTS: '-Xmx1g'
+        run: |
+          ./gradlew.bat clean build --warning-mode all --no-daemon --info
