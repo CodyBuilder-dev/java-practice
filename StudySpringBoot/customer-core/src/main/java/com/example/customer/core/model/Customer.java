@@ -1,0 +1,58 @@
+package com.example.customer.core.model;
+
+import java.util.UUID;
+
+public class Customer {
+    private UUID id;
+    private String name;
+    private String email;
+    private String status; // ACTIVE, INACTIVE, DORMANT
+
+    public Customer() {}
+
+    public Customer(UUID id, String name, String email) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.status = "ACTIVE";
+    }
+
+    public Customer(UUID id, String name, String email, String status) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.status = status;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+}
