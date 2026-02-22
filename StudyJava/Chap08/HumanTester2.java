@@ -21,11 +21,11 @@ class Human2 {
         System.out.println(h.getHeight());
         System.out.println(h.getWeight());
 
-        h.setName("명수");
+        h.setName("춘향");
         System.out.println(h.name);
 
         //자기 클래스 안의 멤버라서 변경 가능
-        h.name = "준수";
+        h.name = "사또";
         System.out.println(h.name);
     }
 
@@ -58,10 +58,10 @@ public class HumanTester2 {
         System.out.println(h.getHeight());
         System.out.println(h.getWeight());
 
-        h.setName("명수");
+        h.setName("춘향");
         System.out.println(h.getName());
 
-        //h.name = "명수";
+        //h.name = "사또";
         //System.out.println(h.name);
     }
 }

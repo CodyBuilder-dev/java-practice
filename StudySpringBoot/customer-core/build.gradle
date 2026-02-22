@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '21'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // 도메인 모델만 포함, Spring 의존성 최소화
+}

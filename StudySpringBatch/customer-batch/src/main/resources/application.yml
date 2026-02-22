@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: customer-batch
+
+  datasource:
+    url: jdbc:h2:mem:batchdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false  # CommandLineRunner로 수동 실행
+
+  h2:
+    console:
+      enabled: true
+
+# Customer Service API (향후 확장용)
+customer:
+  service:
+    url: http://localhost:8085/api/customers
+
+logging:
+  level:
+    org.springframework.batch: DEBUG
