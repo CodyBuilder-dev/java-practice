@@ -17,32 +17,32 @@ Java 개발자로 살아남아 성장하기 위함
 
 #### 목차
 
-- [custom-annotation-processor/](./custom-annotation-processor/) — (간단 설명을 여기에 작성)
-- [study/](./study/) — (간단 설명을 여기에 작성)
-- [StudyJava/](./StudyJava/) — (간단 설명을 여기에 작성)
-- [StudySpring/](./StudySpring/) — (간단 설명을 여기에 작성)
-- [자바 ORM 표준 JPA 프로그래밍/](./%EC%9E%90%EB%B0%94%20ORM%20%ED%91%9C%EC%A4%80%20JPA%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/) — (간단 설명을 여기에 작성)
+- [custom-annotation-processor/](./custom-annotation-processor/) — Custom Annotation Processor 실습 모듈
+- [study/](./study/) — Java 학습 모듈
+- [StudyJava/](./StudyJava/) — '알쏭달쏭 자바 200제' 기록 모듈
+- [StudySpring/](./StudySpring/) — Spring 학습 모듈
+- [자바 ORM 표준 JPA 프로그래밍/](./%EC%9E%90%EB%B0%94%20ORM%20%ED%91%9C%EC%A4%80%20JPA%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/) — '자바 ORM 표준 JPA 프로그래밍' 기록 모듈
 
 
 ### custom-annotation-processor/
 
-- 목적: (예: 라이브러리, 예제, 서비스 등 한 줄 설명)
+- 목적:  Custom Annotation Processor 작성 및 배포 실습
 - 주요 내용: (예: 주요 파일/하위폴더/모듈)
-- 사용법 / 빌드: (예: gradlew build, javac 등)
+- 사용법 / 빌드: gradlew
 - 담당자 / 참고: (예: GitHub ID, OWNER 파일 위치)
 - 비고:
 
 ### study/
 
-- 목적: (예: 학습용 예제, 연습 문제 모음 등 한 줄 설명)
+- 목적: Java 기본기 학습
 - 주요 내용: (예: build.gradle, 연습용 코드, 테스트 등)
-- 사용법 / 빌드: (예: gradlew build 등)
+- 사용법 / 빌드: gradlew
 - 담당자 / 참고:
 - 비고:
 
 ### StudyJava/
 
-- 목적: 자바 기초 학습용 예제 모음(챕터별).
+- 목적: '알쏭달쏭 자바 200제' 예제 학습 기록(챕터별).
 - 주요 내용: Chap01 ~ Chap16 예제 Java 파일들, `hello.java` 등.
 - 사용법 / 빌드: 개별 파일은 `javac <파일>`로 컴파일; 통합 빌드는 없음.
 - 담당자 / 참고:
@@ -58,7 +58,7 @@ Java 개발자로 살아남아 성장하기 위함
 
 ### 자바 ORM 표준 JPA 프로그래밍/
 
-- 목적: JPA 관련 학습 자료 및 예제 코드 모음.
+- 목적: '자바 ORM 표준 JPA 프로그래밍' 예제 코드 모음.
 - 주요 내용: jpabook 등 레포지토리
 - 사용법 / 빌드: 각 하위 프로젝트의 가이드를 따름
 - 담당자 / 참고:
