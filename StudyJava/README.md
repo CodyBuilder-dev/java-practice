@@ -1,6 +1,6 @@
-# study 모듈
+# Study 모듈
 
-이 디렉토리는 학습용 `study` 모듈 소스와 빌드 스크립트를 포함합니다.
+이 디렉토리는 학습용 `StudyJava` 모듈 소스와 빌드 스크립트를 포함합니다.
 
 ## Build / Annotation Processing 정책 요약
 이 저장소는 `custom-annotation-processor`라는 별도 모듈(또는 mavenLocal의 artifact)을 통해 annotation processing을 수행하고, 그 결과로 생성된 AspectJ 파일을 AspectJ 컴파일 단계에서 위빙합니다.
