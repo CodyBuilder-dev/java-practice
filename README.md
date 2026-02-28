@@ -18,8 +18,7 @@ Java 개발자로 살아남아 성장하기 위함
 #### 목차
 
 - [custom-annotation-processor/](./custom-annotation-processor/) — Custom Annotation Processor 실습 모듈
-- [study/](./study/) — Java 학습 모듈
-- [StudyJava/](./StudyJava/) — '알쏭달쏭 자바 200제' 기록 모듈
+- [StudyJava/](./StudyJava/) — Java 학습 모듈, '알쏭달쏭 자바 200제' 기록 포함
 - [StudySpring/](./StudySpring/) — Spring 학습 모듈
 - [자바 ORM 표준 JPA 프로그래밍/](./%EC%9E%90%EB%B0%94%20ORM%20%ED%91%9C%EC%A4%80%20JPA%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/) — '자바 ORM 표준 JPA 프로그래밍' 기록 모듈
 
@@ -32,19 +31,11 @@ Java 개발자로 살아남아 성장하기 위함
 - 담당자 / 참고: (예: GitHub ID, OWNER 파일 위치)
 - 비고:
 
-### study/
-
-- 목적: Java 기본기 학습
-- 주요 내용: (예: build.gradle, 연습용 코드, 테스트 등)
-- 사용법 / 빌드: gradlew
-- 담당자 / 참고:
-- 비고:
-
 ### StudyJava/
 
-- 목적: '알쏭달쏭 자바 200제' 예제 학습 기록(챕터별).
+- 목적: Java 기본기 학습. '알쏭달쏭 자바 200제' 예제 학습 기록(Question200 폴더 아래 챕터별 분류).
 - 주요 내용: Chap01 ~ Chap16 예제 Java 파일들, `hello.java` 등.
-- 사용법 / 빌드: 개별 파일은 `javac <파일>`로 컴파일; 통합 빌드는 없음.
+- 사용법 / 빌드:  gradlew. Qustion200 아래 개별 파일은 `javac <파일>`로 컴파일
 - 담당자 / 참고:
 - 비고: 교육 목적, 프로덕션 코드 아님.
 
