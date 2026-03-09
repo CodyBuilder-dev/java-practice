@@ -1,40 +1,20 @@
 package thread;
 
-import annotations.Main;
+public class CustomThread extends Thread {
 
-
-public class CustomThread implements Runnable {
-  @Override
-  public void run() {
-    System.out.println(Thread.currentThread().getName());
+  public CustomThread() {
   }
 
-  @Main
-  public static void main() {
-    Thread thread = new Thread(new CustomThread());
-
-    Thread thread1 = new Thread(new CustomThread());
-    Thread thread2 = new Thread(new CustomThread());
-    Thread thread3 = new Thread(new CustomThread());
-    Thread thread4 = new Thread(new CustomThread());
-    Thread thread5 = new Thread(new CustomThread());
-
-    // run() 호출은 스레드를 생성하지 않는다.
-    thread.run();
-
-    // start()를 2회 호출하면 Exception 발생
-    thread.start();
-    try {
-      thread.start();
-    } catch (IllegalThreadStateException e) {
-      System.out.println("thread.start() called twice.");
-    }
-
-
-    thread1.start();
-    thread2.start();
-    thread3.start();
-    thread4.start();
-    thread5.start();
+  public CustomThread(Runnable target) {
+    super(target);
   }
+
+
+  public static void main(String[] args) {
+    Thread t = new CustomThread();
+    t.start(); // run()메서드를 오버라이딩 하지 않으면 아무것도 하지 않음
+
+    Thread t2 = new CustomThread(new CustomRunnable());
+    t2.start(); // runnable을 받으면 runnable의 동작을 수행
+   }
 }
