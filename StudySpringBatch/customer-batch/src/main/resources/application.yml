@@ -3,18 +3,26 @@ spring:
     name: customer-batch
 
   datasource:
-    url: jdbc:h2:mem:batchdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/customer_batch?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: batch_user
+    password: batch_password
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate  # schema.sql로 테이블 생성하므로 validate로 변경
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+    open-in-view: false
 
   batch:
     jdbc:
@@ -34,3 +42,17 @@ customer:
 logging:
   level:
     org.springframework.batch: DEBUG
+    com.example.customerbatch: DEBUG
+    com.example.customerbatch.listener: INFO  # Listener 로그는 INFO 레벨로
+    com.example.customerbatch.job.debug: INFO  # Debug Job 로그는 INFO 레벨로
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# MyBatis Configuration
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.example.customerbatch.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30

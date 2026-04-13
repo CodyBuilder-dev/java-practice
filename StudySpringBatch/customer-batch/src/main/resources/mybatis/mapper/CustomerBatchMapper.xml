@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.customerbatch.mapper.CustomerBatchMapper">
+
+    <!-- Result Map for CustomerEntity -->
+    <resultMap id="customerResultMap" type="com.example.customerbatch.entity.CustomerEntity">
+        <id property="id" column="id" jdbcType="BINARY"/>
+        <result property="name" column="name"/>
+        <result property="email" column="email"/>
+        <result property="status" column="status" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
+        <result property="tier" column="tier" typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
+        <result property="lastLoginAt" column="last_login_at"/>
+        <result property="createdAt" column="created_at"/>
+        <result property="updatedAt" column="updated_at"/>
+    </resultMap>
+
+    <!-- Find dormant customers -->
+    <select id="findDormantCustomers" resultMap="customerResultMap">
+        SELECT
+            id,
+            name,
+            email,
+            status,
+            tier,
+            last_login_at,
+            created_at,
+            updated_at
+        FROM customers
+        WHERE status = 'ACTIVE'
+          AND last_login_at &lt; #{cutoffDate}
+        ORDER BY last_login_at ASC
+    </select>
+
+    <!-- Find customers by status -->
+    <select id="findByStatus" resultMap="customerResultMap">
+        SELECT
+            id,
+            name,
+            email,
+            status,
+            tier,
+            last_login_at,
+            created_at,
+            updated_at
+        FROM customers
+        WHERE status = #{status}
+        ORDER BY created_at DESC
+    </select>
+
+    <!-- Find VIP eligible customers -->
+    <select id="findVipEligibleCustomers" resultMap="customerResultMap">
+        SELECT
+            c.id,
+            c.name,
+            c.email,
+            c.status,
+            c.tier,
+            c.last_login_at,
+            c.created_at,
+            c.updated_at
+        FROM customers c
+        WHERE c.status = 'ACTIVE'
+          AND c.tier != 'VIP'
+          AND EXISTS (
+              SELECT 1
+              FROM (
+                  SELECT customer_id, SUM(order_amount) as total_amount
+                  FROM customer_orders
+                  WHERE order_date &gt;= #{startDate}
+                    AND status = 'COMPLETED'
+                  GROUP BY customer_id
+                  HAVING total_amount &gt;= #{minTotalAmount}
+              ) orders
+              WHERE orders.customer_id = c.id
+          )
+        ORDER BY c.created_at DESC
+    </select>
+
+    <!-- Update customer status -->
+    <update id="updateCustomerStatus">
+        UPDATE customers
+        SET status = #{status},
+            updated_at = #{updatedAt}
+        WHERE id = #{customerId}
+    </update>
+
+    <!-- Update customer tier -->
+    <update id="updateCustomerTier">
+        UPDATE customers
+        SET tier = #{tier},
+            updated_at = #{updatedAt}
+        WHERE id = #{customerId}
+    </update>
+
+    <!-- Get total order amount -->
+    <select id="getTotalOrderAmount" resultType="java.lang.Double">
+        SELECT COALESCE(SUM(order_amount), 0)
+        FROM customer_orders
+        WHERE customer_id = #{customerId}
+          AND order_date &gt;= #{startDate}
+          AND status = 'COMPLETED'
+    </select>
+
+    <!-- Find customers with pagination -->
+    <select id="findCustomersWithPagination" resultMap="customerResultMap">
+        SELECT
+            id,
+            name,
+            email,
+            status,
+            tier,
+            last_login_at,
+            created_at,
+            updated_at
+        FROM customers
+        ORDER BY created_at DESC
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <!-- Count total customers -->
+    <select id="countCustomers" resultType="long">
+        SELECT COUNT(*)
+        FROM customers
+    </select>
+
+    <!-- Find customers by status and tier (for partition) -->
+    <select id="findByStatusAndTier" resultMap="customerResultMap">
+        SELECT
+            id,
+            name,
+            email,
+            status,
+            tier,
+            last_login_at,
+            created_at,
+            updated_at
+        FROM customers
+        WHERE status = #{status}
+          AND tier = #{tier}
+        ORDER BY email ASC
+    </select>
+
+</mapper>
