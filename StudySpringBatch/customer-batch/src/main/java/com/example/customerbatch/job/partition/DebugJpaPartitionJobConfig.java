@@ -8,18 +8,18 @@ import com.example.customerbatch.partitioner.CustomerTierPartitioner;
 import jakarta.persistence.EntityManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.partition.support.TaskExecutorPartitionHandler;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.database.JpaItemWriter;
-import org.springframework.batch.item.database.JpaPagingItemReader;
-import org.springframework.batch.item.database.builder.JpaItemWriterBuilder;
-import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.database.JpaItemWriter;
+import org.springframework.batch.infrastructure.item.database.JpaPagingItemReader;
+import org.springframework.batch.infrastructure.item.database.builder.JpaItemWriterBuilder;
+import org.springframework.batch.infrastructure.item.database.builder.JpaPagingItemReaderBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -33,7 +33,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * JPA 기반 Partition 배치 Job (Tier별 분할)
- * - CustomerTierPartitioner 사용 (BRONZE, SILVER, GOLD, VIP)
+ * - CustomerTierPartitioner 사용 (BRONZE, SILVER, GOLD, PLATINUM, DIAMOND)
  * - 각 파티션은 별도 스레드에서 병렬 처리
  * - 모든 Listener 적용하여 병렬 처리 과정 추적
  */
@@ -43,7 +43,7 @@ public class DebugJpaPartitionJobConfig {
     private static final Logger logger = LoggerFactory.getLogger(DebugJpaPartitionJobConfig.class);
     private static final String JOB_NAME = "debugJpaPartitionJob";
     private static final int CHUNK_SIZE = 5;
-    private static final int GRID_SIZE = 4; // 4개 파티션 (Tier별)
+    private static final int GRID_SIZE = 5; // 5개 파티션 (Tier별)
     private static final int SKIP_LIMIT = 10;
 
     private final Map<String, Integer> retryAttempts = new ConcurrentHashMap<>();

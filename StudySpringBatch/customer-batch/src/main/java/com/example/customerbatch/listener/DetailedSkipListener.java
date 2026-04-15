@@ -2,7 +2,7 @@ package com.example.customerbatch.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.SkipListener;
+import org.springframework.batch.core.listener.SkipListener;
 
 /**
  * Skip 이벤트를 상세히 추적하는 Listener

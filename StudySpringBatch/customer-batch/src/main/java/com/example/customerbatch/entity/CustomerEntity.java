@@ -38,22 +38,17 @@ public class CustomerEntity {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<MarketingConsentEntity> marketingConsents = new ArrayList<>();
 
-    public CustomerEntity() {}
+    public CustomerEntity() {
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+        this.status = CustomerStatus.ACTIVE;
+        this.tier = CustomerTier.BRONZE;
+    }
 
-    /**
-     * 도메인 모델로부터 생성
-     */
-    public static CustomerEntity fromDomain(Customer customer) {
-        CustomerEntity entity = new CustomerEntity();
-        entity.setId(customer.getId());
-        entity.setName(customer.getName());
-        entity.setEmail(customer.getEmail());
-        entity.setStatus(customer.getStatus());
-        entity.setTier(customer.getTier());
-        entity.setLastLoginAt(customer.getLastLoginAt());
-        entity.setCreatedAt(customer.getCreatedAt());
-        entity.setUpdatedAt(customer.getUpdatedAt());
-        return entity;
+    public CustomerEntity(String name, String email) {
+        this();
+        this.name = name;
+        this.email = email;
     }
 
     /**
@@ -61,24 +56,16 @@ public class CustomerEntity {
      */
     public Customer toDomain() {
         Customer customer = new Customer(id, name, email);
-        customer.setStatus(status);
-        customer.setTier(tier);
-        customer.setLastLoginAt(lastLoginAt);
-        customer.setCreatedAt(createdAt);
-        customer.setUpdatedAt(updatedAt);
+        customer.setStatus(status.name());
         return customer;
     }
 
     /**
-     * 도메인 모델의 변경사항을 반영
+     * 마케팅 동의 추가
      */
-    public void updateFromDomain(Customer customer) {
-        this.name = customer.getName();
-        this.email = customer.getEmail();
-        this.status = customer.getStatus();
-        this.tier = customer.getTier();
-        this.lastLoginAt = customer.getLastLoginAt();
-        this.updatedAt = customer.getUpdatedAt();
+    public void addMarketingConsent(MarketingConsentEntity consent) {
+        marketingConsents.add(consent);
+        consent.setCustomer(this);
     }
 
     // Getters and Setters

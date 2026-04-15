@@ -2,7 +2,7 @@ package com.example.customerbatch.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.ItemReadListener;
+import org.springframework.batch.core.listener.ItemReadListener;
 
 /**
  * Item Read 과정을 상세히 추적하는 Listener

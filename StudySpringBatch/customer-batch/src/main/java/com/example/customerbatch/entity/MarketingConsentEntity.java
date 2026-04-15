@@ -30,7 +30,22 @@ public class MarketingConsentEntity {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-    public MarketingConsentEntity() {}
+    public MarketingConsentEntity() {
+        this.consented = false;
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
+    }
+
+    public MarketingConsentEntity(CustomerEntity customer, MarketingChannel channel, Boolean consented) {
+        this();
+        this.customer = customer;
+        this.channel = channel;
+        this.consented = consented;
+        if (consented) {
+            this.consentedAt = LocalDateTime.now();
+            this.expiresAt = LocalDateTime.now().plusYears(2);
+        }
+    }
 
     /**
      * 도메인 모델로 변환
@@ -50,13 +65,10 @@ public class MarketingConsentEntity {
     }
 
     /**
-     * 도메인 모델의 변경사항 반영
+     * 만료 여부 확인
      */
-    public void updateFromDomain(MarketingConsent consent) {
-        this.consented = consent.getConsented();
-        this.consentedAt = consent.getConsentedAt();
-        this.expiresAt = consent.getExpiresAt();
-        this.updatedAt = consent.getUpdatedAt();
+    public boolean isExpired() {
+        return consented && expiresAt != null && LocalDateTime.now().isAfter(expiresAt);
     }
 
     // Getters and Setters
@@ -122,5 +134,14 @@ public class MarketingConsentEntity {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    /**
+     * 동의 철회 (도메인 로직)
+     */
+    public void revokeConsent() {
+        this.consented = false;
+        this.expiresAt = null;
+        this.updatedAt = LocalDateTime.now();
     }
 }

@@ -2,14 +2,16 @@ package com.example.customerbatch.listener;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.partition.StepExecutionSplitter;
-import org.springframework.batch.core.partition.support.StepExecutionAggregator;
+import org.springframework.batch.core.listener.StepExecutionListener;
+import org.springframework.batch.core.step.StepExecution;
+
+import java.time.Duration;
 
 /**
  * Partition 실행을 추적하는 Listener
  * StepExecutionListener를 사용하여 각 파티션의 시작/종료를 추적
  */
-public class DetailedPartitionListener implements org.springframework.batch.core.StepExecutionListener {
+public class DetailedPartitionListener implements StepExecutionListener {
 
     private static final Logger logger = LoggerFactory.getLogger(DetailedPartitionListener.class);
     private final String jobName;
@@ -19,7 +21,7 @@ public class DetailedPartitionListener implements org.springframework.batch.core
     }
 
     @Override
-    public void beforeStep(org.springframework.batch.core.StepExecution stepExecution) {
+    public void beforeStep(StepExecution stepExecution) {
         String partitionName = stepExecution.getExecutionContext().getString("partitionName", "unknown");
         Integer partitionNumber = stepExecution.getExecutionContext().getInt("partitionNumber", -1);
         String tier = stepExecution.getExecutionContext().getString("tier", "");
@@ -42,12 +44,12 @@ public class DetailedPartitionListener implements org.springframework.batch.core
     }
 
     @Override
-    public org.springframework.batch.core.ExitStatus afterStep(org.springframework.batch.core.StepExecution stepExecution) {
+    public org.springframework.batch.core.ExitStatus afterStep(StepExecution stepExecution) {
         String partitionName = stepExecution.getExecutionContext().getString("partitionName", "unknown");
         long readCount = stepExecution.getReadCount();
         long writeCount = stepExecution.getWriteCount();
         long skipCount = stepExecution.getSkipCount();
-        long processDuration = stepExecution.getEndTime().getTime() - stepExecution.getStartTime().getTime();
+        Duration processDuration = Duration.between(stepExecution.getStartTime(), stepExecution.getEndTime());
 
         logger.info("╔════════════════════════════════════════════════════════════════╗");
         logger.info("║ [{}] ✅ PARTITION END: {}                                      ", jobName, partitionName);

@@ -1,18 +1,17 @@
 package com.example.customerbatch.job;
 
-import com.example.customerbatch.model.Customer;
-import com.example.customerbatch.model.CustomerStatus;
+import com.example.customerbatch.entity.CustomerEntity;
+import com.example.customer.core.enums.CustomerStatus;
 import com.example.customerbatch.repository.CustomerRepository;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.Step;
+import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.data.RepositoryItemReader;
-import org.springframework.batch.item.data.builder.RepositoryItemReaderBuilder;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.ItemWriter;
+import org.springframework.batch.infrastructure.item.data.RepositoryItemReader;
+import org.springframework.batch.infrastructure.item.data.builder.RepositoryItemReaderBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.Sort;
@@ -51,7 +50,7 @@ public class DormantCustomerJobConfig {
     @Bean
     public Step dormantCustomerStep() {
         return new StepBuilder("dormantCustomerStep", jobRepository)
-                .<Customer, Customer>chunk(10, transactionManager)
+                .<CustomerEntity, CustomerEntity>chunk(10, transactionManager)
                 .reader(dormantCustomerReader())
                 .processor(dormantCustomerProcessor())
                 .writer(dormantCustomerWriter())
@@ -59,10 +58,10 @@ public class DormantCustomerJobConfig {
     }
 
     @Bean
-    public RepositoryItemReader<Customer> dormantCustomerReader() {
+    public RepositoryItemReader<CustomerEntity> dormantCustomerReader() {
         LocalDateTime threshold = LocalDateTime.now().minusDays(90);
 
-        return new RepositoryItemReaderBuilder<Customer>()
+        return new RepositoryItemReaderBuilder<CustomerEntity>()
                 .name("dormantCustomerReader")
                 .repository(customerRepository)
                 .methodName("findByStatusAndLastLoginBefore")
@@ -73,7 +72,7 @@ public class DormantCustomerJobConfig {
     }
 
     @Bean
-    public ItemProcessor<Customer, Customer> dormantCustomerProcessor() {
+    public ItemProcessor<CustomerEntity, CustomerEntity> dormantCustomerProcessor() {
         return customer -> {
             // 휴면 회원으로 전환
             customer.setStatus(CustomerStatus.DORMANT);
@@ -83,7 +82,7 @@ public class DormantCustomerJobConfig {
     }
 
     @Bean
-    public ItemWriter<Customer> dormantCustomerWriter() {
+    public ItemWriter<CustomerEntity> dormantCustomerWriter() {
         return chunk -> {
             // DB에 저장
             customerRepository.saveAll(chunk.getItems());

@@ -1,20 +1,20 @@
 package com.example.customerbatch.job.jpa;
 
 import com.example.customerbatch.entity.CustomerEntity;
+import com.example.customer.core.vo.CustomerTier;
 import jakarta.persistence.EntityManagerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.Step;
+import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.database.JpaItemWriter;
-import org.springframework.batch.item.database.JpaPagingItemReader;
-import org.springframework.batch.item.database.builder.JpaItemWriterBuilder;
-import org.springframework.batch.item.database.builder.JpaPagingItemReaderBuilder;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.database.JpaItemWriter;
+import org.springframework.batch.infrastructure.item.database.JpaPagingItemReader;
+import org.springframework.batch.infrastructure.item.database.builder.JpaItemWriterBuilder;
+import org.springframework.batch.infrastructure.item.database.builder.JpaPagingItemReaderBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -100,12 +100,12 @@ public class JpaCustomerTierUpgradeJobConfig {
             logger.info("[JPA] Processing customer for tier upgrade: {} (current tier: {})",
                     customer.getEmail(), customer.getTier());
 
-            // 등급을 VIP로 업그레이드
+            // 등급을 DIAMOND로 업그레이드 (VIP 대신)
             String previousTier = customer.getTier().toString();
-            customer.setTier(com.example.customerbatch.model.CustomerTier.VIP);
+            customer.setTier(CustomerTier.DIAMOND);
             customer.setUpdatedAt(LocalDateTime.now());
 
-            logger.info("[JPA] Customer {} upgraded: {} -> VIP",
+            logger.info("[JPA] Customer {} upgraded: {} -> DIAMOND",
                     customer.getEmail(), previousTier);
 
             return customer;

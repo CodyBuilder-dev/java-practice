@@ -6,22 +6,22 @@ import com.example.customerbatch.exception.SkippableCustomerException;
 import com.example.customerbatch.exception.TemporaryException;
 import com.example.customerbatch.listener.*;
 import com.example.customerbatch.mapper.CustomerBatchMapper;
-import com.example.customerbatch.model.CustomerStatus;
+import com.example.customer.core.enums.CustomerStatus;
 import com.example.customerbatch.partitioner.CustomerTierPartitioner;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.batch.MyBatisPagingItemReader;
 import org.mybatis.spring.batch.builder.MyBatisPagingItemReaderBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.StepScope;
+import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.partition.support.TaskExecutorPartitionHandler;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -44,7 +44,7 @@ public class DebugMyBatisPartitionJobConfig {
     private static final Logger logger = LoggerFactory.getLogger(DebugMyBatisPartitionJobConfig.class);
     private static final String JOB_NAME = "debugMyBatisPartitionJob";
     private static final int CHUNK_SIZE = 5;
-    private static final int GRID_SIZE = 4;
+    private static final int GRID_SIZE = 5; // 5개 파티션 (Tier별)
     private static final int SKIP_LIMIT = 10;
 
     @Autowired

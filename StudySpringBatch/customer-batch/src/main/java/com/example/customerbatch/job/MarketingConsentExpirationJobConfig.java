@@ -1,16 +1,16 @@
 package com.example.customerbatch.job;
 
-import com.example.customerbatch.model.MarketingConsent;
-import com.example.customerbatch.repository.MarketingConsentRepository;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.Step;
+import com.example.customerbatch.entity.MarketingConsentEntity;
+import com.example.customerbatch.repository.MarketingConsentEntityRepository;
+import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
-import org.springframework.batch.item.support.ListItemReader;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.ItemReader;
+import org.springframework.batch.infrastructure.item.ItemWriter;
+import org.springframework.batch.infrastructure.item.support.ListItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -28,15 +28,15 @@ public class MarketingConsentExpirationJobConfig {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
-    private final MarketingConsentRepository marketingConsentRepository;
+    private final MarketingConsentEntityRepository marketingConsentEntityRepository;
 
     public MarketingConsentExpirationJobConfig(
             JobRepository jobRepository,
             PlatformTransactionManager transactionManager,
-            MarketingConsentRepository marketingConsentRepository) {
+            MarketingConsentEntityRepository marketingConsentEntityRepository) {
         this.jobRepository = jobRepository;
         this.transactionManager = transactionManager;
-        this.marketingConsentRepository = marketingConsentRepository;
+        this.marketingConsentEntityRepository = marketingConsentEntityRepository;
     }
 
     @Bean
@@ -49,7 +49,7 @@ public class MarketingConsentExpirationJobConfig {
     @Bean
     public Step marketingConsentExpirationStep() {
         return new StepBuilder("marketingConsentExpirationStep", jobRepository)
-                .<MarketingConsent, MarketingConsent>chunk(20, transactionManager)
+                .<MarketingConsentEntity, MarketingConsentEntity>chunk(20, transactionManager)
                 .reader(expiredConsentReader())
                 .processor(expiredConsentProcessor())
                 .writer(expiredConsentWriter())
@@ -57,17 +57,17 @@ public class MarketingConsentExpirationJobConfig {
     }
 
     @Bean
-    public ItemReader<MarketingConsent> expiredConsentReader() {
+    public ItemReader<MarketingConsentEntity> expiredConsentReader() {
         // 만료된 동의 조회
-        List<MarketingConsent> expiredConsents =
-                marketingConsentRepository.findExpiredConsents(LocalDateTime.now());
+        List<MarketingConsentEntity> expiredConsents =
+                marketingConsentEntityRepository.findExpiredConsents(LocalDateTime.now());
 
         System.out.println("Found " + expiredConsents.size() + " expired marketing consents");
         return new ListItemReader<>(expiredConsents);
     }
 
     @Bean
-    public ItemProcessor<MarketingConsent, MarketingConsent> expiredConsentProcessor() {
+    public ItemProcessor<MarketingConsentEntity, MarketingConsentEntity> expiredConsentProcessor() {
         return consent -> {
             // 동의 철회 처리
             consent.revokeConsent();
@@ -79,10 +79,10 @@ public class MarketingConsentExpirationJobConfig {
     }
 
     @Bean
-    public ItemWriter<MarketingConsent> expiredConsentWriter() {
+    public ItemWriter<MarketingConsentEntity> expiredConsentWriter() {
         return chunk -> {
             // DB 저장
-            marketingConsentRepository.saveAll(chunk.getItems());
+            marketingConsentEntityRepository.saveAll(chunk.getItems());
             System.out.println("Revoked " + chunk.size() + " expired marketing consents");
 
             // 향후 확장: 재동의 요청 알림 발송

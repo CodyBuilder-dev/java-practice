@@ -1,1 +1,4 @@
 rootProject.name = 'customer-batch'
+
+include ':customer-core'
+project(':customer-core').projectDir = file('../../StudySpringBoot/customer-core')

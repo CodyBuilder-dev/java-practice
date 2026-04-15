@@ -2,19 +2,18 @@ package com.example.customerbatch.job.mybatis;
 
 import com.example.customerbatch.entity.CustomerEntity;
 import com.example.customerbatch.mapper.CustomerBatchMapper;
-import com.example.customerbatch.model.CustomerStatus;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.batch.MyBatisPagingItemReader;
 import org.mybatis.spring.batch.builder.MyBatisPagingItemReaderBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.batch.core.Job;
-import org.springframework.batch.core.Step;
+import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
+import org.springframework.batch.core.step.Step;
 import org.springframework.batch.core.step.builder.StepBuilder;
-import org.springframework.batch.item.ItemProcessor;
-import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.infrastructure.item.ItemProcessor;
+import org.springframework.batch.infrastructure.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -88,7 +87,7 @@ public class MyBatisDormantCustomerJobConfig {
                     customer.getEmail(), customer.getLastLoginAt());
 
             // 휴면 상태로 변경할 고객만 반환
-            if (customer.getStatus() == CustomerStatus.ACTIVE &&
+            if (customer.getStatus() == com.example.customer.core.enums.CustomerStatus.ACTIVE &&
                 customer.getLastLoginAt() != null &&
                 customer.getLastLoginAt().isBefore(LocalDateTime.now().minusDays(DORMANT_DAYS))) {
 
@@ -106,7 +105,7 @@ public class MyBatisDormantCustomerJobConfig {
             for (CustomerEntity customer : items) {
                 int updated = customerBatchMapper.updateCustomerStatus(
                         customer.getId(),
-                        CustomerStatus.DORMANT.name(),
+                        com.example.customer.core.enums.CustomerStatus.DORMANT.name(),
                         LocalDateTime.now()
                 );
 
