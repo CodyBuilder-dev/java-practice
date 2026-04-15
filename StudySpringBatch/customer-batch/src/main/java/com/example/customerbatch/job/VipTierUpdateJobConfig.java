@@ -3,6 +3,7 @@ package com.example.customerbatch.job;
 import com.example.customerbatch.entity.CustomerEntity;
 import com.example.customer.core.model.Customer;
 import com.example.customer.core.vo.CustomerTier;
+import com.example.customerbatch.repository.CustomerEntityRepository;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;

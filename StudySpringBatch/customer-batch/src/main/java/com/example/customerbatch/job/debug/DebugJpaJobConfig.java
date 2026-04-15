@@ -64,9 +64,9 @@ public class DebugJpaJobConfig {
                 .writer(debugJpaWriter)
                 // Listeners
                 .listener(new DetailedChunkListener(JOB_NAME))
-                .listener(new DetailedItemReadListener<CustomerEntity>(JOB_NAME))
-                .listener(new DetailedItemProcessListener<CustomerEntity, CustomerEntity>(JOB_NAME))
-                .listener(new DetailedItemWriteListener<CustomerEntity>(JOB_NAME))
+                .listener(new DetailedItemReadListener<>(JOB_NAME))
+                .listener(new DetailedItemProcessListener<>(JOB_NAME))
+                .listener(new DetailedItemWriteListener<>(JOB_NAME))
                 .listener(new DetailedSkipListener<CustomerEntity, CustomerEntity>(JOB_NAME))
                 // Fault Tolerance - Skip 설정
                 .faultTolerant()

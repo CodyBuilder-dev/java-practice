@@ -1,7 +1,6 @@
 package com.example.customerbatch.job.debug;
 
 import com.example.customerbatch.entity.CustomerEntity;
-import com.example.customerbatch.exception.NonSkippableCustomerException;
 import com.example.customerbatch.exception.RetryableCustomerException;
 import com.example.customerbatch.exception.SkippableCustomerException;
 import com.example.customerbatch.exception.TemporaryException;
@@ -74,9 +73,9 @@ public class DebugJpaRetryJobConfig {
                 .writer(debugJpaRetryWriter)
                 // Listeners
                 .listener(new DetailedChunkListener(JOB_NAME))
-                .listener(new DetailedItemReadListener<CustomerEntity>(JOB_NAME))
-                .listener(new DetailedItemProcessListener<CustomerEntity, CustomerEntity>(JOB_NAME))
-                .listener(new DetailedItemWriteListener<CustomerEntity>(JOB_NAME))
+                .listener(new DetailedItemReadListener<>(JOB_NAME))
+                .listener(new DetailedItemProcessListener<>(JOB_NAME))
+                .listener(new DetailedItemWriteListener<>(JOB_NAME))
                 .listener(new DetailedSkipListener<CustomerEntity, CustomerEntity>(JOB_NAME))
                 .listener(new DetailedRetryListener(JOB_NAME))
                 // Fault Tolerance - Retry 설정

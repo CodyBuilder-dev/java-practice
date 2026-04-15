@@ -68,9 +68,9 @@ public class DebugJdbcJobConfig {
                 .writer(debugJdbcWriter)
                 // Listeners
                 .listener(new DetailedChunkListener(JOB_NAME))
-                .listener(new DetailedItemReadListener<CustomerDto>(JOB_NAME))
-                .listener(new DetailedItemProcessListener<CustomerDto, CustomerDto>(JOB_NAME))
-                .listener(new DetailedItemWriteListener<CustomerDto>(JOB_NAME))
+                .listener(new DetailedItemReadListener<>(JOB_NAME))
+                .listener(new DetailedItemProcessListener<>(JOB_NAME))
+                .listener(new DetailedItemWriteListener<>(JOB_NAME))
                 .listener(new DetailedSkipListener<CustomerDto, CustomerDto>(JOB_NAME))
                 // Fault Tolerance
                 .faultTolerant()

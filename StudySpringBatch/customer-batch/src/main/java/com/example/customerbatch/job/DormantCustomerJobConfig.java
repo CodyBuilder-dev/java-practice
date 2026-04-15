@@ -2,7 +2,7 @@ package com.example.customerbatch.job;
 
 import com.example.customerbatch.entity.CustomerEntity;
 import com.example.customer.core.enums.CustomerStatus;
-import com.example.customerbatch.repository.CustomerRepository;
+import com.example.customerbatch.repository.CustomerEntityRepository;
 import org.springframework.batch.core.job.Job;
 import org.springframework.batch.core.job.builder.JobBuilder;
 import org.springframework.batch.core.repository.JobRepository;
@@ -29,15 +29,15 @@ public class DormantCustomerJobConfig {
 
     private final JobRepository jobRepository;
     private final PlatformTransactionManager transactionManager;
-    private final CustomerRepository customerRepository;
+    private final CustomerEntityRepository customerEntityRepository;
 
     public DormantCustomerJobConfig(
             JobRepository jobRepository,
             PlatformTransactionManager transactionManager,
-            CustomerRepository customerRepository) {
+            CustomerEntityRepository customerEntityRepository) {
         this.jobRepository = jobRepository;
         this.transactionManager = transactionManager;
-        this.customerRepository = customerRepository;
+        this.customerEntityRepository = customerEntityRepository;
     }
 
     @Bean
@@ -63,7 +63,7 @@ public class DormantCustomerJobConfig {
 
         return new RepositoryItemReaderBuilder<CustomerEntity>()
                 .name("dormantCustomerReader")
-                .repository(customerRepository)
+                .repository(customerEntityRepository)
                 .methodName("findByStatusAndLastLoginBefore")
                 .arguments(CustomerStatus.ACTIVE, threshold)
                 .pageSize(10)
@@ -85,7 +85,7 @@ public class DormantCustomerJobConfig {
     public ItemWriter<CustomerEntity> dormantCustomerWriter() {
         return chunk -> {
             // DB에 저장
-            customerRepository.saveAll(chunk.getItems());
+            customerEntityRepository.saveAll(chunk.getItems());
             System.out.println("Saved " + chunk.size() + " customers as DORMANT");
 
             // 향후 확장: 알림 서비스 API 호출
