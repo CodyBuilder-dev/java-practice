@@ -23,6 +23,10 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
     open-in-view: false
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
 
   batch:
     jdbc:
@@ -56,3 +60,10 @@ mybatis:
     map-underscore-to-camel-case: true
     default-fetch-size: 100
     default-statement-timeout: 30
+  type-handlers-package: com.example.customerbatch.typehandler  # Type Handler 패키지 설정
+
+
+coupon-data-initializer:
+  enabled: false  # true로 설정하면 대량 데이터 생성
+  total-records: 5000000  # 500만건
+  batch-size: 10000  # 한 번에 저장할 배치 크기

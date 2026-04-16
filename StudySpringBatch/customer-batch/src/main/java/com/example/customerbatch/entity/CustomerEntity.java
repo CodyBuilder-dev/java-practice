@@ -20,6 +20,7 @@ import java.util.UUID;
 public class CustomerEntity {
     @Id
     @GeneratedValue
+    @Column(columnDefinition = "BINARY(16)")
     private UUID id;
 
     private String name;
